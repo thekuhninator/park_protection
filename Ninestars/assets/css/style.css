@@ -344,7 +344,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 #hero {
   width: 100%;
   height: 70vh;
-  background: #fef8f5;
+  background: #e7fffb;
   border-bottom: 2px solid #fcebe3;
   margin: 72px 0 -72px 0;
 }
@@ -374,11 +374,11 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   transition: 0.5s;
   margin: 10px;
   color: #fff;
-  background: #eb5d1e;
+  background: #e74c3c;
 }
 
 #hero .btn-get-started:hover {
-  background: #ef7f4d;
+  background: #c0392b;
 }
 
 #hero .animated {
