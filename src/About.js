@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 
 function About() {
-  return (
+  return ( 
+    <div>Hello</div>
+
   );
 }
 
