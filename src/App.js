@@ -36,19 +36,19 @@ class App extends Component {
           </Navbar>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/Animals/AbbottsBooby" component={AbbottsBooby} />
+            <Route path="/Animals/AcklinsGroundIguana" component={AcklinsGroundIguana} />
+            <Route path="/Animals/Akiapolaau" component={Akiapolaau} />
+            <Route path="/Parks/GrandCanyon" component={GrandCanyon} />
+            <Route path="/Parks/Yellowstone" component={Yellowstone} />
+            <Route path="/Parks/Zion" component={Zion} />
+            <Route path="/Plants/AleutianHollyFern" component={AleutianHollyFern} />
+            <Route path="/Plants/AmargosaNiterwort" component={AmargosaNiterwort} />
+            <Route path="/Plants/PricklyApplecactus" component={PricklyApplecactus} />
+            <Route path="/About" component={About} />
             <Route path="/Parks" component={Parks} />
             <Route path="/Animals" component={Animals} />
             <Route path="/Plants" component={Plants} />
-            <Route path="/AbbottsBooby" component={AbbottsBooby} />
-            <Route path="/AcklinsGroundIguana" component={AcklinsGroundIguana} />
-            <Route path="/Akiapolaau" component={Akiapolaau} />
-            <Route path="/GrandCanyon" component={GrandCanyon} />
-            <Route path="/Yellowstone" component={Yellowstone} />
-            <Route path="/Zion" component={Zion} />
-            <Route path="/AleutianHollyFern" component={AleutianHollyFern} />
-            <Route path="/AmargosaNiterwort" component={AmargosaNiterwort} />
-            <Route path="/PricklyApplecactus" component={PricklyApplecactus} />
-            <Route path="/About" component={About} />
           </Switch>
         </Router>
       </React.Fragment>
