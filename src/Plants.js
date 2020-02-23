@@ -9,6 +9,8 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Pagination from 'react-bootstrap/Pagination';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 function Plants() {
 	return (
@@ -28,6 +30,40 @@ function Plants() {
 				</Col>
 				</Row>
 
+				<Row>
+					<Col>
+						<DropdownButton variant="light" title="Common Name">
+							<Dropdown.Item as="button">Ascending</Dropdown.Item>
+							<Dropdown.Item as="button">Descending</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+					<Col>
+						<DropdownButton variant="light" title="Scientific Name">
+							<Dropdown.Item as="button">Ascending</Dropdown.Item>
+							<Dropdown.Item as="button">Descending</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+					<Col>
+						<DropdownButton variant="light" title="Family Name">
+							<Dropdown.Item as="button">Ascending</Dropdown.Item>
+							<Dropdown.Item as="button">Descending</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+					<Col>
+						<DropdownButton variant="light" title="Listing Status">
+							<Dropdown.Item as="button">Endangered</Dropdown.Item>
+							<Dropdown.Item as="button">Threatened</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+					<Col>
+						<DropdownButton variant="light" title="States">
+							<Dropdown.Item as="button">TX</Dropdown.Item>
+							<Dropdown.Item as="button">AZ</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+				</Row>
+
+				<br/>
 		    	<CardDeck className="text-center">
 			  		<Card>
 			  			<Card.Img variant="top" src="https://images-na.ssl-images-amazon.com/images/I/51vxwr8lUxL._AC_SX450_.jpg"/>

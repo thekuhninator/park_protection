@@ -41,9 +41,9 @@ function Animals() {
 						</DropdownButton>
 					</Col>
 					<Col>
-						<DropdownButton variant="light" title="Family Name">
-							<Dropdown.Item as="button">Ascending</Dropdown.Item>
-							<Dropdown.Item as="button">Descending</Dropdown.Item>
+						<DropdownButton variant="light" title="Group">
+							<Dropdown.Item as="button">Birds</Dropdown.Item>
+							<Dropdown.Item as="button">Reptiles</Dropdown.Item>
 						</DropdownButton>
 					</Col>
 					<Col>
@@ -53,9 +53,9 @@ function Animals() {
 						</DropdownButton>
 					</Col>
 					<Col>
-						<DropdownButton variant="light" title="Group">
-							<Dropdown.Item as="button">Birds</Dropdown.Item>
-							<Dropdown.Item as="button">Reptiles</Dropdown.Item>
+						<DropdownButton variant="light" title="States">
+							<Dropdown.Item as="button">TX</Dropdown.Item>
+							<Dropdown.Item as="button">AZ</Dropdown.Item>
 						</DropdownButton>
 					</Col>
 				</Row>

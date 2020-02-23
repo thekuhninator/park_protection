@@ -9,6 +9,9 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Pagination from 'react-bootstrap/Pagination';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+
 
 function Parks() {
 	return (
@@ -28,6 +31,39 @@ function Parks() {
 				</Col>
 				</Row>
 
+				<Row>
+					<Col>
+						<DropdownButton variant="light" title="Park Code">
+							<Dropdown.Item as="button">Ascending</Dropdown.Item>
+							<Dropdown.Item as="button">Descending</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+					<Col>
+						<DropdownButton variant="light" title="Name">
+							<Dropdown.Item as="button">Ascending</Dropdown.Item>
+							<Dropdown.Item as="button">Descending</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+					<Col>
+						<DropdownButton variant="light" title="Phone Numbers">
+							<Dropdown.Item as="button">Ascending</Dropdown.Item>
+							<Dropdown.Item as="button">Descending</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+					<Col>
+						<DropdownButton variant="light" title="Designation">
+							<Dropdown.Item as="button">National Park</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+					<Col>
+						<DropdownButton variant="light" title="States">
+							<Dropdown.Item as="button">TX</Dropdown.Item>
+							<Dropdown.Item as="button">AZ</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+				</Row>
+
+				<br/>
 		    	<CardDeck className="text-center">
 			  		<Card>
 			  			<Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg"/>
