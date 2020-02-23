@@ -11,6 +11,7 @@ import Button from 'react-bootstrap/Button';
 import Pagination from 'react-bootstrap/Pagination';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import { Link } from 'react-router-dom';
 
 function Plants() {
 	return (
@@ -65,24 +66,24 @@ function Plants() {
 
 				<br/>
 		    	<CardDeck className="text-center">
-			  		<Card>
+			  		<Card><Link to="/Plants/PricklyApplecactus">
 			  			<Card.Img variant="top" src="https://images-na.ssl-images-amazon.com/images/I/51vxwr8lUxL._AC_SX450_.jpg"/>
 			    		<Card.Body>
 			      			<Card.Title>Prickly Applecactus</Card.Title>
 			    		</Card.Body>
-			  		</Card>
-					  <Card>
+			  		</Link></Card>
+					  <Card><Link to="/Plants/AleutianHollyFern">
 					    <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Aleutian_Shield_Fern.jpg" />
 					    <Card.Body>
 					      <Card.Title>Aleutian Holly Fern</Card.Title>
 					    </Card.Body>
-					</Card>
-					<Card>
+					</Link></Card>
+					<Card><Link to="/Plants/AmargosaNiterwort">
 						<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Nitrophila_mohavensis_6.jpg" />
 					 	<Card.Body>
 							<Card.Title>Amargosa Niterwort</Card.Title>
 					 	</Card.Body>
-					</Card>
+					</Link></Card>
 				</CardDeck>
 
 				<br/>

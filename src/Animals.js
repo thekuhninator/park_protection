@@ -11,6 +11,7 @@ import Button from 'react-bootstrap/Button';
 import Pagination from 'react-bootstrap/Pagination';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import { Link } from 'react-router-dom';
 
 function Animals() {
 	return (
@@ -62,24 +63,24 @@ function Animals() {
 
 				<br/>
 		    	<CardDeck className="text-center">
-			  		<Card>
+			  		<Card><Link to="/Animals/AbbottsBooby">
 			  			<Card.Img variant="top" src="https://ecos.fws.gov/docs/species_images/doc1650-250px-thumbnail.jpg"/>
 			    		<Card.Body>
 			      			<Card.Title>Abbott's Booby</Card.Title>
 			    		</Card.Body>
-			  		</Card>
-					  <Card>
-					    <Card.Img variant="top" src="https://ecos.fws.gov/docs/species_images/doc1803-250px-thumbnail.jpg" />
-					    <Card.Body>
-					      <Card.Title>Acklins Ground Iguana</Card.Title>
-					    </Card.Body>
-					</Card>
-					<Card>
+		    		</Link></Card>
+					<Card><Link to="/Animals/AcklinsGroundIguana">
+						<Card.Img variant="top" src="https://ecos.fws.gov/docs/species_images/doc1803-250px-thumbnail.jpg" />
+						<Card.Body>
+							<Card.Title>Acklins Ground Iguana</Card.Title>
+						</Card.Body>
+					</Link></Card>
+					<Card><Link to="/Animals/Akiapolaau">
 						<Card.Img variant="top" src="https://download.ams.birds.cornell.edu/api/v1/asset/96716321/1800" />
 					 	<Card.Body>
 							<Card.Title>Akiapolaau</Card.Title>
 					 	</Card.Body>
-					</Card>
+					</Link></Card>
 				</CardDeck>
 
 				<br/>
