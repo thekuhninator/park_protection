@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Parks from './Parks';
 import Animals from './Animals';
+import Plants from './Plants';
 import { Link } from 'react-router-dom';
 
 
@@ -27,6 +28,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/Parks" component={Parks} />
             <Route path="/Animals" component={Animals} />
+            <Route path="/Plants" component={Plants} />
           </Switch>
         </Router>
       </React.Fragment>

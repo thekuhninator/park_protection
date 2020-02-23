@@ -12,13 +12,13 @@ function Animals() {
 	  		<Card>
 	  			<Card.Img variant="top" src="https://ecos.fws.gov/docs/species_images/doc1650-250px-thumbnail.jpg"/>
 	    		<Card.Body>
-	      			<Card.Title>Abbott's booby</Card.Title>
+	      			<Card.Title>Abbott's Booby</Card.Title>
 	    		</Card.Body>
 	  		</Card>
 			  <Card>
 			    <Card.Img variant="top" src="https://ecos.fws.gov/docs/species_images/doc1803-250px-thumbnail.jpg" />
 			    <Card.Body>
-			      <Card.Title>Acklins ground iguana</Card.Title>
+			      <Card.Title>Acklins Ground Iguana</Card.Title>
 			    </Card.Body>
 			</Card>
 			<Card>
