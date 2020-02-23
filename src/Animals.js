@@ -9,14 +9,13 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Pagination from 'react-bootstrap/Pagination';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 function Animals() {
 	return (
-		<div
-			style={{
-			position: 'absolute', left: '0%', right: '0%', top: '10%', bottom: '0%'
-    	}}>
 			<Container>
+				<br/>
 				<Row>
 				<Col><h1>Animals</h1><br/></Col>
 				<Col xs={{span: 3}}>
@@ -28,6 +27,40 @@ function Animals() {
 				</Col>
 				</Row>
 
+				<Row>
+					<Col>
+						<DropdownButton variant="light" title="Common Name">
+							<Dropdown.Item as="button">Ascending</Dropdown.Item>
+							<Dropdown.Item as="button">Descending</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+					<Col>
+						<DropdownButton variant="light" title="Scientific Name">
+							<Dropdown.Item as="button">Ascending</Dropdown.Item>
+							<Dropdown.Item as="button">Descending</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+					<Col>
+						<DropdownButton variant="light" title="Family Name">
+							<Dropdown.Item as="button">Ascending</Dropdown.Item>
+							<Dropdown.Item as="button">Descending</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+					<Col>
+						<DropdownButton variant="light" title="Listing Status">
+							<Dropdown.Item as="button">Endangered</Dropdown.Item>
+							<Dropdown.Item as="button">Threatened</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+					<Col>
+						<DropdownButton variant="light" title="Group">
+							<Dropdown.Item as="button">Birds</Dropdown.Item>
+							<Dropdown.Item as="button">Reptiles</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+				</Row>
+
+				<br/>
 		    	<CardDeck className="text-center">
 			  		<Card>
 			  			<Card.Img variant="top" src="https://ecos.fws.gov/docs/species_images/doc1650-250px-thumbnail.jpg"/>
@@ -60,7 +93,6 @@ function Animals() {
 				</Pagination>
 
 		    </Container>
-	    </div>
   	);
 }
 
