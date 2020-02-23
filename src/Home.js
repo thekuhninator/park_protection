@@ -6,14 +6,7 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Form, FormControl, Button 
 function Home() {
   return (
     <div className="Home">
-    <Navbar bg="dark" variant="dark">
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-        </Navbar>
+      
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
