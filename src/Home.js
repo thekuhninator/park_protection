@@ -1,27 +1,20 @@
 import React, {Component} from 'react';
 import logo from './logo.png';
 import './App.css';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Form, FormControl, Button } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Image from 'react-bootstrap/Image'
 
 function Home() {
   return (
-    <div className="Home">
-      
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+    <Row>
+      <Col><h1>Preserving Nature Through Education</h1><br/><h3>Learn more about
+        endangered species and the national parks protecting them</h3></Col>
+      <Col md={{span: 4, offset: 2}}><Image src={ logo } fluid /></Col>
+    </Row>
+    </Container>
   );
 }
 
