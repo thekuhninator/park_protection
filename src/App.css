@@ -24,6 +24,12 @@
   color: white;
 }
 
+.card-img-top {
+    width: 20vw;
+    height: 15vw;
+    object-fit: cover;
+}
+
 .App-link {
   color: #61dafb;
 }

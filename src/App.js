@@ -5,6 +5,7 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Form, FormControl, Button 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Parks from './Parks';
+import Animals from './Animals';
 import { Link } from 'react-router-dom';
 
 
@@ -25,6 +26,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/Parks" component={Parks} />
+            <Route path="/Animals" component={Animals} />
           </Switch>
         </Router>
       </React.Fragment>

@@ -1,8 +1,35 @@
 import React, {Component} from 'react';
+import logo from './logo.png';
+import './App.css';
+import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card'
+import CardDeck from 'react-bootstrap/CardDeck'
 
 function Animals() {
-  return (
-  );
+	return (
+	<Container>
+    	<CardDeck>
+	  		<Card>
+	  			<Card.Img variant="top" src="https://ecos.fws.gov/docs/species_images/doc1650-250px-thumbnail.jpg"/>
+	    		<Card.Body>
+	      			<Card.Title>Abbott's booby</Card.Title>
+	    		</Card.Body>
+	  		</Card>
+			  <Card>
+			    <Card.Img variant="top" src="https://ecos.fws.gov/docs/species_images/doc1803-250px-thumbnail.jpg" />
+			    <Card.Body>
+			      <Card.Title>Acklins ground iguana</Card.Title>
+			    </Card.Body>
+			</Card>
+			<Card>
+				<Card.Img variant="top" src="https://download.ams.birds.cornell.edu/api/v1/asset/96716321/1800" />
+			 	<Card.Body>
+					<Card.Title>Akiapolaau</Card.Title>
+			 	</Card.Body>
+			</Card>
+		</CardDeck>
+    </Container>
+  	);
 }
 
 export default Animals;
