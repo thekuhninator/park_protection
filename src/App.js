@@ -7,6 +7,15 @@ import Home from './Home';
 import Parks from './Parks';
 import Animals from './Animals';
 import Plants from './Plants';
+import AbbottsBooby from './AnimalInstancePages/AbbottsBooby';
+import AcklinsGroundIguana from './AnimalInstancePages/AcklinsGroundIguana';
+import Akiapolaau from './AnimalInstancePages/Akiapolaau';
+import GrandCanyon from './ParkInstancePages/GrandCanyon';
+import Yellowstone from './ParkInstancePages/Yellowstone';
+import Zion from './ParkInstancePages/Zion';
+import AleutianHollyFern from './PlantInstancePages/AleutianHollyFern';
+import AmargosaNiterwort from './PlantInstancePages/AmargosaNiterwort';
+import PricklyApplecactus from './PlantInstancePages/PricklyApplecactus';
 import { Link } from 'react-router-dom';
 
 
@@ -29,6 +38,15 @@ class App extends Component {
             <Route path="/Parks" component={Parks} />
             <Route path="/Animals" component={Animals} />
             <Route path="/Plants" component={Plants} />
+            <Route path="/AbbottsBooby" component={AbbottsBooby} />
+            <Route path="/AcklinsGroundIguana" component={AcklinsGroundIguana} />
+            <Route path="/Akiapolaau" component={Akiapolaau} />
+            <Route path="/GrandCanyon" component={GrandCanyon} />
+            <Route path="/Yellowstone" component={Yellowstone} />
+            <Route path="/Zion" component={Zion} />
+            <Route path="/AleutianHollyFern" component={AleutianHollyFern} />
+            <Route path="/AmargosaNiterwort" component={AmargosaNiterwort} />
+            <Route path="/PricklyApplecactus" component={PricklyApplecactus} />
           </Switch>
         </Router>
       </React.Fragment>
