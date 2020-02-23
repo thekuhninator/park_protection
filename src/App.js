@@ -3,7 +3,8 @@ import logo from './logo.png';
 import './App.css';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Form, FormControl, Button } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './Home'
+import Home from './Home';
+import Parks from './Parks';
 import { Link } from 'react-router-dom';
 
 
@@ -23,6 +24,7 @@ class App extends Component {
           </Navbar>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/Parks" component={Parks} />
           </Switch>
         </Router>
       </React.Fragment>
