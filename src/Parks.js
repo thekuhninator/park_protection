@@ -12,14 +12,30 @@ import Pagination from 'react-bootstrap/Pagination';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import Select from 'react-select';
+
+const designations = [
+  { value: 'national park', label: 'National Park' }
+]
+
+const Designations = () => (
+  <Select options={designations} isMulti className="basic-multi-select" placeholder="Designations" />
+)
+
+const states = [
+	{ value: 'AZ', label: 'AZ' },
+	{ value: 'TX', label: 'TX' }
+]
+
+const States = () => (
+  <Select options={states} isMulti className="basic-multi-select" placeholder="States" />
+)
 
 function Parks() {
 	return (
-		<div
-			style={{
-			position: 'absolute', left: '0%', right: '0%', top: '10%', bottom: '0%'
-    	}}>
 			<Container>
+				<br/>
 				<Row>
 				<Col><h1>Parks</h1><br/></Col>
 				<Col xs={{span: 3}}>
@@ -51,19 +67,14 @@ function Parks() {
 						</DropdownButton>
 					</Col>
 					<Col>
-						<DropdownButton variant="light" title="Designation">
-							<Dropdown.Item as="button">National Park</Dropdown.Item>
-						</DropdownButton>
+						<Designations />
 					</Col>
 					<Col>
-						<DropdownButton variant="light" title="States">
-							<Dropdown.Item as="button">TX</Dropdown.Item>
-							<Dropdown.Item as="button">AZ</Dropdown.Item>
-						</DropdownButton>
+						<States />
 					</Col>
 				</Row>
 
-				<br/>
+				<br/><br/>
 		    	<CardDeck className="text-center">
 			  		<Card><Link to="/Parks/Yellowstone">
 			  			<Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg"/>
@@ -96,7 +107,6 @@ function Parks() {
 				</Pagination>
 
 		    </Container>
-	    </div>
   	);
 }
 
