@@ -12,6 +12,26 @@ import Pagination from 'react-bootstrap/Pagination';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import Select from 'react-select';
+
+const statuses = [
+  { value: 'threatened', label: 'Threatened' },
+  { value: 'endangered', label: 'Endangered' }
+]
+
+const Statuses = () => (
+  <Select options={statuses} isMulti className="basic-multi-select" placeholder="Listing Statuses" />
+)
+
+const states = [
+	{ value: 'AZ', label: 'AZ' },
+	{ value: 'TX', label: 'TX' }
+]
+
+const States = () => (
+  <Select options={states} isMulti className="basic-multi-select" placeholder="States" />
+)
 
 function Animals() {
 	return (
@@ -48,20 +68,14 @@ function Animals() {
 						</DropdownButton>
 					</Col>
 					<Col>
-						<DropdownButton variant="light" title="Listing Status">
-							<Dropdown.Item as="button">Endangered</Dropdown.Item>
-							<Dropdown.Item as="button">Threatened</Dropdown.Item>
-						</DropdownButton>
+						<Statuses />
 					</Col>
 					<Col>
-						<DropdownButton variant="light" title="States">
-							<Dropdown.Item as="button">TX</Dropdown.Item>
-							<Dropdown.Item as="button">AZ</Dropdown.Item>
-						</DropdownButton>
+						<States />
 					</Col>
 				</Row>
 
-				<br/>
+				<br/><br/>
 		    	<CardDeck className="text-center">
 			  		<Card><Link to="/Animals/AbbottsBooby">
 			  			<Card.Img variant="top" src="https://ecos.fws.gov/docs/species_images/doc1650-250px-thumbnail.jpg"/>
