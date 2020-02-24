@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import logo from '../logo.png';
+import map from '../Assets/Maps/BlankMap.png';
 import '../App.css';
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron'
@@ -19,8 +19,6 @@ const ScientificName = styled('h4')`
 `;
 
 const EndangeredBox = styled('div')`
-	border-radius: 5px;
-	background: #62DE95;
 	text-align: center;
 	height: 50px;
 	width: 250px;
@@ -50,6 +48,15 @@ const TableBox = styled('div')`
 	margin: 10px;
 `;
 
+const ImageBox = styled('img')`
+	width: 400px;
+	height: 400px;
+`;
+
+const ImageBoxLong = styled('img')`
+	width: 600px;
+	height: 400px;
+`;
 function AbbottsBooby() {
 	return (
 		<div>
@@ -68,11 +75,11 @@ function AbbottsBooby() {
 			<Container>
 				<Row>
 					<CenteredCol>
-						<Image src="https://ecos.fws.gov/docs/species_images/doc1650-250px-thumbnail.jpg" fluid />
+						<ImageBox src="https://ecos.fws.gov/docs/species_images/doc1650-250px-thumbnail.jpg" fluid />
 					</CenteredCol>
 
 					<CenteredCol>
-						<Image src="https://ecos.fws.gov/docs/species_images/doc1650-250px-thumbnail.jpg" fluid />
+						<ImageBoxLong src={ map } fluid />
 					</CenteredCol>
 				</Row>
 			</Container>
