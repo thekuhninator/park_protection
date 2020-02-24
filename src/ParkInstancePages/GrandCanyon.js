@@ -7,14 +7,16 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import styled from 'styled-components';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import map from '../Assets/Maps/GrandCanyon.png';
 
 const CarouselImage = styled('img')`
 	width: 400px;
 	height: 350px;
 	margin: auto;
 `;
-const ParkCarousel = styled('Carousel')`
-	
+const ImageBoxLong = styled('img')`
+	width: 600px;
+	height: 400px;
 `;
 
 function GrandCanyon() {
@@ -51,15 +53,15 @@ function GrandCanyon() {
 				  </Carousel.Item>
 				  <Carousel.Item>
 				    <CarouselImage 
-				      className="d-block w-50"
+				      className="d-block w-60"
 				      src="https://www.nps.gov/common/uploads/structured_data/3C7B1720-1DD8-B71B-0B74DCF6F887A960.jpg"
 				      alt="Third slide"
 				    />
 				  </Carousel.Item>
 				</Carousel>
 				<br></br>
-				<h4>Address: 20 South Entrance Road, Grand Canyon, AZ 86023</h4>
-				<h3>Map</h3>
+				<ImageBoxLong src={ map } fluid />
+				<h4>20 South Entrance Road, Grand Canyon, AZ 86023</h4>
 				<br></br>
 				<Row>
 					<Col>
