@@ -8,6 +8,8 @@ import styled from 'styled-components';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import map from '../Assets/Maps/Yellowstone.png';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
+import YSMapWrapper from '../Assets/Maps/YSMapWrapper';
 
 const CarouselImage = styled('img')`
 	width: 400px;
@@ -19,12 +21,16 @@ const ImageBoxLong = styled('img')`
 	height: 400px;
 `;
 
+const CenterText = styled('div')`
+	text-align: center;
+`
+
 function Yellowstone() {
 	return (
 		<div>
 			<Jumbotron fluid>
 				<Container>
-					<h1>Yellowstone National Park</h1>
+					<CenterText><h1>Yellowstone National Park</h1></CenterText>
 				</Container>
 			</Jumbotron>
 			<Container>
@@ -60,9 +66,6 @@ function Yellowstone() {
 				  </Carousel.Item>
 				</Carousel>
 				<br></br>
-				<ImageBoxLong src={ map } fluid />
-				<h4>2 Officers Row, Yellowstone National Park Headquarters, Yellowstone National Park, WY 82190</h4>
-				<br></br>
 				<Row>
 					<Col>
 					<h6>On March 1, 1872, Yellowstone became the first national park for all to enjoy the unique hydrothermal wonders. Today, millions of people come here each year to camp, hike, and enjoy the majesty of the park.
@@ -77,13 +80,17 @@ function Yellowstone() {
 					</h6>
 					</Col>
 				</Row>
-					<br></br>
-				<h5>https://www.nps.gov/yell/index.htm</h5>
+
 				<br></br>
-				<h5>Phone: 307-344-7381 </h5>
-				<br></br>
-				<h5>Email: yell_visitor_services@nps.gov</h5>
+				<h3>Contact Them</h3>
+				<h5><a href="https://www.nps.gov/yell/index.htm">Website</a></h5>
+				<h5>yell_visitor_services@nps.gov</h5>
+				<h5>(307) 344-7381</h5>
+				<h5>2 Officers Row, Yellowstone National Park Headquarters, Yellowstone National Park, WY 82190</h5>
 			</Container>
+
+			<br/>
+			<YSMapWrapper />
 		</div>
   	);
 }

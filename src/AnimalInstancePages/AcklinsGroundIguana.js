@@ -76,7 +76,7 @@ function AcklinsGroundIguana() {
 			<Container>
 				<Row>
 					<CenteredCol>
-						<ImageBox src="https://ecos.fws.gov/docs/species_images/doc1803-250px-thumbnail.jpg" fluid />
+						<ImageBox src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cyclura_rileyi_nuchalis_Exumas_1997_c_W_K_Hayes.jpg" fluid />
 					</CenteredCol>
 
 					<CenteredCol>

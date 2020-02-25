@@ -75,7 +75,7 @@ function AbbottsBooby() {
 			<Container>
 				<Row>
 					<CenteredCol>
-						<ImageBox src="https://ecos.fws.gov/docs/species_images/doc1650-250px-thumbnail.jpg" fluid />
+						<ImageBox src="https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg" fluid />
 					</CenteredCol>
 
 					<CenteredCol>

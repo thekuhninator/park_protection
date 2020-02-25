@@ -76,18 +76,18 @@ function Parks() {
 
 				<br/><br/>
 		    	<CardDeck className="text-center">
-			  		<Card><Link to="/Parks/Yellowstone">
-			  			<Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg"/>
-			    		<Card.Body>
-			      			<Card.Title>Yellowstone National Park</Card.Title>
-			    		</Card.Body>
-			  		</Link></Card>
 					  <Card><Link to="/Parks/GrandCanyon">
 					    <Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg" />
 					    <Card.Body>
 					      <Card.Title>Grand Canyon National Park</Card.Title>
 					    </Card.Body>
 					</Link></Card>
+					<Card><Link to="/Parks/Yellowstone">
+			  			<Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg"/>
+			    		<Card.Body>
+			      			<Card.Title>Yellowstone National Park</Card.Title>
+			    		</Card.Body>
+			  		</Link></Card>
 					<Card><Link to="/Parks/Zion">
 						<Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7EFF41-1DD8-B71B-0B50E940FE9F2658.jpg" />
 					 	<Card.Body>
