@@ -14,6 +14,34 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Select from 'react-select';
+import { Nav } from 'react-bootstrap';
+
+const common = [
+  { value: 'asc', label: 'Ascending' },
+  { value: 'des', label: 'Descending' }
+]
+
+const Common = () => (
+  <Select options={common} placeholder="Common Names" />
+)
+
+const scientific = [
+  { value: 'asc', label: 'Ascending' },
+  { value: 'des', label: 'Descending' }
+]
+
+const Scientific = () => (
+  <Select options={scientific} placeholder="Scientific Names" />
+)
+
+const groups = [
+  { value: 'birds', label: 'Birds' },
+  { value: 'reptiles', label: 'Reptiles' }
+]
+
+const Groups = () => (
+  <Select options={groups} isMulti className="basic-multi-select" placeholder="Groups" />
+)
 
 const statuses = [
   { value: 'threatened', label: 'Threatened' },
@@ -37,6 +65,10 @@ const ItalicText = styled('div')`
 	font-style: italic;
 `
 
+const Text = styled('div')`
+	color: black;
+`
+
 function Animals() {
 	return (
 			<Container>
@@ -54,22 +86,13 @@ function Animals() {
 
 				<Row>
 					<Col>
-						<DropdownButton variant="light" title="Common Name">
-							<Dropdown.Item as="button">Ascending</Dropdown.Item>
-							<Dropdown.Item as="button">Descending</Dropdown.Item>
-						</DropdownButton>
+						<Common />
 					</Col>
 					<Col>
-						<DropdownButton variant="light" title="Scientific Name">
-							<Dropdown.Item as="button">Ascending</Dropdown.Item>
-							<Dropdown.Item as="button">Descending</Dropdown.Item>
-						</DropdownButton>
+						<Scientific />
 					</Col>
 					<Col>
-						<DropdownButton variant="light" title="Group">
-							<Dropdown.Item as="button">Birds</Dropdown.Item>
-							<Dropdown.Item as="button">Reptiles</Dropdown.Item>
-						</DropdownButton>
+						<Groups />
 					</Col>
 					<Col>
 						<Statuses />
@@ -81,7 +104,7 @@ function Animals() {
 
 				<br/><br/>
 		    	<CardDeck className="text-center">
-			  		<Card><Link to="/Animals/AbbottsBooby">
+			  		<Card><Nav.Link as={ Link } to="/Animals/AbbottsBooby"><Text>
 			  			<Card.Img variant="top" src="https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg"/>
 			    		<Card.Body>
 			      			<Card.Title>Abbott's Booby</Card.Title>
@@ -90,8 +113,8 @@ function Animals() {
 			      			<Card.Text>Birds</Card.Text>
 			      			<Card.Text>Not found in the US</Card.Text>
 			    		</Card.Body>
-		    		</Link></Card>
-					<Card><Link to="/Animals/AcklinsGroundIguana">
+		    		</Text></Nav.Link></Card>
+					<Card><Nav.Link as={ Link } to="/Animals/AcklinsGroundIguana"><Text>
 						<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cyclura_rileyi_nuchalis_Exumas_1997_c_W_K_Hayes.jpg" />
 						<Card.Body>
 							<Card.Title>Acklins Ground Iguana</Card.Title>
@@ -100,8 +123,8 @@ function Animals() {
 			      			<Card.Text>Reptiles</Card.Text>
 			      			<Card.Text>Not found in the US</Card.Text>
 						</Card.Body>
-					</Link></Card>
-					<Card><Link to="/Animals/Akiapolaau">
+					</Text></Nav.Link></Card>
+					<Card><Nav.Link as={ Link } to="/Animals/Akiapolaau"><Text>
 						<Card.Img variant="top" src="https://download.ams.birds.cornell.edu/api/v1/asset/96716321/1800" />
 					 	<Card.Body>
 							<Card.Title>Akiapolaau</Card.Title>
@@ -110,7 +133,7 @@ function Animals() {
 			      			<Card.Text>Birds</Card.Text>
 			      			<Card.Text>HI</Card.Text>
 					 	</Card.Body>
-					</Link></Card>
+					</Text></Nav.Link></Card>
 				</CardDeck>
 
 				<br/>

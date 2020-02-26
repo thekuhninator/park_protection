@@ -24,7 +24,7 @@ function Home() {
             <br/><h1>Preserving Nature Through Education</h1>
             <h4>Learn more about endangered species and the national parks protecting
             them</h4><br/><br/><br/><br/>
-            &nbsp;&nbsp;&nbsp;<Button variant="danger"><Link to="/Parks">&nbsp;&nbsp;&nbsp;Get Started&nbsp;&nbsp;&nbsp;</Link></Button>
+            &nbsp;&nbsp;&nbsp;<Button variant="danger" as={ Link } to ="/Parks">&nbsp;&nbsp;&nbsp;Get Started&nbsp;&nbsp;&nbsp;</Button>
           </Col>
           <Col xs={6}><Image src={ logo } fluid /></Col>
         </Row>

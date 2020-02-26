@@ -15,6 +15,34 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Select from 'react-select';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { Nav } from 'react-bootstrap';
+
+const name = [
+  { value: 'asc', label: 'Ascending' },
+  { value: 'des', label: 'Descending' }
+]
+
+const Name = () => (
+  <Select options={name} placeholder="Names" />
+)
+
+const email = [
+  { value: 'asc', label: 'Ascending' },
+  { value: 'des', label: 'Descending' }
+]
+
+const Email = () => (
+  <Select options={email} placeholder="Emails" />
+)
+
+const phone = [
+  { value: 'asc', label: 'Ascending' },
+  { value: 'des', label: 'Descending' }
+]
+
+const Phone = () => (
+  <Select options={phone} placeholder="Phone Numbers" />
+)
 
 const designations = [
   { value: 'national park', label: 'National Park' }
@@ -33,6 +61,10 @@ const States = () => (
   <Select options={states} isMulti className="basic-multi-select" placeholder="States" />
 )
 
+const Text = styled('div')`
+	color: black;
+`
+
 function Parks() {
 	return (
 			<Container>
@@ -50,22 +82,13 @@ function Parks() {
 
 				<Row>
 					<Col>
-						<DropdownButton variant="light" title="Name">
-							<Dropdown.Item as="button">Ascending</Dropdown.Item>
-							<Dropdown.Item as="button">Descending</Dropdown.Item>
-						</DropdownButton>
+						<Name />
 					</Col>
 					<Col>
-						<DropdownButton variant="light" title="Email">
-							<Dropdown.Item as="button">Ascending</Dropdown.Item>
-							<Dropdown.Item as="button">Descending</Dropdown.Item>
-						</DropdownButton>
+						<Email />
 					</Col>
 					<Col>
-						<DropdownButton variant="light" title="Phone Number">
-							<Dropdown.Item as="button">Ascending</Dropdown.Item>
-							<Dropdown.Item as="button">Descending</Dropdown.Item>
-						</DropdownButton>
+						<Phone />
 					</Col>
 					<Col>
 						<Designations />
@@ -77,7 +100,7 @@ function Parks() {
 
 				<br/><br/>
 		    	<CardDeck className="text-center">
-					  <Card><Link to="/Parks/GrandCanyon">
+					  <Card><Nav.Link as={ Link } to="/Parks/GrandCanyon"><Text>
 					    <Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg" />
 					    <Card.Body>
 					    	<Card.Title>Grand Canyon National Park</Card.Title>
@@ -86,8 +109,8 @@ function Parks() {
 					    	<Card.Text>(928) 638-7888</Card.Text>
 					    	<Card.Text>AZ</Card.Text>
 					    </Card.Body>
-				    </Link></Card>
-					<Card><Link to="/Parks/Yellowstone">
+				    </Text></Nav.Link></Card>
+					<Card><Nav.Link as={ Link } to="/Parks/Yellowstone"><Text>
 			  			<Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg"/>
 			    		<Card.Body>
 			      			<Card.Title>Yellowstone National Park</Card.Title>
@@ -96,8 +119,8 @@ function Parks() {
 					    	<Card.Text>(307) 344-7381</Card.Text>
 					    	<Card.Text>ID, MT, WY</Card.Text>
 			    		</Card.Body>
-			  		</Link></Card>
-					<Card><Link to="/Parks/Zion">
+			  		</Text></Nav.Link></Card>
+					<Card><Nav.Link as={ Link } to="/Parks/Zion"><Text>
 						<Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7EFF41-1DD8-B71B-0B50E940FE9F2658.jpg" />
 					 	<Card.Body>
 							<Card.Title>Zion National Park</Card.Title>
@@ -106,7 +129,7 @@ function Parks() {
 					    	<Card.Text>(435) 772-3256</Card.Text>
 					    	<Card.Text>UT</Card.Text>
 					 	</Card.Body>
-					</Link></Card>
+					</Text></Nav.Link></Card>
 				</CardDeck>
 
 				<br/>

@@ -14,6 +14,34 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Select from 'react-select';
+import { Nav } from 'react-bootstrap';
+
+const common = [
+  { value: 'asc', label: 'Ascending' },
+  { value: 'des', label: 'Descending' }
+]
+
+const Common = () => (
+  <Select options={common} placeholder="Common Names" />
+)
+
+const scientific = [
+  { value: 'asc', label: 'Ascending' },
+  { value: 'des', label: 'Descending' }
+]
+
+const Scientific = () => (
+  <Select options={scientific} placeholder="Scientific Names" />
+)
+
+const families = [
+  { value: 'asc', label: 'Ascending' },
+  { value: 'des', label: 'Descending' }
+]
+
+const Families = () => (
+  <Select options={families} isMulti className="basic-multi-select" placeholder="Groups" />
+)
 
 const statuses = [
   { value: 'threatened', label: 'Threatened' },
@@ -36,6 +64,9 @@ const States = () => (
 const ItalicText = styled('div')`
 	font-style: italic;
 `
+const Text = styled('div')`
+	color: black;
+`
 
 function Plants() {
 	return (
@@ -54,22 +85,13 @@ function Plants() {
 
 				<Row>
 					<Col>
-						<DropdownButton variant="light" title="Common Name">
-							<Dropdown.Item as="button">Ascending</Dropdown.Item>
-							<Dropdown.Item as="button">Descending</Dropdown.Item>
-						</DropdownButton>
+						<Common />
 					</Col>
 					<Col>
-						<DropdownButton variant="light" title="Scientific Name">
-							<Dropdown.Item as="button">Ascending</Dropdown.Item>
-							<Dropdown.Item as="button">Descending</Dropdown.Item>
-						</DropdownButton>
+						<Scientific />
 					</Col>
 					<Col>
-						<DropdownButton variant="light" title="Family Name">
-							<Dropdown.Item as="button">Ascending</Dropdown.Item>
-							<Dropdown.Item as="button">Descending</Dropdown.Item>
-						</DropdownButton>
+						<Families />
 					</Col>
 					<Col>
 						<Statuses />
@@ -81,7 +103,7 @@ function Plants() {
 
 				<br/><br/>
 		    	<CardDeck className="text-center">
-					  <Card><Link to="/Plants/AleutianHollyFern">
+					  <Card><Nav.Link as={ Link } to="/Plants/AleutianHollyFern"><Text>
 					    <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Aleutian_Shield_Fern.jpg" />
 					    <Card.Body>
 					      	<Card.Title>Aleutian Holly Fern</Card.Title>
@@ -90,8 +112,8 @@ function Plants() {
 			      			<Card.Text>Wood Fern</Card.Text>
 			      			<Card.Text>AK</Card.Text>
 					    </Card.Body>
-					</Link></Card>
-					<Card><Link to="/Plants/AmargosaNiterwort">
+					</Text></Nav.Link></Card>
+					<Card><Nav.Link as={ Link } to="/Plants/AmargosaNiterwort"><Text>
 						<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Nitrophila_mohavensis_6.jpg" />
 					 	<Card.Body>
 							<Card.Title>Amargosa Niterwort</Card.Title>
@@ -100,8 +122,8 @@ function Plants() {
 			      			<Card.Text>Goosefoot</Card.Text>
 			      			<Card.Text>CA, NV</Card.Text>
 					 	</Card.Body>
-					</Link></Card>
-					<Card><Link to="/Plants/PricklyApplecactus">
+					</Text></Nav.Link></Card>
+					<Card><Nav.Link as={ Link } to="/Plants/PricklyApplecactus"><Text>
 			  			<Card.Img variant="top" src="https://images-na.ssl-images-amazon.com/images/I/51vxwr8lUxL._AC_SX450_.jpg"/>
 			    		<Card.Body>
 			      			<Card.Title>Prickly Applecactus</Card.Title>
@@ -110,7 +132,7 @@ function Plants() {
 			      			<Card.Text>Cactus</Card.Text>
 			      			<Card.Text>FL</Card.Text>
 			    		</Card.Body>
-			  		</Link></Card>
+			  		</Text></Nav.Link></Card>
 				</CardDeck>
 
 				<br/>

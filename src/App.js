@@ -26,12 +26,12 @@ class App extends Component {
       <React.Fragment>
         <Router>
           <Navbar bg="dark" variant="dark">
-            <Navbar.Brand><Link to="/">Park Protection</Link></Navbar.Brand>
+            <Navbar.Brand as={ Link } to="/">Park Protection</Navbar.Brand>
             <Nav className="mr-auto">
-              <Nav.Link><Link to="/Parks">Parks</Link></Nav.Link>
-              <Nav.Link><Link to="/Plants">Plants</Link></Nav.Link>
-              <Nav.Link><Link to="/Animals">Animals</Link></Nav.Link>
-              <Nav.Link><Link to="/About">About</Link></Nav.Link>
+              <Nav.Link as={ Link } to="/Parks">Parks</Nav.Link>
+              <Nav.Link as={ Link } to="/Plants">Plants</Nav.Link>
+              <Nav.Link as={ Link } to="/Animals">Animals</Nav.Link>
+              <Nav.Link as={ Link } to="/About">About</Nav.Link>
             </Nav>
           </Navbar>
           <Switch>
