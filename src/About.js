@@ -14,37 +14,40 @@ import pedro from './Assets/img/headshots/pedro.jpeg'
 
 
 const AboutBox = styled('div')`
-	text-align: center;
-	height: 20%;
-	width: 50%;
-  padding-top: 20%;
+	text-align: left;
+	width: 35%;
   margin: auto;
-  margin-top: 20%;
-  background-color: red;
-  border-radius: 40px 20px;
+  margin-top: 10%;
+  background-color: white;
+  border-radius: 0%;
+  font-size: 150%;
 `;
 
-const ImageBoxLong = styled('img')`
-	width: 500px;
-	height: 500px;
+const MembersBox = styled('div')`
+  text-align: left;
+  width: 75%;
+  margin: auto;
+  margin-top: 10%;
+  background-color: white;
+  border-radius: 0%;
+  font-size: 150%;
 `;
 
 
 function About() {
   return (
-		<Container>
-      <h1 align="center">About Us</h1>
-      <br></br>
-      <h4 align="center">Project Goal:</h4>
-      <p align="center"> Many species are dying out in recent years, whether
-        it be due to global warming or other environmental factors. This website
-        helps those who want to witness4 or take action in preservation efforts
-        locate the appropriate help centers. Our websie grabs data on endangered
-        animal and plant species and groups them with national park centers based
-        on location in hopes to spread awareness of what states may have efforts
-        already in place for preservation. </p>
-
-			<div>
+      <Container>
+			<Container>
+	        <h1>About Us</h1>
+	        <br></br>
+	        <p> Many species are dying out in recent years, whether
+	          it be due to global warming or other environmental factors. This website
+	          helps those who want to witness or take action in preservation efforts
+	          locate the appropriate help centers. Our websie grabs data on endangered
+	          animal and plant species and groups them with national park centers based
+	          on location in hopes to spread awareness of what states may have efforts
+	          already in place for preservation. </p>
+			</Container>
 			<CardDeck>
 				<Card>
 					<Card.Img variant="top" src={roman} />
@@ -83,7 +86,6 @@ function About() {
 					</Card.Footer>
 				</Card>
 				</CardDeck>
-				</div>
 				<br />
 
 				<CardDeck>
@@ -137,7 +139,50 @@ function About() {
 			Gitlab Repository
 			Postman Api
 
+			<CardDeck>
+				<Card>
+					<Card.Img variant="top" src={skylore} />
+					<Card.Body>
+						<Card.Title> Skylore Evans </Card.Title>
+						<Card.Text>
+							Ameya is a super cool and nice guy and he is my friend.
+						</Card.Text>
+					</Card.Body>
+					<Card.Footer>
+						commits and whatnot
+					</Card.Footer>
+				</Card>
+				<Card>
+					<Card.Img variant="top" src={jordan} />
+					<Card.Body>
+						<Card.Title> Jordan Bogaards </Card.Title>
+						<Card.Text>
+							Ameya is a super cool and nice guy and he is my friend.
+						</Card.Text>
+					</Card.Body>
+					<Card.Footer>
+						commits and whatnot
+					</Card.Footer>
+
+
+
+				</Card>
+				<Card>
+					<Card.Img variant="top" src={pedro} />
+					<Card.Body>
+						<Card.Title> Pedro Silva </Card.Title>
+						<Card.Text>
+							Ameya is a super cool and nice guy and he is my friend.
+						</Card.Text>
+					</Card.Body>
+					<Card.Footer>
+						Commits:
+						Total Commits:
+					</Card.Footer>
+				</Card>
+		</CardDeck>
 		</Container>
+
   );
 }
 

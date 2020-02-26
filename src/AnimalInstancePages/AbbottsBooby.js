@@ -10,12 +10,13 @@ import styled from 'styled-components';
 import Table from 'react-bootstrap/Table'
 
 const CommonName = styled('h1')`
-  color: #2a4d14;
+  color: #444444;
   text-align: center;
 `
 const ScientificName = styled('h4')`
-  color: #e75a7c;
   text-align: center;
+  font-style: italic;
+  color: #444444;
 `;
 
 const EndangeredBox = styled('div')`
@@ -26,7 +27,7 @@ const EndangeredBox = styled('div')`
 `;
 
 const EndangeredText = styled('h1')`
-	color: #8b0000;
+	color: #ab0f0f;
 `;
 
 const CenteredRow = styled('Row')`
@@ -45,7 +46,6 @@ const TableBox = styled('div')`
 	position: absolute;
 	left: 10%;
 	right: 10%;
-	margin: 10px;
 `;
 
 const ImageBox = styled('img')`
@@ -57,6 +57,7 @@ const ImageBoxLong = styled('img')`
 	width: 600px;
 	height: 400px;
 `;
+
 function AbbottsBooby() {
 	return (
 		<div>
@@ -66,16 +67,11 @@ function AbbottsBooby() {
 	    			<ScientificName>Papasula abbotti</ScientificName>
 	  			</Container>
 			</Jumbotron>
-			<CenteredRow>
-					<EndangeredBox>
-						<EndangeredText>Endangered</EndangeredText>
-					</EndangeredBox>
-			</CenteredRow>
 
 			<Container>
 				<Row>
 					<CenteredCol>
-						<ImageBox src="https://ecos.fws.gov/docs/species_images/doc1650-250px-thumbnail.jpg" fluid />
+						<ImageBox src="https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg" fluid />
 					</CenteredCol>
 
 					<CenteredCol>
@@ -84,12 +80,18 @@ function AbbottsBooby() {
 				</Row>
 			</Container>
 
+			<br/>
+			<EndangeredBox>
+				<EndangeredText>Endangered</EndangeredText>
+			</EndangeredBox>
+
+			<br/>
 			 <TableBox>
 				<Table striped bordered hover size="sm">
 					<thead>
 						<tr>
 							<th>Group</th>
-							<th>Foreign?</th>
+							<th>Domestic or Foreign?</th>
 							<th>Distinct Population Segment?</th>
 							<th>Aquatic?</th>
 							<th>BCC?</th>
@@ -98,12 +100,12 @@ function AbbottsBooby() {
 					</thead>
 					<tbody>
 						<tr>
-							<td>BIRDS</td>
-							<td>BOTH</td>
-							<td>NO</td>
-							<td>NO</td>
-							<td>NO</td>
-							<td>NULL</td>
+							<td>Birds</td>
+							<td>Both</td>
+							<td>No</td>
+							<td>No</td>
+							<td>No</td>
+							<td>None</td>
 						</tr>
 					</tbody>
 				</Table>

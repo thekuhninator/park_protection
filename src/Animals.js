@@ -78,13 +78,13 @@ function Animals() {
 				<br/><br/>
 		    	<CardDeck className="text-center">
 			  		<Card><Link to="/Animals/AbbottsBooby">
-			  			<Card.Img variant="top" src="https://ecos.fws.gov/docs/species_images/doc1650-250px-thumbnail.jpg"/>
+			  			<Card.Img variant="top" src="https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg"/>
 			    		<Card.Body>
 			      			<Card.Title>Abbott's Booby</Card.Title>
 			    		</Card.Body>
 		    		</Link></Card>
 					<Card><Link to="/Animals/AcklinsGroundIguana">
-						<Card.Img variant="top" src="https://ecos.fws.gov/docs/species_images/doc1803-250px-thumbnail.jpg" />
+						<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cyclura_rileyi_nuchalis_Exumas_1997_c_W_K_Hayes.jpg" />
 						<Card.Body>
 							<Card.Title>Acklins Ground Iguana</Card.Title>
 						</Card.Body>

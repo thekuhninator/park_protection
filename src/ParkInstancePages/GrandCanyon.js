@@ -8,6 +8,8 @@ import styled from 'styled-components';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import map from '../Assets/Maps/GrandCanyon.png';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
+import GCMapWrapper from '../Assets/Maps/GCMapWrapper';
 
 const CarouselImage = styled('img')`
 	width: 400px;
@@ -19,12 +21,16 @@ const ImageBoxLong = styled('img')`
 	height: 400px;
 `;
 
+const CenterText = styled('div')`
+	text-align: center;
+`
+
 function GrandCanyon() {
 	return (
 		<div>
 			<Jumbotron fluid>
 				<Container>
-					<h1>Grand Canyon National Park</h1>
+					<CenterText><h1>Grand Canyon National Park</h1></CenterText>
 				</Container>
 			</Jumbotron>
 			<Container>
@@ -60,9 +66,6 @@ function GrandCanyon() {
 				  </Carousel.Item>
 				</Carousel>
 				<br></br>
-				<ImageBoxLong src={ map } fluid />
-				<h4>20 South Entrance Road, Grand Canyon, AZ 86023</h4>
-				<br></br>
 				<Row>
 					<Col>
 					<h6>Unique combinations of geologic color and 
@@ -96,13 +99,16 @@ function GrandCanyon() {
 					</h6>
 					</Col>
 				</Row>
-					<br></br>
-				<h5>Website:https: https://www.nps.gov/grca/index.htm</h5>
 				<br></br>
-				<h5>Phone: 928-638-7888</h5>
-				<br></br>
-				<h5>Email: grca_information@nps.gov</h5>
+				<h3>Contact Them</h3>
+				<h5><a href="https://www.nps.gov/grca/index.htm">Website</a></h5>
+				<h5>grca_information@nps.gov</h5>
+				<h5>(928) 638-7888</h5>
+				<h5>20 South Entrance Road, Grand Canyon, AZ 86023</h5>
 			</Container>
+
+			<br/>
+			<GCMapWrapper />
 		</div>
   	);
 }

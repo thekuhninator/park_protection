@@ -10,12 +10,13 @@ import styled from 'styled-components';
 import Table from 'react-bootstrap/Table'
 
 const CommonName = styled('h1')`
-  color: #2a4d14;
+  color: #444444;
   text-align: center;
 `
 const ScientificName = styled('h4')`
-  color: #e75a7c;
   text-align: center;
+  font-style: italic;
+  color: #444444;
 `;
 
 const EndangeredBox = styled('div')`
@@ -26,7 +27,7 @@ const EndangeredBox = styled('div')`
 `;
 
 const EndangeredText = styled('h1')`
-	color: #8b0000;
+	color: #db8b00;
 `;
 
 const CenteredRow = styled('Row')`
@@ -45,7 +46,6 @@ const TableBox = styled('div')`
 	position: absolute;
 	left: 10%;
 	right: 10%;
-	margin: 10px;
 `;
 
 const ImageBox = styled('img')`
@@ -67,11 +67,6 @@ function Akiapolaau() {
 	    			<ScientificName>Hemignathus wilsoni</ScientificName>
 	  			</Container>
 			</Jumbotron>
-			<CenteredRow>
-					<EndangeredBox>
-						<EndangeredText>Endangered</EndangeredText>
-					</EndangeredBox>
-			</CenteredRow>
 
 			<Container>
 				<Row>
@@ -85,12 +80,18 @@ function Akiapolaau() {
 				</Row>
 			</Container>
 
+			<br/>
+			<EndangeredBox>
+				<EndangeredText>Threatened</EndangeredText>
+			</EndangeredBox>
+
+			<br/>
 			 <TableBox>
 				<Table striped bordered hover size="sm">
 					<thead>
 						<tr>
 							<th>Group</th>
-							<th>Foreign?</th>
+							<th>Domestic or Foreign?</th>
 							<th>Distinct Population Segment?</th>
 							<th>Aquatic?</th>
 							<th>BCC?</th>
@@ -99,12 +100,12 @@ function Akiapolaau() {
 					</thead>
 					<tbody>
 						<tr>
-							<td>BIRDS</td>
-							<td>DOMESTIC</td>
-							<td>FALSE</td>
-							<td>FALSE</td>
-							<td>FALSE</td>
-							<td>Kamehameha Schools - Keauhou Ranch/Olaa-Kilauea Partnership</td>
+							<td>Birds</td>
+							<td>Domestic</td>
+							<td>No</td>
+							<td>No</td>
+							<td>No</td>
+							<td><a href="https://ecos.fws.gov/ecp0/conservationPlan/plan?plan_id=920">Kamehameha Schools - Keauhou Ranch/Olaa-Kilauea Partnership</a></td>
 						</tr>
 					</tbody>
 				</Table>

@@ -10,12 +10,13 @@ import styled from 'styled-components';
 import Table from 'react-bootstrap/Table'
 
 const CommonName = styled('h1')`
-  color: #2a4d14;
+  color: #444444;
   text-align: center;
 `
 const ScientificName = styled('h4')`
-  color: #e75a7c;
   text-align: center;
+  font-style: italic;
+  color: #444444;
 `;
 
 const EndangeredBox = styled('div')`
@@ -26,7 +27,7 @@ const EndangeredBox = styled('div')`
 `;
 
 const EndangeredText = styled('h1')`
-	color: #8b0000;
+	color: #ab0f0f;
 `;
 
 const CenteredRow = styled('Row')`
@@ -45,7 +46,6 @@ const TableBox = styled('div')`
 	position: absolute;
 	left: 10%;
 	right: 10%;
-	margin: 10px;
 `;
 
 const ImageBox = styled('img')`
@@ -67,11 +67,6 @@ function AleutianHollyFern() {
 	    			<ScientificName>Polystichum aleuticum</ScientificName>
 	  			</Container>
 			</Jumbotron>
-			<CenteredRow>
-					<EndangeredBox>
-						<EndangeredText>Endangered</EndangeredText>
-					</EndangeredBox>
-			</CenteredRow>
 
 			<Container>
 				<Row>
@@ -85,7 +80,13 @@ function AleutianHollyFern() {
 				</Row>
 			</Container>
 
-			 <TableBox>
+			<br/>
+			<EndangeredBox>
+				<EndangeredText>Endangered</EndangeredText>
+			</EndangeredBox>
+
+			<br/>
+			<TableBox>
 				<Table striped bordered hover size="sm">
 					<thead>
 						<tr>
@@ -104,11 +105,12 @@ function AleutianHollyFern() {
 							<td>Fern</td>
 							<td>Perennial</td>
 							<td>Forb/herb</td>
-							<td>NULL</td>
+							<td>None</td>
 						</tr>
 					</tbody>
 				</Table>
 			</TableBox>
+
 		</div>
 	);
 }

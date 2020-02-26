@@ -8,6 +8,8 @@ import styled from 'styled-components';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import map from '../Assets/Maps/Zion.png';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
+import ZIMapWrapper from '../Assets/Maps/ZIMapWrapper';
 
 const CarouselImage = styled('img')`
 	width: 400px;
@@ -19,12 +21,16 @@ const ImageBoxLong = styled('img')`
 	height: 400px;
 `;
 
+const CenterText = styled('div')`
+	text-align: center;
+`
+
 function Zion() {
 	return (
 		<div>
 			<Jumbotron fluid>
 				<Container>
-					<h1>Zion National Park</h1>
+					<CenterText><h1>Zion National Park</h1></CenterText>
 				</Container>
 			</Jumbotron>
 			<Container>
@@ -60,9 +66,6 @@ function Zion() {
 				  </Carousel.Item>
 				</Carousel>
 				<br></br>
-				<ImageBoxLong src={ map } fluid />
-				<h4>Zion National Park, 1 Zion Park Blvd., State Route 9, Springdale, UT 84767</h4>
-				<br></br>
 				<Row>
 					<Col>
 					<h6>Follow the paths where ancient native people and pioneers walked. Gaze up at massive sandstone cliffs of cream, pink, and red that soar into a brilliant blue sky. Experience wilderness in a narrow slot canyon. Zion’s unique array of plants and animals will enchant you as you absorb the rich history of the past and enjoy the excitement of present day adventures.
@@ -77,13 +80,16 @@ function Zion() {
 					</h6>
 					</Col>
 				</Row>
-					<br></br>
-				<h5>Website:https://www.nps.gov/zion/index.htm</h5>
 				<br></br>
-				<h5>Phone: 435-772-3256</h5>
-				<br></br>
-				<h5>Email: zion_park_information@nps.gov</h5>
+				<h3>Contact Them</h3>
+				<h5><a href="https://www.nps.gov/zion/index.htm">Website</a></h5>
+				<h5>zion_park_information@nps.gov</h5>
+				<h5>(435) 772-3256</h5>
+				<h5>Zion National Park, 1 Zion Park Blvd., State Route 9, Springdale, UT 84767</h5>
 			</Container>
+
+			<br/>
+			<ZIMapWrapper />
 		</div>
   	);
 }

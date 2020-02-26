@@ -77,12 +77,6 @@ function Plants() {
 
 				<br/><br/>
 		    	<CardDeck className="text-center">
-			  		<Card><Link to="/Plants/PricklyApplecactus">
-			  			<Card.Img variant="top" src="https://images-na.ssl-images-amazon.com/images/I/51vxwr8lUxL._AC_SX450_.jpg"/>
-			    		<Card.Body>
-			      			<Card.Title>Prickly Applecactus</Card.Title>
-			    		</Card.Body>
-			  		</Link></Card>
 					  <Card><Link to="/Plants/AleutianHollyFern">
 					    <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Aleutian_Shield_Fern.jpg" />
 					    <Card.Body>
@@ -95,6 +89,12 @@ function Plants() {
 							<Card.Title>Amargosa Niterwort</Card.Title>
 					 	</Card.Body>
 					</Link></Card>
+					<Card><Link to="/Plants/PricklyApplecactus">
+			  			<Card.Img variant="top" src="https://images-na.ssl-images-amazon.com/images/I/51vxwr8lUxL._AC_SX450_.jpg"/>
+			    		<Card.Body>
+			      			<Card.Title>Prickly Applecactus</Card.Title>
+			    		</Card.Body>
+			  		</Link></Card>
 				</CardDeck>
 
 				<br/>
