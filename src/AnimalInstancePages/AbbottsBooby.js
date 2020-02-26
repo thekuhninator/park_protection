@@ -101,7 +101,7 @@ function AbbottsBooby() {
 					<tbody>
 						<tr>
 							<td>Birds</td>
-							<td>Both</td>
+							<td>Foreign</td>
 							<td>No</td>
 							<td>No</td>
 							<td>No</td>

@@ -14,13 +14,14 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Select from 'react-select';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const designations = [
   { value: 'national park', label: 'National Park' }
 ]
 
 const Designations = () => (
-  <Select options={designations} isMulti className="basic-multi-select" placeholder="Designations" />
+  <Select options={designations} isMulti className="basic-multi-select" placeholder="Designation" />
 )
 
 const states = [
@@ -49,19 +50,19 @@ function Parks() {
 
 				<Row>
 					<Col>
-						<DropdownButton variant="light" title="Park Code">
-							<Dropdown.Item as="button">Ascending</Dropdown.Item>
-							<Dropdown.Item as="button">Descending</Dropdown.Item>
-						</DropdownButton>
-					</Col>
-					<Col>
 						<DropdownButton variant="light" title="Name">
 							<Dropdown.Item as="button">Ascending</Dropdown.Item>
 							<Dropdown.Item as="button">Descending</Dropdown.Item>
 						</DropdownButton>
 					</Col>
 					<Col>
-						<DropdownButton variant="light" title="Phone Numbers">
+						<DropdownButton variant="light" title="Email">
+							<Dropdown.Item as="button">Ascending</Dropdown.Item>
+							<Dropdown.Item as="button">Descending</Dropdown.Item>
+						</DropdownButton>
+					</Col>
+					<Col>
+						<DropdownButton variant="light" title="Phone Number">
 							<Dropdown.Item as="button">Ascending</Dropdown.Item>
 							<Dropdown.Item as="button">Descending</Dropdown.Item>
 						</DropdownButton>
@@ -79,19 +80,31 @@ function Parks() {
 					  <Card><Link to="/Parks/GrandCanyon">
 					    <Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg" />
 					    <Card.Body>
-					      <Card.Title>Grand Canyon National Park</Card.Title>
+					    	<Card.Title>Grand Canyon National Park</Card.Title>
+					    	<Card.Text>National Park</Card.Text>
+					    	<Card.Text>grca_information@nps.gov</Card.Text>
+					    	<Card.Text>(928) 638-7888</Card.Text>
+					    	<Card.Text>AZ</Card.Text>
 					    </Card.Body>
-					</Link></Card>
+				    </Link></Card>
 					<Card><Link to="/Parks/Yellowstone">
 			  			<Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg"/>
 			    		<Card.Body>
 			      			<Card.Title>Yellowstone National Park</Card.Title>
+					    	<Card.Text>National Park</Card.Text>
+					    	<Card.Text>yell_visitor_services@nps.gov</Card.Text>
+					    	<Card.Text>(307) 344-7381</Card.Text>
+					    	<Card.Text>ID, MT, WY</Card.Text>
 			    		</Card.Body>
 			  		</Link></Card>
 					<Card><Link to="/Parks/Zion">
 						<Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7EFF41-1DD8-B71B-0B50E940FE9F2658.jpg" />
 					 	<Card.Body>
 							<Card.Title>Zion National Park</Card.Title>
+					    	<Card.Text>National Park</Card.Text>
+					    	<Card.Text>zion_park_information@nps.gov</Card.Text>
+					    	<Card.Text>(435) 772-3256</Card.Text>
+					    	<Card.Text>UT</Card.Text>
 					 	</Card.Body>
 					</Link></Card>
 				</CardDeck>

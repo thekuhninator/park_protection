@@ -33,6 +33,10 @@ const States = () => (
   <Select options={states} isMulti className="basic-multi-select" placeholder="States" />
 )
 
+const ItalicText = styled('div')`
+	font-style: italic;
+`
+
 function Animals() {
 	return (
 			<Container>
@@ -81,18 +85,30 @@ function Animals() {
 			  			<Card.Img variant="top" src="https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg"/>
 			    		<Card.Body>
 			      			<Card.Title>Abbott's Booby</Card.Title>
+			      			<Card.Text><ItalicText>Papasula abbotti</ItalicText></Card.Text>
+			      			<Card.Text>Endangered</Card.Text>
+			      			<Card.Text>Birds</Card.Text>
+			      			<Card.Text>Not found in the US</Card.Text>
 			    		</Card.Body>
 		    		</Link></Card>
 					<Card><Link to="/Animals/AcklinsGroundIguana">
 						<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cyclura_rileyi_nuchalis_Exumas_1997_c_W_K_Hayes.jpg" />
 						<Card.Body>
 							<Card.Title>Acklins Ground Iguana</Card.Title>
+							<Card.Text><ItalicText>Cyclura rileyi nuchalis</ItalicText></Card.Text>
+			      			<Card.Text>Threatened</Card.Text>
+			      			<Card.Text>Reptiles</Card.Text>
+			      			<Card.Text>Not found in the US</Card.Text>
 						</Card.Body>
 					</Link></Card>
 					<Card><Link to="/Animals/Akiapolaau">
 						<Card.Img variant="top" src="https://download.ams.birds.cornell.edu/api/v1/asset/96716321/1800" />
 					 	<Card.Body>
 							<Card.Title>Akiapolaau</Card.Title>
+							<Card.Text><ItalicText>Hemignathus wilsoni</ItalicText></Card.Text>
+			      			<Card.Text>Threatened</Card.Text>
+			      			<Card.Text>Birds</Card.Text>
+			      			<Card.Text>HI</Card.Text>
 					 	</Card.Body>
 					</Link></Card>
 				</CardDeck>

@@ -33,6 +33,10 @@ const States = () => (
   <Select options={states} isMulti className="basic-multi-select" placeholder="States" />
 )
 
+const ItalicText = styled('div')`
+	font-style: italic;
+`
+
 function Plants() {
 	return (
 			<Container>
@@ -80,19 +84,31 @@ function Plants() {
 					  <Card><Link to="/Plants/AleutianHollyFern">
 					    <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Aleutian_Shield_Fern.jpg" />
 					    <Card.Body>
-					      <Card.Title>Aleutian Holly Fern</Card.Title>
+					      	<Card.Title>Aleutian Holly Fern</Card.Title>
+					      	<Card.Text><ItalicText>Polystichum aleuticum</ItalicText></Card.Text>
+			      			<Card.Text>Endangered</Card.Text>
+			      			<Card.Text>Wood Fern</Card.Text>
+			      			<Card.Text>AK</Card.Text>
 					    </Card.Body>
 					</Link></Card>
 					<Card><Link to="/Plants/AmargosaNiterwort">
 						<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Nitrophila_mohavensis_6.jpg" />
 					 	<Card.Body>
 							<Card.Title>Amargosa Niterwort</Card.Title>
+							<Card.Text><ItalicText>Nitrophila mohavensis</ItalicText></Card.Text>
+			      			<Card.Text>Endangered</Card.Text>
+			      			<Card.Text>Goosefoot</Card.Text>
+			      			<Card.Text>CA, NV</Card.Text>
 					 	</Card.Body>
 					</Link></Card>
 					<Card><Link to="/Plants/PricklyApplecactus">
 			  			<Card.Img variant="top" src="https://images-na.ssl-images-amazon.com/images/I/51vxwr8lUxL._AC_SX450_.jpg"/>
 			    		<Card.Body>
 			      			<Card.Title>Prickly Applecactus</Card.Title>
+			      			<Card.Text><ItalicText>Harrisia aboriginum</ItalicText></Card.Text>
+			      			<Card.Text>Endangered</Card.Text>
+			      			<Card.Text>Cactus</Card.Text>
+			      			<Card.Text>FL</Card.Text>
 			    		</Card.Body>
 			  		</Link></Card>
 				</CardDeck>
