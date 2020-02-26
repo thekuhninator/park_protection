@@ -102,9 +102,9 @@ function Akiapolaau() {
 						<tr>
 							<td>Birds</td>
 							<td>Domestic</td>
-							<td>False</td>
-							<td>False</td>
-							<td>False</td>
+							<td>No</td>
+							<td>No</td>
+							<td>No</td>
 							<td><a href="https://ecos.fws.gov/ecp0/conservationPlan/plan?plan_id=920">Kamehameha Schools - Keauhou Ranch/Olaa-Kilauea Partnership</a></td>
 						</tr>
 					</tbody>
