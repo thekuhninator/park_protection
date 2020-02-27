@@ -38,10 +38,6 @@ const Text = styled('div')`
 	color: black;
 `
 
-const Div = styled('div')`
-	padding-top: 420px;
-`
-
 const CenteredCol = styled('Col')`
   margin: auto;
 `;
@@ -116,7 +112,7 @@ function Yellowstone() {
 				<YSMapWrapper />
 
 				<br/>
-				<Div>
+				<div>
 					<Row>
 						<Col className="text-center">
 							<h4>Related Plants</h4>
@@ -157,7 +153,7 @@ function Yellowstone() {
 				    		</CardDeck>
 						</Col>
 					</Row>
-				</Div>
+				</div>
 
 				<br/>
 				&nbsp;

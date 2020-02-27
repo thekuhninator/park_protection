@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import { Map, Marker, GoogleApiWrapper, Polygon } from 'google-maps-react';
 
-const style = {
-	width: '1100px',
-	height: '400px'
+const containerStyle = {
+	position: 'relative',
+	width: '100%',
+ 	height: '400px'
 }
 
 class ZIMapWrapper extends Component {
@@ -11,7 +12,7 @@ class ZIMapWrapper extends Component {
 		return (
 			<div>
 				<Map google={this.props.google}
-					style={style}
+					containerStyle={containerStyle}
 					zoom={9}
 					initialCenter={{lat: 37.29839254, lng: -113.0265138}} >
 					<Marker />
