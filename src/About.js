@@ -119,10 +119,9 @@ class About extends React.Component{
 
 					<br/>
 					<h1>Documentation</h1>
-		            <a href="https://gitlab.com/thekuhninator/parks_protection"> Gitlab Repository </a>
-		            <br/>
-		            <a href="https://documenter.getpostman.com/view/10458674/SzKYQcpT?version=latest">Postman API</a>
-		            <br/>&nbsp;
+		            <p><a href="https://gitlab.com/thekuhninator/parks_protection"> Gitlab Repository </a></p>
+		            <p><a href="https://documenter.getpostman.com/view/10458674/SzKYQcpT?version=latest">Postman API</a></p>
+		            &nbsp;
 		            </Container>
         </Container>
 

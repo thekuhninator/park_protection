@@ -77,7 +77,7 @@ function PricklyApplecactus() {
 	  			</Container>
 			</Jumbotron>
 
-			<br/><br/><br/>
+			<br/><br/>
 			<Container>
 				<Row>
 					<CenteredCol>
@@ -89,12 +89,12 @@ function PricklyApplecactus() {
 					</CenteredCol>
 				</Row>
 
-				<br/><br/><br/>
+				<br/><br/>
 				<EndangeredBox>
 					<EndangeredText>Endangered</EndangeredText>
 				</EndangeredBox>
 
-				<br/><br/><br/>
+				<br/><br/>
 				<Row><Col /><Col xs={6}>
 				 <TableBox>
 					<Table striped bordered hover size="sm">
@@ -110,7 +110,7 @@ function PricklyApplecactus() {
 				</TableBox></Col><Col />
 				</Row>
 
-					<br/><br/><br/>
+					<br/><br/>
 					<Row>
 						<Col className="text-center">
 							<h4>Related Parks</h4>

@@ -45,7 +45,8 @@ const Phone = () => (
 )
 
 const designations = [
-  { value: 'national park', label: 'National Park' }
+  { value: 'national park', label: 'National Park' },
+  { value: 'national preserve', label: 'National Preserve' }
 ]
 
 const Designations = () => (

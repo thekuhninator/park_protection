@@ -44,7 +44,7 @@ class GitlabTable extends React.Component{
           commits: 0,
           issues: 0,
           tests: 0,
-          desc: 'A hardcore FPS and Minecraft G A M E R who came to UT to be a game dev, realized how bad the hours were, and is apparently doing web dev.'
+          desc: 'A hardcore FPS and Minecraft G A M E R who came to UT to be a game dev, realized how bad the hours were, and is now apparently doing web dev.'
         },
         {
           name: 'Dylan Kan',

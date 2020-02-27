@@ -47,9 +47,6 @@ const CenteredCol = styled('Col')`
 const TableBox = styled('div')`
 	text-align: center;
 	display: flex;
-	position: absolute;
-	left: 10%;
-	right: 10%;
 `;
 
 const ImageBox = styled('img')`
@@ -70,10 +67,6 @@ const Text = styled('div')`
 	color: black;
 `
 
-const Div = styled('div')`
-	padding-top: 100px;
-`
-
 function AmargosaNiterwort() {
 	return (
 		<div>
@@ -84,6 +77,7 @@ function AmargosaNiterwort() {
 	  			</Container>
 			</Jumbotron>
 
+			<br/><br/>
 			<Container>
 				<Row>
 					<CenteredCol>
@@ -95,38 +89,28 @@ function AmargosaNiterwort() {
 					</CenteredCol>
 				</Row>
 
-				<br/>
+				<br/><br/>
 				<EndangeredBox>
 					<EndangeredText>Endangered</EndangeredText>
 				</EndangeredBox>
 
-				<br/>
+				<br/><br/>
+				<Row><Col /><Col xs={6}>
 				 <TableBox>
 					<Table striped bordered hover size="sm">
-						<thead>
-							<tr>
-								<th>Family</th>
-								<th>Family Common Name</th>
-								<th>Category</th>
-								<th>Duration</th>
-								<th>Growth Habit</th>
-								<th>Toxicity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Chenopodiaceae</td>
-								<td>Goosefoot</td>
-								<td>Dicot</td>
-								<td>Perennial</td>
-								<td>Forb/herb</td>
-								<td>None</td>
-							</tr>
-						</tbody>
+							<tbody>
+							<tr><th>Family</th><td>Chenopodiaceae</td></tr>
+							<tr><th>Family Common Name</th><td>Goosefoot</td></tr>
+							<tr><th>Category</th><td>Dicot</td></tr>
+							<tr><th>Duration</th><td>Perennial</td></tr>
+							<tr><th>Growth Habit</th><td>Forb/herb</td></tr>
+							<tr><th>Toxicity</th><td>None</td></tr>
+							</tbody>
 					</Table>
-				</TableBox>
+				</TableBox></Col><Col />
+				</Row>
 				
-				<Div>
+				<br/><br/>
 					<Row>
 						<Col className="text-center">
 							<h4>Related Parks</h4>
@@ -167,7 +151,6 @@ function AmargosaNiterwort() {
 				    		</CardDeck>
 						</Col>
 					</Row>
-				</Div>
 
 				<br/>
 				&nbsp;

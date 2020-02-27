@@ -47,9 +47,6 @@ const CenteredCol = styled('Col')`
 const TableBox = styled('div')`
 	text-align: center;
 	display: flex;
-	position: absolute;
-	left: 10%;
-	right: 10%;
 `;
 
 const ImageBox = styled('img')`
@@ -70,10 +67,6 @@ const Text = styled('div')`
 	color: black;
 `
 
-const Div = styled('div')`
-	padding-top: 100px;
-`
-
 function AcklinsGroundIguana() {
 	return (
 		<div>
@@ -84,6 +77,7 @@ function AcklinsGroundIguana() {
 	  			</Container>
 			</Jumbotron>
 
+			<br/><br/>
 			<Container>
 				<Row>
 					<CenteredCol>
@@ -95,42 +89,31 @@ function AcklinsGroundIguana() {
 					</CenteredCol>
 				</Row>
 
-				<br/>
+				<br/><br/>
 				<EndangeredBox>
 					<EndangeredText>Threatened</EndangeredText>
 				</EndangeredBox>
 
-				<br/>
+				<br/><br/>
+				<Row><Col /><Col xs={6}>
 				 <TableBox>
 					<Table striped bordered hover size="sm">
-						<thead>
-							<tr>
-								<th>Group</th>
-								<th>Domestic or Foreign?</th>
-								<th>Distinct Population Segment?</th>
-								<th>Aquatic?</th>
-								<th>BCC?</th>
-								<th>Conservation Plan Title</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Reptiles</td>
-								<td>Foreign</td>
-								<td>No</td>
-								<td>Yes</td>
-								<td>No</td>
-								<td>None</td>
-							</tr>
-						</tbody>
+							<tbody>
+							<tr><th>Group</th><td>Reptiles</td></tr>
+							<tr><th>Domestic or Foreign</th><td>Foreign</td></tr>
+							<tr><th>Distinct Population Segment?</th><td>No</td></tr>
+							<tr><th>Aquatic?</th><td>Yes</td></tr>
+							<tr><th>BCC?</th><td>No</td></tr>
+							<tr><th>Conservation Plan Title</th><td>None</td></tr>
+							</tbody>
 					</Table>
-				</TableBox>
+				</TableBox></Col><Col />
+				</Row>
 
-				<Div>
+					<br/><br/>
 					<Row>
 						<Col className="text-center">
 							<h4>Related Parks</h4>
-
 							<br/>
 							<CardDeck className="text-center">
 								<Card><Nav.Link as={ Link } to="/Parks/GrandCanyon"><Text>
@@ -167,7 +150,6 @@ function AcklinsGroundIguana() {
 				    		</CardDeck>
 						</Col>
 					</Row>
-				</Div>
 
 				<br/>
 				&nbsp;
