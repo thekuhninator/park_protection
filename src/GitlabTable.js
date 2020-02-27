@@ -58,7 +58,7 @@ class GitlabTable extends React.Component{
           commits: 0,
           issues: 0,
           tests: 0,
-          desc: 'Nerd #4'
+          desc: 'Third year CS major. President of Anime Club. Weeb. Chronically tired. Code janitor.'
         },
         {
           name: 'Jordan Bogaards',

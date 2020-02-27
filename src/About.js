@@ -78,6 +78,7 @@ class About extends React.Component{
 						<br/>
 						<Container>
 							<h1> Tools </h1>
+
 							<CardDeck>
 									<Card>
 											<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/AWS_Simple_Icons_AWS_Cloud.svg/1280px-AWS_Simple_Icons_AWS_Cloud.svg.png" />
@@ -110,11 +111,19 @@ class About extends React.Component{
 					</CardDeck>
 
 					<br/><br/>
-					</Container>
-            <h2><a href="https://gitlab.com/thekuhninator/parks_protection"> Gitlab Repository </a></h2>
-            <h2> Postman API </h2>
-					<br />
-					
+					<h1>Optional Tools</h1>
+					<p><a href="https://react-select.com/home">React Select</a> - Used for filter/sort dropdowns on models pages because React Bootstrap doesn't
+					natively support multi-select in dropdowns.</p>
+					<p><a href="https://github.com/fullstackreact/google-maps-react">Google Maps React</a> - Used for Google maps for park locations.</p>
+					<p><a href="https://styled-components.com/">Styled Components</a> - Used for simple styling in components, like centering text inside a column.</p>
+
+					<br/>
+					<h1>Documentation</h1>
+		            <a href="https://gitlab.com/thekuhninator/parks_protection"> Gitlab Repository </a>
+		            <br/>
+		            <a href="https://documenter.getpostman.com/view/10458674/SzKYQcpT?version=latest">Postman API</a>
+		            <br/>&nbsp;
+		            </Container>
         </Container>
 
         );
