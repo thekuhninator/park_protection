@@ -86,7 +86,9 @@ class About extends React.Component{
                     const commit_data = data[i];
                     var curr = commitMap.get(commit_data.author_name) + 1;
                     commitMap.set(commit_data.author_name, curr);
+										{/*
                     console.log(commit_data.author_name + " " + commitMap.get(commit_data.author_name));
+										*/}
                 }
                 let i = 0;
                 for (let [k, v] of commitMap) {
