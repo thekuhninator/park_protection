@@ -244,13 +244,20 @@ class GitlabTable extends React.Component{
                     <Col> <h2> 0 Unit Tests </h2> </Col>
                 </Row>
             </Container>
-            <br />
 
             <Container>
                 <h1> Data Sources </h1>
-                <p> Data sources were collected from _____. </p>
+                <p> Data sources were collected from the National Park Services's API,
+                the Environmental Conservation Online System, and the Unied States Department of Agriculture.
+                <br />
+                <a href="https://www.nps.gov/subjects/digital/nps-data-api.htm"> National Parks Data </a>
+                <br />
+                <a href="https://ecos.fws.gov/ecp/report/ad-hoc-documentation?catalogId=species&reportId=species"> Animals Data </a>
+                <br />
+                <a href="https://data.nal.usda.gov/dataset/usda-plants-database-api-r"> Plants Data </a>
+
+                </p>
             </Container>
-            <br />
 
         </Container>
 

@@ -61,47 +61,50 @@ class About extends React.Component{
             already in place for preservation. </ Paragraph>
             </Container>
 						<GitlabTable />
+						<Container>
+							<h1> Tools </h1>
+							<CardDeck>
+									<Card>
+											<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/AWS_Simple_Icons_AWS_Cloud.svg/1280px-AWS_Simple_Icons_AWS_Cloud.svg.png" />
+											<Card.Body>
+													<Card.Title> AWS </Card.Title>
+													<Card.Text>
+															Amazon Web Services (AWS) is a platform that allows us to host our website.
+													</Card.Text>
+											</Card.Body>
+									</Card>
+									<Card>
+											<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" />
+											<Card.Body>
+													<Card.Title> React Bootstrap</Card.Title>
+													<Card.Text>
+															React Bootstrap is a front-end tool that allows us to create nice web pages.
+													</Card.Text>
+											</Card.Body>
+									</Card>
+
+									<Card>
+											<Card.Img variant="top" src="https://img.stackshare.io/service/1336/xWMRvm_5_400x400.png" />
+											<Card.Body>
+													<Card.Title> Postman </Card.Title>
+													<Card.Text>
+															Postman is a tool that generates useful API for our functions.
+													</Card.Text>
+											</Card.Body>
+									</Card>
+					</CardDeck>
+
+					</Container>
+					<br />
             <h2><a href="https://gitlab.com/thekuhninator/parks_protection"> Gitlab Repository </a></h2>
             <h2> Postman Api </h2>
-
+					<br />
+					
         </Container>
 
         );
     }
 
-    componentDidMount() {
-        let commitMap = new Map([["Dylan Kan", 0],
-            ["Roman Kuhn", 0],
-            ["bogaards.jordan", 0],
-            ["Pedro_Silva0111", 0],
-            ["Ameya Joshi", 0],
-            ["Poisonthorns", 0]])
-        let names = ["Dylan Kan", "Roman Kuhn", "Jordan Bogaards", "Pedro Silva", "Ameya Joshi", "Skylore Evans"];
-        fetch(
-            'https://gitlab.com/api/v4/projects/16967791/repository/commits?per_page=10000'
-        )
-            .then((response) => response.json())
-            .then((data) => {
-                for (const i in data) {
-                    const commit_data = data[i];
-                    var curr = commitMap.get(commit_data.author_name) + 1;
-                    commitMap.set(commit_data.author_name, curr);
-										{/*
-                    console.log(commit_data.author_name + " " + commitMap.get(commit_data.author_name));
-										*/}
-                }
-                let i = 0;
-                for (let [k, v] of commitMap) {
-                    var curr = names[i] + ": " + v + " commits <br/>";
-                    document.getElementById('stuff').innerHTML += curr;
-                    i++;
-                }
-            })
-            .catch((e) => {
-                console.log('Error');
-                console.log(e);
-            });
-    }
 }
 
 export default About;
