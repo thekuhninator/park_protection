@@ -55,12 +55,27 @@ class About extends React.Component{
             <Paragraph > Many species are dying out in recent years, whether
             it be due to global warming or other environmental factors. This website
             helps those who want to witness or take action in preservation efforts
-            locate the appropriate help centers. Our websie grabs data on endangered
+            locate the appropriate help centers. Our website grabs data on endangered
             animal and plant species and groups them with national park centers based
             on location in hopes to spread awareness of what states may have efforts
-            already in place for preservation. </ Paragraph>
+            already in place for preservation and to identify places to observe these
+            species in their natural habitat. </ Paragraph>
+
+            <br/><br/>
             </Container>
 						<GitlabTable />
+
+			            <br/><br/>
+			            <Container>
+			                <h1> Data Sources </h1>
+			                <p> Data was collected from the <a href="https://www.nps.gov/subjects/digital/nps-data-api.htm">National Park Services</a>,
+			                the <a href="https://ecos.fws.gov/ecp/report/ad-hoc-documentation?catalogId=species&reportId=species">Environmental 
+			                Conservation Online System</a>, 
+			                and the <a href="https://data.nal.usda.gov/dataset/usda-plants-database-api-r">United States Department of Agriculture</a>.
+			                </p>
+			            </Container>
+
+						<br/>
 						<Container>
 							<h1> Tools </h1>
 							<CardDeck>
@@ -94,10 +109,10 @@ class About extends React.Component{
 									</Card>
 					</CardDeck>
 
+					<br/><br/>
 					</Container>
-					<br />
             <h2><a href="https://gitlab.com/thekuhninator/parks_protection"> Gitlab Repository </a></h2>
-            <h2> Postman Api </h2>
+            <h2> Postman API </h2>
 					<br />
 					
         </Container>
