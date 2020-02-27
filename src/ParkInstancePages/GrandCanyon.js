@@ -10,6 +10,10 @@ import Col from 'react-bootstrap/Col'
 import map from '../Assets/Maps/GrandCanyon.png';
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 import GCMapWrapper from '../Assets/Maps/GCMapWrapper';
+import { Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
+import CardDeck from 'react-bootstrap/CardDeck';
 
 const CarouselImage = styled('img')`
 	width: 400px;
@@ -22,17 +26,36 @@ const ImageBoxLong = styled('img')`
 `;
 
 const CenterText = styled('div')`
+	color: #444444;
 	text-align: center;
 `
+
+const ItalicText = styled('div')`
+	font-style: italic;
+`
+
+const Text = styled('div')`
+	color: black;
+`
+
+const Div = styled('div')`
+	padding-top: 420px;
+`
+
+const CenteredCol = styled('Col')`
+  margin: auto;
+`;
 
 function GrandCanyon() {
 	return (
 		<div>
-			<Jumbotron fluid>
+			<Jumbotron>
 				<Container>
 					<CenterText><h1>Grand Canyon National Park</h1></CenterText>
 				</Container>
 			</Jumbotron>
+
+			<br/>
 			<Container>
 				<Carousel>
 				  <Carousel.Item>
@@ -65,7 +88,8 @@ function GrandCanyon() {
 				    />
 				  </Carousel.Item>
 				</Carousel>
-				<br></br>
+
+				<br/><br/><br/>
 				<Row>
 					<Col>
 					<h6>Unique combinations of geologic color and 
@@ -99,16 +123,66 @@ function GrandCanyon() {
 					</h6>
 					</Col>
 				</Row>
+
 				<br></br>
 				<h3>Contact Them</h3>
 				<h5><a href="https://www.nps.gov/grca/index.htm">Website</a></h5>
 				<h5>grca_information@nps.gov</h5>
 				<h5>(928) 638-7888</h5>
 				<h5>20 South Entrance Road, Grand Canyon, AZ 86023</h5>
+
+				<br/>
+				<GCMapWrapper />
+
+				<br/>
+				<Div>
+					<Row>
+						<Col className="text-center">
+							<h4>Related Plants</h4>
+
+							<br/>
+							<CardDeck className="text-center">
+								<Card><Nav.Link as={ Link } to="/Plants/AleutianHollyFern"><Text>
+								    <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Aleutian_Shield_Fern.jpg" />
+								    <Card.Body>
+								      	<Card.Title>Aleutian Holly Fern</Card.Title>
+								    </Card.Body>
+								</Text></Nav.Link></Card>
+					    		<Card><Nav.Link as={ Link } to="/Plants/AmargosaNiterwort"><Text>
+									<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Nitrophila_mohavensis_6.jpg" />
+								 	<Card.Body>
+										<Card.Title>Amargosa Niterwort</Card.Title>
+								 	</Card.Body>
+								</Text></Nav.Link></Card>
+				    		</CardDeck>
+						</Col>
+						<Col className="text-center">
+							<h4>Related Animals</h4>
+
+							<br/>
+							<CardDeck className="text-center">
+								<Card><Nav.Link as={ Link } to="/Animals/AbbottsBooby"><Text>
+						  			<Card.Img variant="top" src="https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg"/>
+						    		<Card.Body>
+						      			<Card.Title>Abbott's Booby</Card.Title>
+						    		</Card.Body>
+					    		</Text></Nav.Link></Card>
+					    		<Card><Nav.Link as={ Link } to="/Animals/AcklinsGroundIguana"><Text>
+									<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cyclura_rileyi_nuchalis_Exumas_1997_c_W_K_Hayes.jpg" />
+									<Card.Body>
+										<Card.Title>Acklins Ground Iguana</Card.Title>
+									</Card.Body>
+								</Text></Nav.Link></Card>
+				    		</CardDeck>
+						</Col>
+					</Row>
+				</Div>
+
+				<br/>
+				&nbsp;
+				
 			</Container>
 
-			<br/>
-			<GCMapWrapper />
 		</div>
   	);
 }

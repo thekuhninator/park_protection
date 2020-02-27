@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import { Map, Marker, GoogleApiWrapper, Polygon } from 'google-maps-react';
 
 const style = {
-	position: 'absolute', left: '15%', right: '15%', bottom: '5%'
+	width: '1100px',
+	height: '400px'
 }
 
 class GCMapWrapper extends Component {

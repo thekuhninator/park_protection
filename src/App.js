@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Router>
-          <Navbar bg="dark" variant="dark">
+          <Navbar bg="light" variant="light">
             <Navbar.Brand as={ Link } to="/">Park Protection</Navbar.Brand>
             <Nav className="mr-auto">
               <Nav.Link as={ Link } to="/Parks">Parks</Nav.Link>
