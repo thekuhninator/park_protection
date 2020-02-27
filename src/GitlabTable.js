@@ -51,7 +51,7 @@ class GitlabTable extends React.Component{
           commits: 0,
           issues: 0,
           tests: 0,
-          desc: 'Nerd #3'
+          desc: 'I cant remember the last time i woke up early enough to eat breakfast.'
         },
         {
           name: 'Skylore Evans',
@@ -187,7 +187,7 @@ class GitlabTable extends React.Component{
                   <Card.Img variant="top" src={dylan} />
                   <Card.Body>
                     <Card.Title> {this.team[2].name} </Card.Title>
-                    <Card.Text>Frontend Developer</Card.Text>
+                    <Card.Text>Fullstack Developer</Card.Text>
                     <Card.Text>
                       {this.team[2].desc}
                     </Card.Text>
