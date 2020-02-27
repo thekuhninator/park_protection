@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
@@ -51,7 +50,7 @@ class GitlabTable extends React.Component{
           commits: 0,
           issues: 0,
           tests: 0,
-          desc: 'I cant remember the last time i woke up early enough to eat breakfast.'
+          desc: 'I can\'t remember the last time I woke up early enough to eat breakfast.'
         },
         {
           name: 'Skylore Evans',

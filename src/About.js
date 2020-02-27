@@ -3,17 +3,8 @@ import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
-import Image from 'react-bootstrap/Image'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import GitlabTable from './GitlabTable.js'
 
-import roman from './Assets/img/headshots/roman.jpeg'
-import dylan from './Assets/img/headshots/dylan.jpg'
-import ameya from './Assets/img/headshots/ameya.jpeg'
-import skylore from './Assets/img/headshots/skylore.jpeg'
-import jordan from './Assets/img/headshots/jordan.jpg'
-import pedro from './Assets/img/headshots/pedro.jpeg'
 
 const AboutTitle = styled('h1')`
 color: black; font-family: 'Raleway',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;
