@@ -71,7 +71,7 @@ class GitlabTable extends React.Component{
           commits: 0,
           issues: 0,
           tests: 0,
-          desc: 'Nerd #6'
+          desc: 'Took Roman\'s title for Smash Ultimate.'
           },
       ];
   }
@@ -158,7 +158,7 @@ class GitlabTable extends React.Component{
                     <Card.Img variant="top" src={roman} />
                     <Card.Body>
                         <Card.Title> {this.team[0].name} </Card.Title>
-                        <Card.Text>Frontend Developer</Card.Text>
+                        <Card.Text>Fullstack Developer</Card.Text>
                         <Card.Text>
                             {this.team[0].desc}
                         </Card.Text>

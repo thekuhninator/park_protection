@@ -40,7 +40,7 @@ const families = [
 ]
 
 const Families = () => (
-  <Select options={families} isMulti className="basic-multi-select" placeholder="Groups" />
+  <Select options={families} isMulti className="basic-multi-select" placeholder="Families" />
 )
 
 const statuses = [
