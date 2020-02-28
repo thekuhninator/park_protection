@@ -90,6 +90,7 @@ class GitlabTable extends React.Component{
         'Ameya Joshi': 1,
         'Dylan Kan': 2,
         'Poisonthorns': 3,
+        'Jordan Bogaards': 4,
         'bogaards.jordan': 4,
         'Pedro_Silva0111': 5
       }
@@ -111,6 +112,7 @@ class GitlabTable extends React.Component{
                   commitMap.set(commit_data.author_name, curr);
                   console.log(commit_data)
                   console.log(commit_data.author_name)
+                  console.log("Author name:" + nameDict[commit_data.author_name])
                   this.team[nameDict[commit_data.author_name]].commits = curr
                   this.setState({ testVariable : 'changed'})
               }
