@@ -40,7 +40,7 @@
 
 Website: https://parkprotection.me
 
-Git SHA: 
+Git SHA: 0c1ecde97df7461f986e2a4d980dee6b9dc71b56
 
 GitLab Pipelines: https://gitlab.com/thekuhninator/parks_protection/pipelines
 
