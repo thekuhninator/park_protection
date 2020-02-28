@@ -44,4 +44,7 @@ Git SHA: a187deb4410d3d28091e281bfb5fd7b4eb50b3c5
 
 GitLab Pipelines: https://gitlab.com/thekuhninator/parks_protection/pipelines
 
-Comments: Eh
+Comments: We actually completed all of our customers' requests, but the project
+          is due in less than 10 minutes, so we don't have time to say that
+          in the technical report, sorry. Just know the report is slightly old,
+          but all the customer requests are done.
