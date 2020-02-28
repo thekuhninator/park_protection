@@ -12,6 +12,7 @@ import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
+import ALMapWrapper from '../Assets/Maps/ALMapWrapper';
 
 const CommonName = styled('h1')`
   color: #444444;
@@ -50,8 +51,9 @@ const TableBox = styled('div')`
 `;
 
 const ImageBox = styled('img')`
-	width: 400px;
+	width: 100%;
 	height: 400px;
+	object-fit: cover;
 `;
 
 const ImageBoxLong = styled('img')`
@@ -80,13 +82,13 @@ function AleutianHollyFern() {
 			<br/><br/>
 			<Container>
 				<Row>
-					<CenteredCol>
-						<ImageBox src="https://upload.wikimedia.org/wikipedia/commons/8/88/Aleutian_Shield_Fern.jpg"/>
-					</CenteredCol>
+					<Col>
+						<ImageBox className="float-right" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Aleutian_Shield_Fern.jpg"/>
+					</Col>
 
-					<CenteredCol>
-						<ImageBoxLong src={ map }/>
-					</CenteredCol>
+					<Col>
+						<ALMapWrapper/>
+					</Col>
 				</Row>
 
 				<br/><br/>

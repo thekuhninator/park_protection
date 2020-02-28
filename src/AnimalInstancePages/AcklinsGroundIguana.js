@@ -12,6 +12,7 @@ import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
+import NoMapWrapper from '../Assets/Maps/NoMapWrapper';
 
 const CommonName = styled('h1')`
   color: #444444;
@@ -50,8 +51,9 @@ const TableBox = styled('div')`
 `;
 
 const ImageBox = styled('img')`
-	width: 400px;
+	width: 100%;
 	height: 400px;
+	object-fit: cover;
 `;
 
 const ImageBoxLong = styled('img')`
@@ -80,13 +82,13 @@ function AcklinsGroundIguana() {
 			<br/><br/>
 			<Container>
 				<Row>
-					<CenteredCol>
-						<ImageBox src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cyclura_rileyi_nuchalis_Exumas_1997_c_W_K_Hayes.jpg" fluid />
-					</CenteredCol>
+					<Col>
+						<ImageBox className="float-right" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cyclura_rileyi_nuchalis_Exumas_1997_c_W_K_Hayes.jpg" fluid />
+					</Col>
 
-					<CenteredCol>
-						<ImageBoxLong src={ map } fluid />
-					</CenteredCol>
+					<Col>
+						<NoMapWrapper/>
+					</Col>
 				</Row>
 
 				<br/><br/>

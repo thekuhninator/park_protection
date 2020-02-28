@@ -12,6 +12,7 @@ import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
+import NoMapWrapper from '../Assets/Maps/NoMapWrapper';
 
 const CommonName = styled('h1')`
   color: #444444;
@@ -50,8 +51,9 @@ const TableBox = styled('div')`
 `;
 
 const ImageBox = styled('img')`
-	width: 400px;
+	width: 100%;
 	height: 400px;
+	object-fit: cover;
 `;
 
 const ImageBoxLong = styled('img')`
@@ -80,13 +82,13 @@ function AbbottsBooby() {
 			<br/><br/>
 			<Container>
 				<Row>
-					<CenteredCol>
-						<ImageBox src="https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg" fluid />
-					</CenteredCol>
+					<Col>
+						<ImageBox className="float-right" src="https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg" fluid />
+					</Col>
 
-					<CenteredCol>
-						<ImageBoxLong src={ map } fluid />
-					</CenteredCol>
+					<Col>
+						<NoMapWrapper/>
+					</Col>
 				</Row>
 
 				<br/><br/>

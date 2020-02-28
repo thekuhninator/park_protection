@@ -12,6 +12,7 @@ import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
+import FLMapWrapper from '../Assets/Maps/FLMapWrapper';
 
 const CommonName = styled('h1')`
   color: #444444;
@@ -50,8 +51,9 @@ const TableBox = styled('div')`
 `;
 
 const ImageBox = styled('img')`
-	width: 400px;
+	width: 100%;
 	height: 400px;
+	object-fit: cover;
 `;
 
 const ImageBoxLong = styled('img')`
@@ -80,13 +82,13 @@ function PricklyApplecactus() {
 			<br/><br/>
 			<Container>
 				<Row>
-					<CenteredCol>
-						<ImageBox src="https://images-na.ssl-images-amazon.com/images/I/51vxwr8lUxL._AC_SX450_.jpg"/>
-					</CenteredCol>
+					<Col>
+						<ImageBox className="float-right" src="https://images-na.ssl-images-amazon.com/images/I/51vxwr8lUxL._AC_SX450_.jpg"/>
+					</Col>
 
-					<CenteredCol>
-						<ImageBoxLong src={ map }/>
-					</CenteredCol>
+					<Col>
+						<FLMapWrapper/>
+					</Col>
 				</Row>
 
 				<br/><br/>

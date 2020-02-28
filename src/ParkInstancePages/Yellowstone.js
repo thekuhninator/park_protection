@@ -16,8 +16,9 @@ import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 
 const CarouselImage = styled('img')`
-	width: 400px;
+	width: 100%;
 	height: 350px;
+	object-fit: cover;
 	margin: auto;
 `;
 const ImageBoxLong = styled('img')`

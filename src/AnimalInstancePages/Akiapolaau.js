@@ -12,6 +12,7 @@ import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
+import HIMapWrapper from '../Assets/Maps/HIMapWrapper';
 
 const CommonName = styled('h1')`
   color: #444444;
@@ -50,8 +51,9 @@ const TableBox = styled('div')`
 `;
 
 const ImageBox = styled('img')`
-	width: 400px;
+	width: 100%;
 	height: 400px;
+	object-fit: cover;
 `;
 
 const ImageBoxLong = styled('img')`
@@ -80,13 +82,13 @@ function Akiapolaau() {
 			<br/><br/>
 			<Container>
 				<Row>
-					<CenteredCol>
-						<ImageBox src="https://download.ams.birds.cornell.edu/api/v1/asset/96716321/1800"/>
-					</CenteredCol>
+					<Col>
+						<ImageBox className="float-right" src="https://download.ams.birds.cornell.edu/api/v1/asset/96716321/1800"/>
+					</Col>
 
-					<CenteredCol>
-						<ImageBoxLong src={ map }/>
-					</CenteredCol>
+					<Col>
+						<HIMapWrapper/>
+					</Col>
 				</Row>
 
 				<br/><br/>
