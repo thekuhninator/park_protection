@@ -34,8 +34,8 @@
 - Pedro Silva
 	- EID: phs524
 	- Gitlab ID: Pedro_Silva0111
-	- Estimated Completion Time: 
-	- Actual Completion Time: 
+	- Estimated Completion Time: 10 hours
+	- Actual Completion Time: 5 hours
 
 
 Website: https://parkprotection.me
