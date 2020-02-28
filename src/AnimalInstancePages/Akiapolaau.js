@@ -103,9 +103,9 @@ function Akiapolaau() {
 							<tbody>
 							<tr><th>Group</th><td>Birds</td></tr>
 							<tr><th>Domestic or Foreign</th><td>Foreign</td></tr>
-							<tr><th>Distinct Population Segment?</th><td>No</td></tr>
+							<tr><th><a href="https://www.fws.gov/pacific/news/grizzly/esafacts.htm">Distinct Population Segment?</a></th><td>No</td></tr>
 							<tr><th>Aquatic?</th><td>No</td></tr>
-							<tr><th>BCC?</th><td>No</td></tr>
+							<tr><th><a href="https://www.fws.gov/birds/management/managed-species/birds-of-conservation-concern.php">BCC?</a></th><td>No</td></tr>
 							<tr><th>Conservation Plan Title</th><td>None</td></tr>
 							</tbody>
 					</Table>
