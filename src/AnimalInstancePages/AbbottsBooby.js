@@ -14,6 +14,17 @@ import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 import NoMapWrapper from '../Assets/Maps/NoMapWrapper';
 
+const cname = "Abbot's Booby";
+const sname = "Papasula abbotti";
+const image = "https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg";
+const endangeredText = true ? "Endangered" : "threatened";
+const group = 'Birds';
+const foreign = 'Foreign';
+const dps = 'No';
+const aquatic = 'No';
+const bcc = 'No';
+const cpt = 'None';
+
 const CommonName = styled('h1')`
   color: #444444;
   text-align: center;
@@ -74,8 +85,8 @@ function AbbottsBooby() {
 		<div>
 			<Jumbotron>
 	  			<Container>
-	    			<CommonName>Abbott's Booby</CommonName>
-	    			<ScientificName>Papasula abbotti</ScientificName>
+	    			<CommonName>{cname}</CommonName>
+	    			<ScientificName>{sname}</ScientificName>
 	  			</Container>
 			</Jumbotron>
 
@@ -83,7 +94,7 @@ function AbbottsBooby() {
 			<Container>
 				<Row>
 					<Col>
-						<ImageBox className="float-right" src="https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg" fluid />
+						<ImageBox className="float-right" src= {image} fluid />
 					</Col>
 
 					<Col>
@@ -93,7 +104,7 @@ function AbbottsBooby() {
 
 				<br/><br/>
 				<EndangeredBox>
-					<EndangeredText>Endangered</EndangeredText>
+					<EndangeredText>{endangeredText}</EndangeredText>
 				</EndangeredBox>
 
 				<br/><br/>
@@ -101,12 +112,12 @@ function AbbottsBooby() {
 				 <TableBox>
 					<Table striped bordered hover size="sm">
 							<tbody>
-							<tr><th>Group</th><td>Birds</td></tr>
-							<tr><th>Domestic or Foreign</th><td>Foreign</td></tr>
-							<tr><th><a href="https://www.fws.gov/pacific/news/grizzly/esafacts.htm">Distinct Population Segment?</a></th><td>No</td></tr>
-							<tr><th>Aquatic?</th><td>No</td></tr>
-							<tr><th><a href="https://www.fws.gov/birds/management/managed-species/birds-of-conservation-concern.php">BCC?</a></th><td>No</td></tr>
-							<tr><th>Conservation Plan Title</th><td>None</td></tr>
+							<tr><th>Group</th><td>{group}</td></tr>
+							<tr><th>Domestic or Foreign</th><td>{foreign}</td></tr>
+							<tr><th><a href="https://www.fws.gov/pacific/news/grizzly/esafacts.htm">Distinct Population Segment?</a></th><td>{dps}</td></tr>
+							<tr><th>Aquatic?</th><td>{aquatic}</td></tr>
+							<tr><th><a href="https://www.fws.gov/birds/management/managed-species/birds-of-conservation-concern.php">BCC?</a></th><td>{bcc}</td></tr>
+							<tr><th>Conservation Plan Title</th><td>{cpt}</td></tr>
 							</tbody>
 					</Table>
 				</TableBox></Col><Col />
