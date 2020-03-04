@@ -95,26 +95,26 @@ class GitlabTable extends React.Component{
         'Pedro_Silva0111': 5
       }
 
-      let names = ["Dylan Kan", "Roman Kuhn", "Jordan Bogaards", "Pedro Silva", "Ameya Joshi", "Skylore Evans"];
-
       fetch(
           'https://gitlab.com/api/v4/projects/16967791/repository/commits?per_page=10000'
       )
           .then((response) => response.json())
           .then((data) => {
-              console.log('TOTAL COMMITS')
-              console.log(data.length)
+              console.log('TOTAL COMMITS');
+              console.log(data.length);
               this.total_commits = data.length
               for (const i in data) {
-
                   const commit_data = data[i];
-                  var curr = commitMap.get(commit_data.author_name) + 1;
-                  commitMap.set(commit_data.author_name, curr);
-                  console.log(commit_data)
-                  console.log(commit_data.author_name)
-                  console.log("Author name:" + nameDict[commit_data.author_name])
-                  this.team[nameDict[commit_data.author_name]].commits = curr
-                  this.setState({ testVariable : 'changed'})
+                  var name = commit_data.author_name;
+                  if (name == 'Pedro Silva') {
+                      name = 'Pedro_Silva0111';
+                  }
+                  var curr = commitMap.get(name) + 1;
+                  commitMap.set(name, curr);
+                  console.log(name);
+                  console.log("Author name:" + nameDict[name]);
+                  this.team[nameDict[name]].commits = curr;
+                  this.setState({ testVariable : 'changed'});
               }
           })
           .catch((e) => {
@@ -129,13 +129,9 @@ class GitlabTable extends React.Component{
             this.total_issues = data.length
             for (const i in data) {
               const issue_data = data[i]
-              console.log(issue_data.author.name)
-              console.log(issue_data.author.name.length)
-              console.log('about to try')
               if(issue_data.author.name in this.team_dict)
               {
                   this.team[this.team_dict[issue_data.author.name]].issues = issue_data.author.name.length
-                  console.log('after doing the thing')
                   console.log(this.team[this.team_dict[issue_data.author.name]].issues)
               }
             }
