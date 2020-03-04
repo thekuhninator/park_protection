@@ -16,6 +16,18 @@ import styled from 'styled-components';
 import Select from 'react-select';
 import { Nav } from 'react-bootstrap';
 
+const state = {
+    cname : "Abbot's Booby",
+    sname : "Papasula abbotti",
+    image : "https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg",
+    endangeredText : true ? "Endangered" : "threatened",
+    group : 'Birds',
+    foreign : 'Foreign',
+    dps : 'No',
+    aquatic : 'No',
+    bcc : 'No',
+    cpt : 'None'};
+
 const common = [
   { value: 'asc', label: 'Ascending' },
   { value: 'des', label: 'Descending' }
@@ -106,17 +118,7 @@ function Animals() {
 		    	<CardDeck className="text-center">
 			  		<Card><Link to = {{
 			  								pathname : "/AnimalPage",
-			  								state : {
-                            cname : "Abbot's Booby",
-														sname : "Papasula abbotti",
-														image : "https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg",
-														endangeredText : true ? "Endangered" : "threatened",
-														group : 'Birds',
-														foreign : 'Foreign',
-														dps : 'No',
-														aquatic : 'No',
-														bcc : 'No',
-														cpt : 'None'}
+			  								state : state
 			  			}}
 			  		><Text>
 			  			<Card.Img variant="top" src="https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg"/>

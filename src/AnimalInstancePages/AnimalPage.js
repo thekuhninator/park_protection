@@ -77,10 +77,9 @@ export default class AnimalPage extends Component {
         <Jumbotron>
             <Container>
               <CommonName>{this.props.location.state.cname}</CommonName>
-              <ScientificName>{this.props.location.state.cname}</ScientificName>
+              <ScientificName>{this.props.location.state.sname}</ScientificName>
             </Container>
         </Jumbotron>
-
         <br/><br/>
         <Container>
           <Row>
