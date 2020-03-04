@@ -105,8 +105,9 @@ function Animals() {
 				<br/><br/>
 		    	<CardDeck className="text-center">
 			  		<Card><Link to = {{
-			  								pathname : "/Animals/AbbottsBooby",
-			  								state : {   cname : "Abbot's Booby",
+			  								pathname : "/AnimalPage",
+			  								state : {
+                            cname : "Abbot's Booby",
 														sname : "Papasula abbotti",
 														image : "https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg",
 														endangeredText : true ? "Endangered" : "threatened",
@@ -150,7 +151,7 @@ function Animals() {
 				</CardDeck>
 
 				<br/>
-				<Pagination 
+				<Pagination
 					style={{ justifyContent: 'center' }}>
 					<Pagination.First />
 					<Pagination.Prev />

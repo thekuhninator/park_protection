@@ -8,7 +8,7 @@ import Home from './Home';
 import Parks from './Parks';
 import Animals from './Animals';
 import Plants from './Plants';
-import AbbottsBooby from './AnimalInstancePages/AbbottsBooby';
+import AnimalPage from './AnimalInstancePages/AnimalPage';
 import AcklinsGroundIguana from './AnimalInstancePages/AcklinsGroundIguana';
 import Akiapolaau from './AnimalInstancePages/Akiapolaau';
 import GrandCanyon from './ParkInstancePages/GrandCanyon';
@@ -36,9 +36,7 @@ class App extends Component {
           </Navbar>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/Animals/AbbottsBooby" component={AbbottsBooby} />
-            <Route path="/Animals/AcklinsGroundIguana" component={AcklinsGroundIguana} />
-            <Route path="/Animals/Akiapolaau" component={Akiapolaau} />
+            <Route path="/AnimalPage" component={AnimalPage} />
             <Route path="/Parks/GrandCanyon" component={GrandCanyon} />
             <Route path="/Parks/Yellowstone" component={Yellowstone} />
             <Route path="/Parks/Zion" component={Zion} />
