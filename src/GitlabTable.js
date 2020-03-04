@@ -23,14 +23,6 @@ class GitlabTable extends React.Component{
       this.total_commits = 0;
       this.total_issues = 0;
       this.total_tests = 0;
-      this.team_dict = {
-        "Roman Kuhn": 0,
-        "Ameya Joshi": 1,
-        "Dylan Kan": 2,
-        "Skylore Evans": 3,
-        "Jordan Bogaards": 4,
-        "Pedro Silva": 5
-      }
       this.team = [{
         name: 'Roman Kuhn',
         commits: 0,
@@ -78,13 +70,6 @@ class GitlabTable extends React.Component{
 
 
   componentDidMount() {
-      let commitMap = new Map([["Dylan Kan", 0],
-          ["Roman Kuhn", 0],
-          ["bogaards.jordan", 0],
-          ["Pedro_Silva0111", 0],
-          ["Ameya Joshi", 0],
-          ["Poisonthorns", 0]])
-
       let nameDict = {
         'Roman Kuhn': 0,
         'Ameya Joshi': 1,
@@ -92,7 +77,8 @@ class GitlabTable extends React.Component{
         'Poisonthorns': 3,
         'Jordan Bogaards': 4,
         'bogaards.jordan': 4,
-        'Pedro_Silva0111': 5
+        'Pedro_Silva0111': 5,
+        'Pedro Silva': 5
       }
 
       fetch(
@@ -106,14 +92,8 @@ class GitlabTable extends React.Component{
               for (const i in data) {
                   const commit_data = data[i];
                   var name = commit_data.author_name;
-                  if (name == 'Pedro Silva') {
-                      name = 'Pedro_Silva0111';
-                  }
-                  var curr = commitMap.get(name) + 1;
-                  commitMap.set(name, curr);
-                  console.log(name);
-                  console.log("Author name:" + nameDict[name]);
-                  this.team[nameDict[name]].commits = curr;
+                  console.log("Commit Author name:" + nameDict[name]);
+                  this.team[nameDict[name]].commits = this.team[nameDict[name]].commits + 1;
                   this.setState({ testVariable : 'changed'});
               }
           })
@@ -129,10 +109,10 @@ class GitlabTable extends React.Component{
             this.total_issues = data.length
             for (const i in data) {
               const issue_data = data[i]
-              if(issue_data.author.name in this.team_dict)
+              if(issue_data.author.name in nameDict)
               {
-                  this.team[this.team_dict[issue_data.author.name]].issues = issue_data.author.name.length
-                  console.log(this.team[this.team_dict[issue_data.author.name]].issues)
+                  this.team[nameDict[issue_data.author.name]].issues = this.team[nameDict[issue_data.author.name]].issues + 1;
+                  console.log(this.team[nameDict[issue_data.author.name]].issues);
               }
             }
             this.setState({ testVariable : 'changed'})
