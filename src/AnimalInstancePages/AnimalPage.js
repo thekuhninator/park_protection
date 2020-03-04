@@ -121,9 +121,9 @@ export default class AnimalPage extends Component {
                 <br/>
                 <CardDeck className="text-center">
                   <Card><Nav.Link as={ Link } to="/Parks/GrandCanyon"><Text>
-                      <Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg" />
+                      <Card.Img variant="top" src= {this.props.location.state.park1img} />
                       <Card.Body>
-                        <Card.Title>Grand Canyon National Park</Card.Title>
+                        <Card.Title>{this.props.location.state.park1}</Card.Title>
                       </Card.Body>
                     </Text></Nav.Link></Card>
                   <Card><Nav.Link as={ Link } to="/Parks/Yellowstone"><Text>

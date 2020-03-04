@@ -17,7 +17,7 @@ import Select from 'react-select';
 import { Nav } from 'react-bootstrap';
 
 const state = {
-    cname : "Abbot's Booby",
+    cname : "Abbot'sby",
     sname : "Papasula abbotti",
     image : "https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg",
     endangeredText : true ? "Endangered" : "threatened",
@@ -26,10 +26,12 @@ const state = {
     dps : 'No',
     aquatic : 'No',
     bcc : 'No',
-    cpt : 'None'};
+    cpt : 'None',
+    park1 : "Grand Canyon National Park",
+    park1img: "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg"};
 
 const state2 = {
-    cname : "Abbot's Booby",
+    cname : "Abbot's by",
     sname : "Papasula abbotti",
     image : "https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg",
     endangeredText : true ? "Endangered" : "threatened",
@@ -138,12 +140,11 @@ function Animals() {
 						<States />
 					</Col>
 				</Row>
-
 				<br/><br/>
 		    	<CardDeck className="text-center">
 			  	<Card>
               <Link to = {{
-  			  								pathname : "/AnimalPage",
+  			  								pathname : "/AnimalPage/AbbotsBooby",
   			  								state : state}}>
                 <Text>
     			  			<Card.Img variant="top" src="https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg"/>
