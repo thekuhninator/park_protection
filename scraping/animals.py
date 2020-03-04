@@ -53,7 +53,10 @@ for animalData in rawData:
 		animalsData.append(animalDict)
 
 # turn states list into states string
-for i in range(len(animalsData)):
+for i in range(len(animalsData) - 1, -1, -1):
 	animalsData[i]['states'] = ", ".join(animalsData[i]['states'])
+	# if animalsData[i]['states'] == "":
+	# 	del animalsData[i]
 
+print(len(animalsData))
 print(animalsData)
