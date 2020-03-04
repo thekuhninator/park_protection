@@ -14,6 +14,7 @@ import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 import NoMapWrapper from '../Assets/Maps/NoMapWrapper';
 
+
 const cname = "Abbot's Booby";
 const sname = "Papasula abbotti";
 const image = "https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg";
@@ -24,7 +25,7 @@ const dps = 'No';
 const aquatic = 'No';
 const bcc = 'No';
 const cpt = 'None';
-
+let location;
 const CommonName = styled('h1')`
   color: #444444;
   text-align: center;

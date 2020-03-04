@@ -104,7 +104,20 @@ function Animals() {
 
 				<br/><br/>
 		    	<CardDeck className="text-center">
-			  		<Card><Nav.Link as={ Link } to="/Animals/AbbottsBooby"><Text>
+			  		<Card><Link to = {{
+			  								pathname : "/Animals/AbbottsBooby",
+			  								state : {   cname : "Abbot's Booby",
+														sname : "Papasula abbotti",
+														image : "https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg",
+														endangeredText : true ? "Endangered" : "threatened",
+														group : 'Birds',
+														foreign : 'Foreign',
+														dps : 'No',
+														aquatic : 'No',
+														bcc : 'No',
+														cpt : 'None'}
+			  			}}
+			  		><Text>
 			  			<Card.Img variant="top" src="https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg"/>
 			    		<Card.Body>
 			      			<Card.Title>Abbott's Booby</Card.Title>
@@ -113,7 +126,7 @@ function Animals() {
 			      			<Card.Text>Birds</Card.Text>
 			      			<Card.Text>Not found in the US</Card.Text>
 			    		</Card.Body>
-		    		</Text></Nav.Link></Card>
+		    		</Text></Link></Card>
 					<Card><Nav.Link as={ Link } to="/Animals/AcklinsGroundIguana"><Text>
 						<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cyclura_rileyi_nuchalis_Exumas_1997_c_W_K_Hayes.jpg" />
 						<Card.Body>
