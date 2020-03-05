@@ -1,7 +1,6 @@
 
 import requests
 import re
-import psycopg2
 
 endpoint = "https://ecos.fws.gov/ecp/pullreports/catalog/species/report/species/export"
  
@@ -68,23 +67,32 @@ for i in range(len(animalsData) - 1, -1, -1):
 # print(len(animalsData))
 # print(animalsData)
 
-conn = psycopg2.connect(database = "", user = "", password = "", host = "", port = "")
-print("Opened database successfully")
+# conn = psycopg2.connect(database = "", user = "", password = "", host = "", port = "")
+# print("Opened database successfully")
 
-cur = conn.cursor()
+# cur = conn.cursor()
 
-# for i in range(0, 10):
-# 	animal = animalsData[i]
-# 	cur.execute("INSERT INTO TEST (ID, COM, SCI, STATUS, LDATE, AGROUP, DPS, AQUATIC, BCC, STATES, PLAN) VALUES (" + str(animal['id']) +
-# 		", '" + animal['common'] + "', '" + animal['scientific'] + "', '" + animal['status'] + "', '" + animal['date'] + "', '" + animal['group'] + "', " + str(animal['dps']) + ", " + str(animal['aquatic']) + ", " + 
-# 		str(animal['bcc']) + ", '" + animal['states'] + "', '" + animal['plan'] + "')")
-# conn.commit()
-# print("Records created successfully")
+# # for i in range(0, 10):
+# # 	animal = animalsData[i]
+# # 	cur.execute("INSERT INTO TEST (ID, COM, SCI, STATUS, LDATE, AGROUP, DPS, AQUATIC, BCC, STATES, PLAN) VALUES (" + str(animal['id']) +
+# # 		", '" + animal['common'] + "', '" + animal['scientific'] + "', '" + animal['status'] + "', '" + animal['date'] + "', '" + animal['group'] + "', " + str(animal['dps']) + ", " + str(animal['aquatic']) + ", " + 
+# # 		str(animal['bcc']) + ", '" + animal['states'] + "', '" + animal['plan'] + "')")
+# # conn.commit()
+# # print("Records created successfully")
 
-cur.execute("SELECT * from TEST")
-rows = cur.fetchall()
-for row in rows:
-	print(row)
-print("Operation done successfully")
+# cur.execute("SELECT * from TEST")
+# rows = cur.fetchall()
+# for row in rows:
+# 	print(row)
+# print("Operation done successfully")
 
-conn.close()
+# conn.close()
+
+
+
+
+
+
+
+
+
