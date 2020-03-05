@@ -1,5 +1,7 @@
 
 import requests
+import re
+import psycopg2
 
 endpoint = "https://ecos.fws.gov/ecp/pullreports/catalog/species/report/species/export"
  
@@ -40,13 +42,13 @@ for animalData in rawData:
 		duplicates[animalData[0]] = len(animalsData)
 		animalDict = dict()
 		animalDict['id'] = animalData[0]
-		animalDict['commonName'] = animalData[1]
-		animalDict['scientificName'] = animalData[2]['value']
+		animalDict['common'] = animalData[1]
+		animalDict['scientific'] = animalData[2]['value']
 		animalDict['status'] = animalData[3]
 		animalDict['date'] = animalData[4]
 		animalDict['group'] = animalData[5]
 		animalDict['dps'] = animalData[6]
-		animalDict['aquatic'] = animalData[7]
+		animalDict['aquatic'] = animalData[7] if animalData[7] is not None else True
 		animalDict['bcc'] = animalData[8]
 		animalDict['states'] = list() if animalData[9] is None else [animalData[9]]
 		animalDict['plan'] = None if animalData[10] is None else animalData[10]['value']
@@ -55,10 +57,34 @@ for animalData in rawData:
 # turn states list into states string
 for i in range(len(animalsData) - 1, -1, -1):
 	animalsData[i]['states'] = ", ".join(animalsData[i]['states'])
-	if animalsData[i]['plan'] is None:
-		animalsData[i]['plan'] = "None"
 	if animalsData[i]['states'] == "":
 		del animalsData[i]
+	else:
+		if animalsData[i]['plan'] is None:
+			animalsData[i]['plan'] = "None"
+		animalsData[i]['common'] = re.sub(" [(]=.*[)]", "", animalsData[i]['common'])
+		animalsData[i]['scientific'] = re.sub(" [(]=.*[)]", "", animalsData[i]['scientific'])
 
-print(len(animalsData))
-print(animalsData)
+# print(len(animalsData))
+# print(animalsData)
+
+conn = psycopg2.connect(database = "", user = "", password = "", host = "", port = "")
+print("Opened database successfully")
+
+cur = conn.cursor()
+
+# for i in range(0, 10):
+# 	animal = animalsData[i]
+# 	cur.execute("INSERT INTO TEST (ID, COM, SCI, STATUS, LDATE, AGROUP, DPS, AQUATIC, BCC, STATES, PLAN) VALUES (" + str(animal['id']) +
+# 		", '" + animal['common'] + "', '" + animal['scientific'] + "', '" + animal['status'] + "', '" + animal['date'] + "', '" + animal['group'] + "', " + str(animal['dps']) + ", " + str(animal['aquatic']) + ", " + 
+# 		str(animal['bcc']) + ", '" + animal['states'] + "', '" + animal['plan'] + "')")
+# conn.commit()
+# print("Records created successfully")
+
+cur.execute("SELECT * from TEST")
+rows = cur.fetchall()
+for row in rows:
+	print(row)
+print("Operation done successfully")
+
+conn.close()
