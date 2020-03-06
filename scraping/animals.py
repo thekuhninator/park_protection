@@ -64,8 +64,8 @@ for i in range(len(animalsData) - 1, -1, -1):
 		animalsData[i]['common'] = re.sub(" [(]=.*[)]", "", animalsData[i]['common'])
 		animalsData[i]['scientific'] = re.sub(" [(]=.*[)]", "", animalsData[i]['scientific'])
 
-# print(len(animalsData))
-# print(animalsData)
+print(len(animalsData))
+print(animalsData)
 
 # conn = psycopg2.connect(database = "", user = "", password = "", host = "", port = "")
 # print("Opened database successfully")
