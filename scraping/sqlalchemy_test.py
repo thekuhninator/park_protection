@@ -47,40 +47,46 @@ load_dotenv()
 
 
 
-engine = create_engine('postgresql://' + os.getenv('DB_USER') + ':' + os.getenv('DB_PASS') + '@' + os.getenv('DB_HOST') + ':' + os.getenv('DB_PORT') + '/' + os.getenv('DB_NAME'), echo=True)
+# engine = create_engine('postgresql://' + os.getenv('DB_USER') + ':' + os.getenv('DB_PASS') + '@' + os.getenv('DB_HOST') + ':' + os.getenv('DB_PORT') + '/' + os.getenv('DB_NAME'), echo=True)
 
-print('postgresql://' + os.getenv('DB_USER') + ':' + os.getenv('DB_PASS') + '@' + os.getenv('DB_HOST') + ':' + os.getenv('DB_PORT') + '/' + os.getenv('DB_NAME'))
+engine = create_engine('sqlite:///:memory:', echo=True)
 
 Base = declarative_base()
-class Test(Base):
-	__tablename__ = "test"
+
+class Animal(Base):
+	__tablename__ = 'animals'
 
 	id = Column(Integer, primary_key=True)
-	com = Column(String)
-	sci = Column(String)
+	com_name = Column(String)
+	sci_name = Column(String)
 	status = Column(String)
-	ldate = Column(String)
-	agroup = Column(String)
+	list_date = Column(String)
+	tax_group = Column(String)
 	dps = Column(Boolean)
 	aquatic = Column(Boolean)
 	bcc = Column(Boolean)
-	states = Column(String)
 	plan = Column(String)
+	image = Column(String)
+
+	states = relationship("AnimalState", back_populates="animal", cascade="all, delete, delete-orphan")
 
 	def __repr__(self):
-		return "TestInst: id=%d,com=%s,sci=%s,status=%s,ldate=%s,agroup=%s,dps=%r,aquatic=%r,bcc=%r,states=%s,plan=%s" % \
-		(self.id, self.com, self.sci, self.status, self.ldate, self.agroup, self.dps, self.aquatic, self.bcc, self.states, self.plan)
+		return "<Animal(id=%d, com=%s, sci=%s, status=%s, date=%s, group=%s, dps=%r, aquatic=%r, bcc=%r, plan=%s, image=%s)>" % \
+		(self.id, self.com_name, self.sci_name, self.status, self.list_date, self.tax_group, self.dps, self.aquatic, self.bcc, self.plan, self.image)
+
+class AnimalState(Base):
+	__tablename__ = 'animal_states'
+
+	id = Column(Integer, primary_key=True)
+	name = Column(String, nullable=False)
+	animal_id = Column(Integer, ForeignKey('animals.id'))
+
+	animal = relationship("Animal", back_populates="states")
+
+	def __repr__(self):
+		return "<State(name=%s)>" % self.name
 
 Base.metadata.create_all(engine)
+
 Session = sessionmaker(bind=engine)
 session = Session()
-
-
-caq = session.query(Test).filter_by(states="HI").first()
-
-print(caq)
-
-
-
-
-
