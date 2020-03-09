@@ -21,7 +21,7 @@ class Parks extends Component {
 	state = {
 		parkList: [tempPark, tempPark, tempPark, tempPark, tempPark, tempPark, tempPark, tempPark, tempPark],
         page: 1,
-        lastPageNum: 3//,
+        lastPageNum: 20//,
         //api: ""
 	};
 
@@ -34,25 +34,29 @@ class Parks extends Component {
 
 		for(; i < 3; ++i) {
 			let parkInstances = [];
-			for(j = 0; (j < 3) && ((i * 3 + j) < deckSize); ++j) {
+			for(j = 0; (j < 3); ++j) {
+                // if((i * 3 + j) < deckSize)
+                    // break;
 				var index = i * 3 + j;
+                var source = this.state.parkList[index];
 				parkInstances.push (
 					<Card>
-						<Nav.Link as={ Link } to={this.state.parkList[index].parkLink}>
+						<Nav.Link as={ Link } to={"/Parks/GrandCanyon"+index}>
 						    <div>
-							    <Card.Img variant="top" src={this.state.parkList[index].parkImage}/>
+							    <Card.Img variant="top" src={source.parkImage}/>
 							    <Card.Body>
-							    	<Card.Title>{this.state.parkList[index].parkName}</Card.Title>
-							    	<Card.Text>{this.state.parkList[index].parkDesignation}</Card.Text>
-							    	<Card.Text>{this.state.parkList[index].parkWebsite}</Card.Text>
-							    	<Card.Text>{this.state.parkList[index].parkPhoneNumber}</Card.Text>
-							    	<Card.Text>{this.state.parkList[index].parkStates}</Card.Text>
+							    	<Card.Title>{source.parkName}</Card.Title>
+							    	<Card.Text>{source.parkDesignation}</Card.Text>
+							    	<Card.Text>{(this.state.page)*9-8+j+i*3}</Card.Text>
+							    	<Card.Text>{source.parkPhoneNumber}</Card.Text>
+							    	<Card.Text>{source.parkStates}</Card.Text>
 							    </Card.Body>
 							</div>
 				    	</Nav.Link>
 				    </Card>
 				)
 			}
+            parkDeck.push(<br></br>)
 			parkDeck.push(<Row>{parkInstances}</Row>)
 		}
 		//var assert = require('assert');
@@ -93,12 +97,12 @@ class Parks extends Component {
 	}
 
 	fillParkList(pageNum) {
-		var startNum = pageNum * 9;
+		var startNum = (pageNum - 1)* 9;
 		var endNum = startNum + 9;
-		let parks = [];
+		let parksList = [];
 
-		for(; startNum < endNum; ++startNum) {
-			let park = { 
+		// for(; startNum < endNum; ++startNum) {
+			let park0 = { 
 				parkLink : "/Parks/GrandCanyon",
 				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
 				parkName : startNum,
@@ -107,9 +111,106 @@ class Parks extends Component {
 				parkPhoneNumber : startNum,
 				parkStates : startNum
 			}
-			parks.push({park})
-		}
-		this.state.parkList = parks;
+			parksList.push(park0)
+            startNum++;
+            
+            let park1 = { 
+				parkLink : "/Parks/GrandCanyon",
+				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
+				parkName : startNum,
+				parkDesignation : startNum,
+				parkWebsite : startNum,
+				parkPhoneNumber : startNum,
+				parkStates : startNum
+			}
+			parksList.push(park1)
+            startNum++;
+            
+            let park2 = { 
+				parkLink : "/Parks/GrandCanyon",
+				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
+				parkName : startNum,
+				parkDesignation : startNum,
+				parkWebsite : startNum,
+				parkPhoneNumber : startNum,
+				parkStates : startNum
+			}
+			parksList.push(park2)
+            startNum++;
+            
+            let park3 = { 
+				parkLink : "/Parks/GrandCanyon",
+				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
+				parkName : startNum,
+				parkDesignation : startNum,
+				parkWebsite : startNum,
+				parkPhoneNumber : startNum,
+				parkStates : startNum
+			}
+			parksList.push(park3)
+            startNum++;
+            
+            let park4 = { 
+				parkLink : "/Parks/GrandCanyon",
+				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
+				parkName : startNum,
+				parkDesignation : startNum,
+				parkWebsite : startNum,
+				parkPhoneNumber : startNum,
+				parkStates : startNum
+			}
+			parksList.push(park4)
+            startNum++;
+            
+            let park5 = { 
+				parkLink : "/Parks/GrandCanyon",
+				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
+				parkName : startNum,
+				parkDesignation : startNum,
+				parkWebsite : startNum,
+				parkPhoneNumber : startNum,
+				parkStates : startNum
+			}
+			parksList.push(park5)
+            startNum++;
+
+            let park6 = { 
+				parkLink : "/Parks/GrandCanyon",
+				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
+				parkName : startNum,
+				parkDesignation : startNum,
+				parkWebsite : startNum,
+				parkPhoneNumber : startNum,
+				parkStates : startNum
+			}
+			parksList.push(park6)
+            startNum++;
+            
+            let park7 = { 
+				parkLink : "/Parks/GrandCanyon",
+				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
+				parkName : startNum,
+				parkDesignation : startNum,
+				parkWebsite : startNum,
+				parkPhoneNumber : startNum,
+				parkStates : startNum
+			}
+			parksList.push(park7)
+            startNum++;
+            
+            let park8 = { 
+				parkLink : "/Parks/GrandCanyon",
+				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
+				parkName : startNum,
+				parkDesignation : startNum,
+				parkWebsite : startNum,
+				parkPhoneNumber : startNum,
+				parkStates : startNum
+			}
+			parksList.push(park8)
+            startNum++;
+		// }
+		this.state.parkList = parksList;
 		//var assert = require('assert');
 		//assert(parks.length == 0);
 	}
@@ -121,9 +222,9 @@ class Parks extends Component {
 				<CardDeck>
 					{this.makeCardDeck()}
 				</CardDeck>
-				<div className = 'row d-flex justify-content-center'>
+				<Container className = 'd-flex justify-content-center'>
 					{this.createPaginationBar()}
-				</div>
+				</Container>
 			</Container>
 		);
 	}
