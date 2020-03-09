@@ -107,7 +107,7 @@ for i in range(len(animalsList) - 1, -1, -1):
 	else:
 		if animalsList[i]['plan'] is None:
 			animalsList[i]['plan'] = "None"
-		animalsList[i]['com_name'] = re.sub(" [(]=.*[)]", "", animalsList[i]['com_name'])
+		animalsList[i]['com_name'] = re.sub(" [(]=.*[)]", "", animalsList[i]['com_name']).title()
 		animalsList[i]['sci_name'] = re.sub(" [(]=.*[)]", "", animalsList[i]['sci_name'])
 
 # fetch images; only run if necessary, costs credits
@@ -116,14 +116,14 @@ endpoint = "https://park-protection-image-search.cognitiveservices.azure.com/bin
 headers = {"Ocp-Apim-Subscription-Key" : os.getenv("IMAGES_KEY")}
 
 # later change to full length
-for i in range(0, 10):
+for i in range(10, -1, -1):
 	print("image request for i=%d" % (i))
 	r = requests.get(endpoint + animalsList[i]["com_name"], headers=headers)
 	rawData = r.json()
 	if "value" in rawData and len(rawData["value"]) > 0:
 		animalsList[i]["image"] = rawData["value"][0]["contentUrl"]
 	else:
-		animalsList[i]["image"] = None
+		del animalsList[i]
 	print("image succeeded for i=%d" % (i))
 
 with open("animals.json", "w") as outfile:
