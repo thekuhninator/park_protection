@@ -1,13 +1,17 @@
 from flask import Flask
 from flask_restless import APIManager
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS, cross_origin
 import os
 from dotenv import load_dotenv
+
 
 # Load environemnt variables
 load_dotenv()
 # Create the Flask application and the Flask-SQLAlchemy object.
 application = Flask(__name__)
+cors = CORS(application)
+application.config['CORS_HEADERS'] = 'Content-Type'
 
 # application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///memory'
 application.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://' + os.environ['DB_USER'] + ':' + os.environ['DB_PASS'] + '@' + os.environ['DB_HOST'] + ':' + os.environ['DB_PORT'] + '/' + os.environ['DB_NAME']
@@ -82,8 +86,14 @@ class ParkStates(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Unicode)
     park_code = db.Column(db.Unicode, db.ForeignKey('parks.code'))
-
     park = db.relationship(Parks, backref=db.backref("states"))
+
+def add_cors_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = 'example.com'
+    response.headers['Access-Control-Allow-Credentials'] = 'true'
+    # Set whatever other headers you like...
+    return response
+
 
 # Create the database tables.
 db.create_all()
@@ -93,14 +103,25 @@ manager = APIManager(application, flask_sqlalchemy_db=db)
 
 # Create API endpoints, which will be available at /api/<tablename> by
 # default. Allowed HTTP methods can be specified as well.
-manager.create_api(Animals, methods=['GET'])
-manager.create_api(Plants, methods=['GET'])
-manager.create_api(Parks, methods=['GET'])
+animals_blueprint = manager.create_api(Animals, methods=['GET'])
+plants_blueprint = manager.create_api(Plants, methods=['GET'])
+parks_blueprint = manager.create_api(Parks, methods=['GET'])
+
+'''
+# add the cors header
+animals_blueprint.after_request(add_cors_headers)
+plants_blueprint.after_request(add_cors_headers)
+parks_blueprint.after_request(add_cors_headers)
+
+application.register_blueprint(animals_blueprint)
+application.register_blueprint(plants_blueprint)
+application.register_blueprint(parks_blueprint)
+'''
 
 @application.route('/')
+@cross_origin()
 def index():
     return "Available endpoints: /api/animals /api/plants /api/parks"
 
 # start the flask loop
 application.run()
-
