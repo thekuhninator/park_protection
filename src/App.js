@@ -17,6 +17,7 @@ import Zion from './ParkInstancePages/Zion';
 import AleutianHollyFern from './PlantInstancePages/AleutianHollyFern';
 import AmargosaNiterwort from './PlantInstancePages/AmargosaNiterwort';
 import PricklyApplecactus from './PlantInstancePages/PricklyApplecactus';
+import PlantInstance from './PlantInstancePages/PlantInstance';
 import { Link } from 'react-router-dom';
 
 
@@ -43,6 +44,7 @@ class App extends Component {
             <Route path="/Plants/AleutianHollyFern" component={AleutianHollyFern} />
             <Route path="/Plants/AmargosaNiterwort" component={AmargosaNiterwort} />
             <Route path="/Plants/PricklyApplecactus" component={PricklyApplecactus} />
+            <Route path="/Plants/:id" component={PlantInstance} />
             <Route path="/About" component={About} />
             <Route path="/Parks" component={Parks} />
             <Route path="/Animals" component={Animals} />
