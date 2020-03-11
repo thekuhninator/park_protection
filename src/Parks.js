@@ -19,7 +19,7 @@ const tempPark = {
 			};
 class Parks extends Component {
 	state = {
-		parkList: [tempPark, tempPark, tempPark, tempPark, tempPark, tempPark, tempPark, tempPark, tempPark],
+		parkList: [],
         page: 1,
         lastPageNum: 20//,
         //api: ""
@@ -35,8 +35,8 @@ class Parks extends Component {
 		for(; i < 3; ++i) {
 			let parkInstances = [];
 			for(j = 0; (j < 3); ++j) {
-                // if((i * 3 + j) < deckSize)
-                    // break;
+                if(!((i * 3 + j) < deckSize))
+                    break;
 				var index = i * 3 + j;
                 var source = this.state.parkList[index];
 				parkInstances.push (
@@ -81,11 +81,17 @@ class Parks extends Component {
 			paginationBar.push(
 				<Pagination.Prev onClick={(e) => {this.generateNewPage(e, pageNum - 1)}}/>
 			)
+            paginationBar.push(
+            <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum-1)}}>{pageNum-1}</Pagination.Item>
+            )
 		}
 		paginationBar.push(
 			<Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum)}}>{pageNum}</Pagination.Item>
 		)
-		if(pageNum != this.state.lastPage) {
+		if(pageNum != this.state.lastPageNum) {
+            paginationBar.push(
+                <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum+1)}}>{pageNum+1}</Pagination.Item>
+            )
 			paginationBar.push(
 				<Pagination.Next onClick={(e) => {this.generateNewPage(e, pageNum + 1)}}/>
 			)
@@ -93,6 +99,7 @@ class Parks extends Component {
 				<Pagination.Last onClick={(e) => {this.generateNewPage(e, this.state.lastPageNum)}}/>
 			)
 		}
+        
 		return paginationBar;
 	}
 
@@ -101,7 +108,7 @@ class Parks extends Component {
 		var endNum = startNum + 9;
 		let parksList = [];
 
-		// for(; startNum < endNum; ++startNum) {
+		 for(; startNum < endNum; ++startNum) {
 			let park0 = { 
 				parkLink : "/Parks/GrandCanyon",
 				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
@@ -209,7 +216,7 @@ class Parks extends Component {
 			}
 			parksList.push(park8)
             startNum++;
-		// }
+		}
 		this.state.parkList = parksList;
 		//var assert = require('assert');
 		//assert(parks.length == 0);
@@ -222,9 +229,10 @@ class Parks extends Component {
 				<CardDeck>
 					{this.makeCardDeck()}
 				</CardDeck>
-				<Container className = 'd-flex justify-content-center'>
+                <br></br>
+				<Pagination className = 'justify-content-center'>
 					{this.createPaginationBar()}
-				</Container>
+				</Pagination>
 			</Container>
 		);
 	}
