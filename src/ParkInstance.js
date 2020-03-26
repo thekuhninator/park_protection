@@ -65,7 +65,7 @@ class ParkInstance extends React.Component {
 
 	componentDidMount() {
 		fetch(
-          "http://127.0.0.1:5000/api/parks/".concat(this.props.match.params.code)
+          "http://api.parkprotection.me/api/parks/".concat(this.props.match.params.code)
       	)
 		.then((response) => response.json())
 		.then((data) => {
