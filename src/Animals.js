@@ -108,8 +108,130 @@ const Text = styled('div')`
 	color: black;
 `
 
-function Animals() {
-	return (
+class Animals extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			animalList: [],
+	        page: 1,
+	        lastPageNum: 88
+		};
+	}
+
+	componentDidMount() {
+		this.fillanimalList(1)
+	}
+
+	makeCardDeck(){
+
+		let animalDeck = [];
+		var deckSize = this.state.animalList.length;
+		var i = 0;
+		var j = 0;
+
+		for(; i < 3; ++i) {
+			let animalInstances = [];
+			for(j = 0; (j < 3); ++j) {
+                if(!((i * 3 + j) < deckSize))
+                    break;
+				var index = i * 3 + j;
+                var source = this.state.animalList[index];
+				animalInstances.push (
+					<Card>
+						<Nav.Link as={ Link } to={{pathname: "/Animals/" + source.id, state: {id: source.id}}}>
+						    <Text>
+							    <Card.Img variant="top" src={source.image}/>
+							    <Card.Body>
+							    	<Card.Title>{source.com_name}</Card.Title>
+							    	<Card.Text>{source.sci_name}</Card.Text>
+							    	<Card.Text>{source.tax_group}</Card.Text>
+							    	<Card.Text>{source.status}</Card.Text>
+							    	<Card.Text>{source.states}</Card.Text>
+							    </Card.Body>
+							</Text>
+				    	</Nav.Link>
+				    </Card>
+				)
+			}
+            animalDeck.push(<br></br>)
+			animalDeck.push(<Row>{animalInstances}</Row>)
+		}
+		// var assert = require('assert');
+		// assert(deckSize == 0);
+		return animalDeck;
+	}
+
+	generateNewPage(event, pageNum) {
+		this.state.page = pageNum;
+		this.fillanimalList(this.state.page)
+		window.scrollTo(0, 0);
+	}
+
+	createPaginationBar = () => {
+		let paginationBar = [];
+		var pageNum = this.state.page;
+		if(pageNum != 1) {
+			paginationBar.push(
+				<Pagination.First onClick={(e) => {this.generateNewPage(e, 1)}}/>
+			)
+			paginationBar.push(
+				<Pagination.Prev onClick={(e) => {this.generateNewPage(e, pageNum - 1)}}/>
+			)
+            paginationBar.push(
+            <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum-1)}}>{pageNum-1}</Pagination.Item>
+            )
+		}
+		paginationBar.push(
+			<Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum)}}>{pageNum}</Pagination.Item>
+		)
+		if(pageNum != this.state.lastPageNum) {
+            paginationBar.push(
+                <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum+1)}}>{pageNum+1}</Pagination.Item>
+            )
+			paginationBar.push(
+				<Pagination.Next onClick={(e) => {this.generateNewPage(e, pageNum + 1)}}/>
+			)
+			paginationBar.push(
+				<Pagination.Last onClick={(e) => {this.generateNewPage(e, this.state.lastPageNum)}}/>
+			)
+		}
+        
+		return paginationBar;
+	}
+
+	fillanimalList(pageNum) {
+		fetch(
+          "http://api.parkprotection.me/api/animals?results_per_page=9&page=".concat(this.state.page)
+      )
+          .then((response) => response.json())
+          .then((data) => {
+              console.log('FETCHED PLANTS');
+              let animalList = [];
+              for (const i in data.objects) {
+              	const animalParsed = {
+              		id : data.objects[i].id,
+              		image : data.objects[i].image,
+              		com_name : data.objects[i].com_name,
+              		sci_name : data.objects[i].sci_name,
+              		tax_group : data.objects[i].tax_group,
+              		status : data.objects[i].status,
+              		states : data.objects[i].states.map((state) => state.name).join(", "),
+              	}
+                animalList.push(animalParsed)
+              }
+              // var assert = require('assert');
+                // assert(animalList == 9);
+              this.setState({ animalList : animalList});
+          })
+          .catch((e) => {
+              console.log('Error');
+              console.log(e);
+              this.setState({ animalList : []});
+          });
+	}
+
+	render() {
+		return (
 			<Container>
 				<br/>
 				<Row>
@@ -140,70 +262,17 @@ function Animals() {
 						<States />
 					</Col>
 				</Row>
-				<br/><br/>
-		    	<CardDeck className="text-center">
-			  	<Card>
-              <Link to = {{
-  			  								pathname : "/AnimalPage/AbbotsBooby",
-  			  								state : state}}>
-                <Text>
-    			  			<Card.Img variant="top" src="https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg"/>
-    			    		<Card.Body>
-    			      			<Card.Title>Abbott's Booby</Card.Title>
-    			      			<Card.Text><ItalicText>Papasula abbotti</ItalicText></Card.Text>
-    			      			<Card.Text>Endangered</Card.Text>
-    			      			<Card.Text>Birds</Card.Text>
-    			      			<Card.Text>Not found in the US</Card.Text>
-    			    		</Card.Body>
-  		    		  </Text>
-              </Link>
-          </Card>
-					<Card>
-            <Link to = {{
-                      pathname : "/AnimalPage",
-                      state : state2}}>
-              <Text>
-    						<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cyclura_rileyi_nuchalis_Exumas_1997_c_W_K_Hayes.jpg" />
-    						<Card.Body>
-    							<Card.Title>Acklins Ground Iguana</Card.Title>
-    							<Card.Text><ItalicText>Cyclura rileyi nuchalis</ItalicText></Card.Text>
-    			      			<Card.Text>Threatened</Card.Text>
-    			      			<Card.Text>Reptiles</Card.Text>
-    			      			<Card.Text>Not found in the US</Card.Text>
-    						</Card.Body>
-  					  </Text>
-            </Link>
-          </Card>
-					<Card>
-            <Link to = {{
-                        pathname : "/AnimalPage",
-                        state : state3}}>
-              <Text>
-    						<Card.Img variant="top" src="https://download.ams.birds.cornell.edu/api/v1/asset/96716321/1800" />
-    					 	<Card.Body>
-    							<Card.Title>Akiapolaau</Card.Title>
-    							<Card.Text><ItalicText>Hemignathus wilsoni</ItalicText></Card.Text>
-    			      			<Card.Text>Threatened</Card.Text>
-    			      			<Card.Text>Birds</Card.Text>
-    			      			<Card.Text>HI</Card.Text>
-    					 	</Card.Body>
-  					  </Text>
-            </Link>
-          </Card>
+
+				<CardDeck className="text-center">
+					{this.makeCardDeck()}
 				</CardDeck>
-
-				<br/>
-				<Pagination
-					style={{ justifyContent: 'center' }}>
-					<Pagination.First />
-					<Pagination.Prev />
-					<Pagination.Item active>{1}</Pagination.Item>
-					<Pagination.Next />
-					<Pagination.Last />
+                <br></br>
+				<Pagination className = 'justify-content-center'>
+					{this.createPaginationBar()}
 				</Pagination>
-
-		    </Container>
-  	);
+			</Container>
+		);
+	}
 }
 
 export default Animals;

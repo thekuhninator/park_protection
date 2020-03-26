@@ -72,7 +72,7 @@ class Plants extends React.Component {
 		this.state = {
 			plantList: [],
 	        page: 1,
-	        lastPageNum: 48
+	        lastPageNum: 88
 		};
 	}
 
@@ -159,7 +159,7 @@ class Plants extends React.Component {
 
 	fillplantList(pageNum) {
 		fetch(
-          "http://127.0.0.1:5000/api/plants?results_per_page=9&page=".concat(this.state.page)
+          "http://api.parkprotection.me/api/plants?results_per_page=9&page=".concat(this.state.page)
       )
           .then((response) => response.json())
           .then((data) => {
