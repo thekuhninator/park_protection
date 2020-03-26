@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './About';
 import Home from './Home';
 import Parks from './Parks';
+import ParkInstance from './ParkInstance'
 import Animals from './Animals';
 import Plants from './Plants';
 import AnimalPage from './AnimalInstancePages/AnimalPage';
@@ -18,7 +19,6 @@ import AleutianHollyFern from './PlantInstancePages/AleutianHollyFern';
 import AmargosaNiterwort from './PlantInstancePages/AmargosaNiterwort';
 import PricklyApplecactus from './PlantInstancePages/PricklyApplecactus';
 import { Link } from 'react-router-dom';
-
 
 class App extends Component {
   render() {
@@ -37,14 +37,12 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/AnimalPage" component={AnimalPage} />
-            <Route path="/Parks/GrandCanyon" component={GrandCanyon} />
-            <Route path="/Parks/Yellowstone" component={Yellowstone} />
-            <Route path="/Parks/Zion" component={Zion} />
             <Route path="/Plants/AleutianHollyFern" component={AleutianHollyFern} />
             <Route path="/Plants/AmargosaNiterwort" component={AmargosaNiterwort} />
             <Route path="/Plants/PricklyApplecactus" component={PricklyApplecactus} />
             <Route path="/About" component={About} />
-            <Route path="/Parks" component={Parks} />
+            <Route exact path="/Parks" component={Parks} />
+            <Route path="/Parks/:code" component={ParkInstance} />
             <Route path="/Animals" component={Animals} />
             <Route path="/Plants" component={Plants} />
           </Switch>
