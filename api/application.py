@@ -101,6 +101,13 @@ manager.create_api(Parks, methods=['GET'])
 def index():
     return "Available endpoints: /api/animals /api/plants /api/parks"
 
+def add_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Credentials'] = 'true'
+    return response
+    
+application.after_request(add_headers)
+
 # start the flask loop
 application.run()
 
