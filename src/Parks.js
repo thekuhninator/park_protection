@@ -109,7 +109,7 @@ class Parks extends React.Component {
 				)
 			}
             parkDeck.push(<br></br>)
-			parkDeck.push(<CardDeck className="text-center">{parkInstances}</CardDeck>)
+			parkDeck.push(<Row>{parkInstances}</Row>)
 		}
 		//var assert = require('assert');
 		//assert(deckSize == 9);
@@ -129,23 +129,33 @@ class Parks extends React.Component {
 			paginationBar.push(
 				<Pagination.First onClick={(e) => {this.generateNewPage(e, 1)}}/>
 			)
-			paginationBar.push(
-				<Pagination.Prev onClick={(e) => {this.generateNewPage(e, pageNum - 1)}}/>
-			)
+			// paginationBar.push(
+				// <Pagination.Prev onClick={(e) => {this.generateNewPage(e, pageNum - 1)}}/>
+			// )
+            if(pageNum != 2){
+                paginationBar.push(
+                    <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum-2)}}>{pageNum-2}</Pagination.Item>
+                )
+            }
             paginationBar.push(
             <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum-1)}}>{pageNum-1}</Pagination.Item>
             )
 		}
 		paginationBar.push(
-			<Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum)}}>{pageNum}</Pagination.Item>
+			<Pagination.Item active onClick={(e) => {this.generateNewPage(e, pageNum)}}>{pageNum}</Pagination.Item>
 		)
 		if(pageNum != this.state.lastPageNum) {
             paginationBar.push(
                 <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum+1)}}>{pageNum+1}</Pagination.Item>
             )
-			paginationBar.push(
-				<Pagination.Next onClick={(e) => {this.generateNewPage(e, pageNum + 1)}}/>
-			)
+			if(pageNum != this.state.lastPageNum - 1){
+                paginationBar.push(
+                    <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum+2)}}>{pageNum+2}</Pagination.Item>
+                )
+            }
+            // paginationBar.push(
+				// <Pagination.Next onClick={(e) => {this.generateNewPage(e, pageNum + 1)}}/>
+			// )
 			paginationBar.push(
 				<Pagination.Last onClick={(e) => {this.generateNewPage(e, this.state.lastPageNum)}}/>
 			)
@@ -216,7 +226,9 @@ class Parks extends React.Component {
 					</Col>
 				</Row>
 
-				{this.makeCardDeck()}
+				<CardDeck className="text-center">
+					{this.makeCardDeck()}
+				</CardDeck>
                 <br></br>
 				<Pagination className = 'justify-content-center'>
 					{this.createPaginationBar()}
