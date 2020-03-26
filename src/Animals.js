@@ -114,7 +114,7 @@ class Animals extends React.Component {
 		this.state = {
 			animalList: [],
 	        page: 1,
-	        lastPageNum: 88
+	        lastPageNum: 73
 		};
 	}
 
