@@ -1,20 +1,18 @@
 import React, {Component} from 'react';
-import logo from './logo.png';
 import './App.css';
+import Pagination from 'react-bootstrap/Pagination';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
+import { Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
+import styled from 'styled-components';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Pagination from 'react-bootstrap/Pagination';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 import Select from 'react-select';
-import { Nav } from 'react-bootstrap';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const common = [
   { value: 'asc', label: 'Ascending' },
@@ -68,8 +66,130 @@ const Text = styled('div')`
 	color: black;
 `
 
-function Plants() {
-	return (
+class Plants extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			plantList: [],
+	        page: 1,
+	        lastPageNum: 48
+		};
+	}
+
+	componentDidMount() {
+		this.fillplantList(1)
+	}
+
+	makeCardDeck(){
+
+		let plantDeck = [];
+		var deckSize = this.state.plantList.length;
+		var i = 0;
+		var j = 0;
+
+		for(; i < 3; ++i) {
+			let plantInstances = [];
+			for(j = 0; (j < 3); ++j) {
+                if(!((i * 3 + j) < deckSize))
+                    break;
+				var index = i * 3 + j;
+                var source = this.state.plantList[index];
+				plantInstances.push (
+					<Card>
+						<Nav.Link as={ Link } to={{pathname: "/Plants/" + source.id, state: {id: source.id}}}>
+						    <Text>
+							    <Card.Img variant="top" src={source.image}/>
+							    <Card.Body>
+							    	<Card.Title>{source.com_name}</Card.Title>
+							    	<Card.Text>{source.sci_name}</Card.Text>
+							    	<Card.Text>{source.family}</Card.Text>
+							    	<Card.Text>{source.status}</Card.Text>
+							    	<Card.Text>{source.states}</Card.Text>
+							    </Card.Body>
+							</Text>
+				    	</Nav.Link>
+				    </Card>
+				)
+			}
+            plantDeck.push(<br></br>)
+			plantDeck.push(<Row>{plantInstances}</Row>)
+		}
+		// var assert = require('assert');
+		// assert(deckSize == 0);
+		return plantDeck;
+	}
+
+	generateNewPage(event, pageNum) {
+		this.state.page = pageNum;
+		this.fillplantList(this.state.page)
+		window.scrollTo(0, 0);
+	}
+
+	createPaginationBar = () => {
+		let paginationBar = [];
+		var pageNum = this.state.page;
+		if(pageNum != 1) {
+			paginationBar.push(
+				<Pagination.First onClick={(e) => {this.generateNewPage(e, 1)}}/>
+			)
+			paginationBar.push(
+				<Pagination.Prev onClick={(e) => {this.generateNewPage(e, pageNum - 1)}}/>
+			)
+            paginationBar.push(
+            <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum-1)}}>{pageNum-1}</Pagination.Item>
+            )
+		}
+		paginationBar.push(
+			<Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum)}}>{pageNum}</Pagination.Item>
+		)
+		if(pageNum != this.state.lastPageNum) {
+            paginationBar.push(
+                <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum+1)}}>{pageNum+1}</Pagination.Item>
+            )
+			paginationBar.push(
+				<Pagination.Next onClick={(e) => {this.generateNewPage(e, pageNum + 1)}}/>
+			)
+			paginationBar.push(
+				<Pagination.Last onClick={(e) => {this.generateNewPage(e, this.state.lastPageNum)}}/>
+			)
+		}
+        
+		return paginationBar;
+	}
+
+	fillplantList(pageNum) {
+		fetch(
+          "http://127.0.0.1:5000/api/plants?results_per_page=9&page=".concat(this.state.page)
+      )
+          .then((response) => response.json())
+          .then((data) => {
+              console.log('FETCHED PLANTS');
+              let plantList = [];
+              for (const i in data.objects) {
+              	const plantParsed = {
+              		id : data.objects[i].id,
+              		image : data.objects[i].image,
+              		com_name : data.objects[i].com_name,
+              		sci_name : data.objects[i].sci_name,
+              		family : data.objects[i].family,
+              		status : data.objects[i].status,
+              		states : data.objects[i].states.map((state) => state.name).join(", "),
+              	}
+                plantList.push(plantParsed)
+              }
+              // var assert = require('assert');
+                // assert(plantList == 9);
+              this.setState({ plantList : plantList});
+          })
+          .catch((e) => {
+              console.log('Error');
+              console.log(e);
+              this.setState({ plantList : []});
+          });
+	}
+
+	render() {
+		return (
 			<Container>
 				<br/>
 				<Row>
@@ -101,52 +221,16 @@ function Plants() {
 					</Col>
 				</Row>
 
-				<br/><br/>
-		    	<CardDeck className="text-center">
-					  <Card><Nav.Link as={ Link } to="/Plants/AleutianHollyFern"><Text>
-					    <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Aleutian_Shield_Fern.jpg" />
-					    <Card.Body>
-					      	<Card.Title>Aleutian Holly Fern</Card.Title>
-					      	<Card.Text><ItalicText>Polystichum aleuticum</ItalicText></Card.Text>
-			      			<Card.Text>Endangered</Card.Text>
-			      			<Card.Text>Wood Fern</Card.Text>
-			      			<Card.Text>AK</Card.Text>
-					    </Card.Body>
-					</Text></Nav.Link></Card>
-					<Card><Nav.Link as={ Link } to="/Plants/AmargosaNiterwort"><Text>
-						<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Nitrophila_mohavensis_6.jpg" />
-					 	<Card.Body>
-							<Card.Title>Amargosa Niterwort</Card.Title>
-							<Card.Text><ItalicText>Nitrophila mohavensis</ItalicText></Card.Text>
-			      			<Card.Text>Endangered</Card.Text>
-			      			<Card.Text>Goosefoot</Card.Text>
-			      			<Card.Text>CA, NV</Card.Text>
-					 	</Card.Body>
-					</Text></Nav.Link></Card>
-					<Card><Nav.Link as={ Link } to="/Plants/PricklyApplecactus"><Text>
-			  			<Card.Img variant="top" src="https://images-na.ssl-images-amazon.com/images/I/51vxwr8lUxL._AC_SX450_.jpg"/>
-			    		<Card.Body>
-			      			<Card.Title>Prickly Applecactus</Card.Title>
-			      			<Card.Text><ItalicText>Harrisia aboriginum</ItalicText></Card.Text>
-			      			<Card.Text>Endangered</Card.Text>
-			      			<Card.Text>Cactus</Card.Text>
-			      			<Card.Text>FL</Card.Text>
-			    		</Card.Body>
-			  		</Text></Nav.Link></Card>
+				<CardDeck className="text-center">
+					{this.makeCardDeck()}
 				</CardDeck>
-
-				<br/>
-				<Pagination 
-					style={{ justifyContent: 'center' }}>
-					<Pagination.First />
-					<Pagination.Prev />
-					<Pagination.Item active>{1}</Pagination.Item>
-					<Pagination.Next />
-					<Pagination.Last />
+                <br></br>
+				<Pagination className = 'justify-content-center'>
+					{this.createPaginationBar()}
 				</Pagination>
-
-		    </Container>
-  	);
+			</Container>
+		);
+	}
 }
 
 export default Plants;
