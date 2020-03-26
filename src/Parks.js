@@ -109,7 +109,7 @@ class Parks extends React.Component {
 				)
 			}
             parkDeck.push(<br></br>)
-			parkDeck.push(<Row>{parkInstances}</Row>)
+			parkDeck.push(<CardDeck className="text-center">{parkInstances}</CardDeck>)
 		}
 		//var assert = require('assert');
 		//assert(deckSize == 9);
@@ -216,9 +216,7 @@ class Parks extends React.Component {
 					</Col>
 				</Row>
 
-				<CardDeck className="text-center">
-					{this.makeCardDeck()}
-				</CardDeck>
+				{this.makeCardDeck()}
                 <br></br>
 				<Pagination className = 'justify-content-center'>
 					{this.createPaginationBar()}

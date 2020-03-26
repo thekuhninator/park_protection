@@ -153,8 +153,8 @@ class Animals extends React.Component {
 				    </Card>
 				)
 			}
-            animalDeck.push(<br></br>)
-			animalDeck.push(<Row>{animalInstances}</Row>)
+      animalDeck.push(<br></br>)
+			animalDeck.push(<CardDeck className="text-center">{animalInstances}</CardDeck>)
 		}
 		// var assert = require('assert');
 		// assert(deckSize == 0);
@@ -263,10 +263,8 @@ class Animals extends React.Component {
 					</Col>
 				</Row>
 
-				<CardDeck className="text-center">
-					{this.makeCardDeck()}
-				</CardDeck>
-                <br></br>
+				{this.makeCardDeck()}
+        <br></br>
 				<Pagination className = 'justify-content-center'>
 					{this.createPaginationBar()}
 				</Pagination>
