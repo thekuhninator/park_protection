@@ -7,23 +7,75 @@ import CardDeck from 'react-bootstrap/CardDeck';
 import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
+import styled from 'styled-components';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Select from 'react-select';
+import ListGroup from 'react-bootstrap/ListGroup';
 
-const tempPark = { 
-				parkLink : "/Parks/GrandCanyon",
-				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
-				parkName : 1,
-				parkDesignation : 1,
-				parkWebsite : 1,
-				parkPhoneNumber : 1,
-				parkStates : 1
-			};
-class Parks extends Component {
-	state = {
-		parkList: [tempPark, tempPark, tempPark, tempPark, tempPark, tempPark, tempPark, tempPark, tempPark],
-        page: 1,
-        lastPageNum: 20//,
-        //api: ""
-	};
+const name = [
+  { value: 'asc', label: 'Ascending' },
+  { value: 'des', label: 'Descending' }
+]
+
+const Name = () => (
+  <Select options={name} placeholder="Names" />
+)
+
+const email = [
+  { value: 'asc', label: 'Ascending' },
+  { value: 'des', label: 'Descending' }
+]
+
+const Email = () => (
+  <Select options={email} placeholder="Emails" />
+)
+
+const phone = [
+  { value: 'asc', label: 'Ascending' },
+  { value: 'des', label: 'Descending' }
+]
+
+const Phone = () => (
+  <Select options={phone} placeholder="Phone Numbers" />
+)
+
+const designations = [
+  { value: 'national park', label: 'National Park' },
+  { value: 'national preserve', label: 'National Preserve' }
+]
+
+const Designations = () => (
+  <Select options={designations} isMulti className="basic-multi-select" placeholder="Designation" />
+)
+
+const states = [
+	{ value: 'AZ', label: 'AZ' },
+	{ value: 'TX', label: 'TX' }
+]
+
+const States = () => (
+  <Select options={states} isMulti className="basic-multi-select" placeholder="States" />
+)
+
+const Text = styled('div')`
+	color: black;
+`
+
+class Parks extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			parkList: [],
+	        page: 1,
+	        lastPageNum: 48
+		};
+	}
+
+	componentDidMount() {
+		this.fillParkList(1)
+	}
 
 	makeCardDeck(){
 
@@ -35,23 +87,23 @@ class Parks extends Component {
 		for(; i < 3; ++i) {
 			let parkInstances = [];
 			for(j = 0; (j < 3); ++j) {
-                // if((i * 3 + j) < deckSize)
-                    // break;
+                if(!((i * 3 + j) < deckSize))
+                    break;
 				var index = i * 3 + j;
                 var source = this.state.parkList[index];
 				parkInstances.push (
 					<Card>
-						<Nav.Link as={ Link } to={"/Parks/GrandCanyon"+index}>
-						    <div>
-							    <Card.Img variant="top" src={source.parkImage}/>
+						<Nav.Link as={ Link } to={{pathname: "/Parks/" + source.code, state: {code: source.code}}}>
+						    <Text>
+							    <Card.Img variant="top" src={source.image}/>
 							    <Card.Body>
-							    	<Card.Title>{source.parkName}</Card.Title>
-							    	<Card.Text>{source.parkDesignation}</Card.Text>
-							    	<Card.Text>{(this.state.page)*9-8+j+i*3}</Card.Text>
-							    	<Card.Text>{source.parkPhoneNumber}</Card.Text>
-							    	<Card.Text>{source.parkStates}</Card.Text>
+							    	<Card.Title>{source.name}</Card.Title>
+							    	<Card.Text>{source.designation}</Card.Text>
+							    	<Card.Text>{source.email}</Card.Text>
+							    	<Card.Text>{source.phone}</Card.Text>
+							    	<Card.Text>{source.states}</Card.Text>
 							    </Card.Body>
-							</div>
+							</Text>
 				    	</Nav.Link>
 				    </Card>
 				)
@@ -65,9 +117,8 @@ class Parks extends Component {
 	}
 
 	generateNewPage(event, pageNum) {
-		this.fillParkList(pageNum);
 		this.state.page = pageNum;
-		this.setState(this.state);
+		this.fillParkList(this.state.page)
 		window.scrollTo(0, 0);
 	}
 
@@ -78,153 +129,110 @@ class Parks extends Component {
 			paginationBar.push(
 				<Pagination.First onClick={(e) => {this.generateNewPage(e, 1)}}/>
 			)
-			paginationBar.push(
-				<Pagination.Prev onClick={(e) => {this.generateNewPage(e, pageNum - 1)}}/>
-			)
+			// paginationBar.push(
+				// <Pagination.Prev onClick={(e) => {this.generateNewPage(e, pageNum - 1)}}/>
+			// )
+            if(pageNum != 2){
+                paginationBar.push(
+                    <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum-2)}}>{pageNum-2}</Pagination.Item>
+                )
+            }
+            paginationBar.push(
+            <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum-1)}}>{pageNum-1}</Pagination.Item>
+            )
 		}
 		paginationBar.push(
-			<Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum)}}>{pageNum}</Pagination.Item>
+			<Pagination.Item active onClick={(e) => {this.generateNewPage(e, pageNum)}}>{pageNum}</Pagination.Item>
 		)
-		if(pageNum != this.state.lastPage) {
-			paginationBar.push(
-				<Pagination.Next onClick={(e) => {this.generateNewPage(e, pageNum + 1)}}/>
-			)
+		if(pageNum != this.state.lastPageNum) {
+            paginationBar.push(
+                <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum+1)}}>{pageNum+1}</Pagination.Item>
+            )
+			if(pageNum != this.state.lastPageNum - 1){
+                paginationBar.push(
+                    <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum+2)}}>{pageNum+2}</Pagination.Item>
+                )
+            }
+            // paginationBar.push(
+				// <Pagination.Next onClick={(e) => {this.generateNewPage(e, pageNum + 1)}}/>
+			// )
 			paginationBar.push(
 				<Pagination.Last onClick={(e) => {this.generateNewPage(e, this.state.lastPageNum)}}/>
 			)
 		}
+        
 		return paginationBar;
 	}
 
 	fillParkList(pageNum) {
-		var startNum = (pageNum - 1)* 9;
-		var endNum = startNum + 9;
-		let parksList = [];
-
-		// for(; startNum < endNum; ++startNum) {
-			let park0 = { 
-				parkLink : "/Parks/GrandCanyon",
-				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
-				parkName : startNum,
-				parkDesignation : startNum,
-				parkWebsite : startNum,
-				parkPhoneNumber : startNum,
-				parkStates : startNum
-			}
-			parksList.push(park0)
-            startNum++;
-            
-            let park1 = { 
-				parkLink : "/Parks/GrandCanyon",
-				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
-				parkName : startNum,
-				parkDesignation : startNum,
-				parkWebsite : startNum,
-				parkPhoneNumber : startNum,
-				parkStates : startNum
-			}
-			parksList.push(park1)
-            startNum++;
-            
-            let park2 = { 
-				parkLink : "/Parks/GrandCanyon",
-				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
-				parkName : startNum,
-				parkDesignation : startNum,
-				parkWebsite : startNum,
-				parkPhoneNumber : startNum,
-				parkStates : startNum
-			}
-			parksList.push(park2)
-            startNum++;
-            
-            let park3 = { 
-				parkLink : "/Parks/GrandCanyon",
-				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
-				parkName : startNum,
-				parkDesignation : startNum,
-				parkWebsite : startNum,
-				parkPhoneNumber : startNum,
-				parkStates : startNum
-			}
-			parksList.push(park3)
-            startNum++;
-            
-            let park4 = { 
-				parkLink : "/Parks/GrandCanyon",
-				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
-				parkName : startNum,
-				parkDesignation : startNum,
-				parkWebsite : startNum,
-				parkPhoneNumber : startNum,
-				parkStates : startNum
-			}
-			parksList.push(park4)
-            startNum++;
-            
-            let park5 = { 
-				parkLink : "/Parks/GrandCanyon",
-				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
-				parkName : startNum,
-				parkDesignation : startNum,
-				parkWebsite : startNum,
-				parkPhoneNumber : startNum,
-				parkStates : startNum
-			}
-			parksList.push(park5)
-            startNum++;
-
-            let park6 = { 
-				parkLink : "/Parks/GrandCanyon",
-				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
-				parkName : startNum,
-				parkDesignation : startNum,
-				parkWebsite : startNum,
-				parkPhoneNumber : startNum,
-				parkStates : startNum
-			}
-			parksList.push(park6)
-            startNum++;
-            
-            let park7 = { 
-				parkLink : "/Parks/GrandCanyon",
-				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
-				parkName : startNum,
-				parkDesignation : startNum,
-				parkWebsite : startNum,
-				parkPhoneNumber : startNum,
-				parkStates : startNum
-			}
-			parksList.push(park7)
-            startNum++;
-            
-            let park8 = { 
-				parkLink : "/Parks/GrandCanyon",
-				parkImage : "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg",
-				parkName : startNum,
-				parkDesignation : startNum,
-				parkWebsite : startNum,
-				parkPhoneNumber : startNum,
-				parkStates : startNum
-			}
-			parksList.push(park8)
-            startNum++;
-		// }
-		this.state.parkList = parksList;
-		//var assert = require('assert');
-		//assert(parks.length == 0);
+		fetch(
+          "http://api.parkprotection.me/api/parks?results_per_page=9&page=".concat(this.state.page)
+      )
+          .then((response) => response.json())
+          .then((data) => {
+              console.log('FETCHED PARKS');
+              let parkList = [];
+              for (const i in data.objects) {
+              	const parkParsed = {
+              		code : data.objects[i].code,
+              		image : data.objects[i].images.split(" ")[0],
+              		name : data.objects[i].name,
+              		designation : data.objects[i].designation,
+              		email : data.objects[i].email,
+              		phone : data.objects[i].phone,
+              		states : data.objects[i].states.map((state) => state.name).join(", "),
+              	}
+                parkList.push(parkParsed)
+              }
+              this.setState({ parkList : parkList});
+          })
+          .catch((e) => {
+              console.log('Error');
+              console.log(e);
+              this.setState({ parkList : []});
+          });
 	}
 
 	render() {
 		return (
 			<Container>
-				{this.fillParkList(this.state.page)}
-				<CardDeck>
+				<br/>
+				<Row>
+				<Col><h1>Parks</h1><br/></Col>
+				<Col xs={{span: 3}}>
+					<Form inline>
+						<Form.Group as={Row}>
+					    	<Form.Control type="text" placeholder="Search" className="mr-sm-2" /><Button>Search</Button>
+						</Form.Group>
+					</Form>
+				</Col>
+				</Row>
+
+				<Row>
+					<Col>
+						<Name />
+					</Col>
+					<Col>
+						<Email />
+					</Col>
+					<Col>
+						<Phone />
+					</Col>
+					<Col>
+						<Designations />
+					</Col>
+					<Col>
+						<States />
+					</Col>
+				</Row>
+
+				<CardDeck className="text-center">
 					{this.makeCardDeck()}
 				</CardDeck>
-				<Container className = 'd-flex justify-content-center'>
+                <br></br>
+				<Pagination className = 'justify-content-center'>
 					{this.createPaginationBar()}
-				</Container>
+				</Pagination>
 			</Container>
 		);
 	}
