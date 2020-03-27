@@ -22,6 +22,12 @@ class GCMapWrapper extends Component {
 	}
 }
 
+// we need to put in the api key from the .env file
+
+const API_key = () => process.env.API_URL
+// MAPS_KEY=AIzaSyDicRKKkdQyyc9MfBnUasDWtPm9J5BGmJ0
+
 export default GoogleApiWrapper({
-	apiKey: ('AIzaSyAKUoq68SyMNAVtaOSLAgQRmPl8OlW54Ig')
+
+	apiKey: (process.env.REACT_APP_MAPS_KEY)
 })(GCMapWrapper);

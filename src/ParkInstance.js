@@ -87,6 +87,8 @@ class ParkInstance extends React.Component {
 				weather : data.weather
 			});
 		});
+
+
 	}
 
 	makeCarousel() {
@@ -188,7 +190,7 @@ class ParkInstance extends React.Component {
 
 					<br/>
 					&nbsp;
-					
+
 				</Container>
 
 			</div>
