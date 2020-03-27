@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Map, Marker, GoogleApiWrapper, Polygon } from 'google-maps-react';
+import PropTypes from 'prop-types';
 
 const containerStyle = {
 	position: 'relative',
@@ -9,19 +10,29 @@ const containerStyle = {
 
 class GCMapWrapper extends Component {
 	render() {
+
 		return (
 			<div>
 				<Map google={this.props.google}
 					containerStyle={containerStyle}
 					zoom={9}
-					initialCenter={{lat: 36.17280161, lng: -112.6836024}} >
-					<Marker />
+					initialCenter={{lat: this.props.latitude, lng: this.props.longitude}}
+					center={{lat: this.props.latitude, lng: this.props.longitude}}>
+					<Marker
+						position={{lat: this.props.latitude, lng: this.props.longitude}}
+					/>
 				</Map>
 			</div>
 		);
 	}
 }
 
+// proptypes
+GCMapWrapper.propTypes = {
+  latitude: PropTypes.number,
+  longitude: PropTypes.number
+};
+
 export default GoogleApiWrapper({
-	apiKey: ('AIzaSyAKUoq68SyMNAVtaOSLAgQRmPl8OlW54Ig')
+	apiKey: (process.env.REACT_APP_MAPS_KEY)
 })(GCMapWrapper);

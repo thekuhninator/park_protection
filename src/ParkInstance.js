@@ -70,7 +70,7 @@ class ParkInstance extends React.Component {
 		.then((response) => response.json())
 		.then((data) => {
 			console.log("FETCHED PARK INSTANCE")
-			console.log("code" in data)
+			console.log(data)
 			this.setState({
 				address : data.address,
 				desc : data.desc,
@@ -86,7 +86,16 @@ class ParkInstance extends React.Component {
 				url : data.url,
 				weather : data.weather
 			});
+
 		});
+		console.log('LAT AND LONG')
+		console.log(this.state)
+		console.log(this.state.latitude)
+		console.log(this.state.longitude)
+
+
+
+
 	}
 
 	makeCarousel() {
@@ -105,6 +114,8 @@ class ParkInstance extends React.Component {
 	}
 
 	render() {
+		console.log('in render')
+		console.log(this.state)
 		return (
 			<div>
 				<Jumbotron>
@@ -140,7 +151,7 @@ class ParkInstance extends React.Component {
 					<h5>{this.state.address}</h5>
 
 					<br/>
-					<GCMapWrapper />
+					<GCMapWrapper latitude={this.state.latitude} longitude={this.state.longitude}/>
 
 					<br/>
 					<div>
@@ -188,7 +199,7 @@ class ParkInstance extends React.Component {
 
 					<br/>
 					&nbsp;
-					
+
 				</Container>
 
 			</div>

@@ -21,7 +21,10 @@ import PricklyApplecactus from './PlantInstancePages/PricklyApplecactus';
 import PlantInstance from './PlantInstancePages/PlantInstance';
 import { Link } from 'react-router-dom';
 
+require('dotenv').config({path: ':../.env' })
+
 class App extends Component {
+
   render() {
     return (
       <React.Fragment>
