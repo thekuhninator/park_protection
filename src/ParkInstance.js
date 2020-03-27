@@ -88,13 +88,6 @@ class ParkInstance extends React.Component {
 			});
 
 		});
-		console.log('LAT AND LONG')
-		console.log(this.state)
-		console.log(this.state.latitude)
-		console.log(this.state.longitude)
-
-
-
 
 	}
 
