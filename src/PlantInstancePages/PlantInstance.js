@@ -64,8 +64,8 @@ class PlantInstance extends React.Component {
   				<br/><br/>
   				<InformationTable />
 
-  					<br/><br/>
-  					<RelatedEntities />
+					<br/><br/>
+					<RelatedEntities />
 
   				<br/>
   				&nbsp;
