@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 import FLMapWrapper from '../Assets/Maps/FLMapWrapper';
+import MapWrapper from '../Assets/Maps/MapWrapper';
 
 const CommonName = styled('h1')`
   color: #444444;
@@ -153,6 +154,7 @@ function PricklyApplecactus() {
 				    		</CardDeck>
 						</Col>
 					</Row>
+
 
 				<br/>
 				&nbsp;

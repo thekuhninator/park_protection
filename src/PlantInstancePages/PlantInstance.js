@@ -9,6 +9,7 @@ import * as Constants from './Constants.js';
 import InstanceHeader from './InstanceHeader.js'
 import InformationTable from './InformationTable.js'
 import RelatedEntities from './RelatedEntities.js'
+import MapWrapper from '../Assets/Maps/MapWrapper';
 
 // TODO: CONSTRUCTOR AND STUFF
 class PlantInstance extends React.Component {
@@ -16,30 +17,39 @@ class PlantInstance extends React.Component {
   {
     super(props)
     this.state = {
-      plant: {
-
-      }
+      plant: {},
+      states: []
     }
   }
   componentDidMount()
   {
+
     // let's do a fetch request for the id
     let plant_id = this.props.match.params.id
     console.log(plant_id)
 
     fetch(
-        'http://127.0.0.1:5000/api/plants/' + plant_id,  {mode: 'cors'})
+        'http://api.parkprotection.me/api/plants/' + plant_id,  {mode: 'cors'})
         .then((response) => response.json())
         .then((data) => {
+          console.log('component MOUNTED HERE IS THE DATA')
           console.log(data)
+          console.log(data.states)
+          let state_list = data.states.map(function(e) {
+            return e.name
+          })
+          console.log('mapped states')
+          console.log(state_list)
           let plant = data
-          this.setState({ plant: plant })
+          this.setState({ plant: plant, states: state_list })
+          console.log('this is the state')
           console.log(this.state)
         })
         .catch((e) => {
             console.log('Error');
             console.log(e);
         });
+
   }
 
   render() {
@@ -68,6 +78,8 @@ class PlantInstance extends React.Component {
 					<RelatedEntities />
 
   				<br/>
+          <MapWrapper key={1} states={this.state.states} />
+
   				&nbsp;
   			</Container>
 
