@@ -57,52 +57,51 @@ class PlantState(Base):
 
 Base.metadata.create_all(engine)
 
-endpoint = "https://ecos.fws.gov/ecp/pullreports/catalog/species/report/species/export"
-# scientific name, status
-plantColumns = "columns=/species@sid,sn,status,listing_date;/species/range_state@abbrev;/species/conservation_plans@plan_title"
-# prevent null = scientific name, common name, date
-# allowed null = range_state, conservation_plan
-validFilters = "filter=/species@sn != ''&filter=/species@sn is not null&filter=/species@cn != ''&filter=/species@cn is not null&filter=/species@cn != 'None'&filter=/species@listing_date is not null"
-statusFilters = "filter=/species@status = 'Endangered' or /species@status = 'Recovery' or /species@status = 'Threatened'"
-plantFilters = "filter=/species@gn = 'Conifers and Cycads' or /species@gn = 'Ferns and Allies' or /species@gn = 'Flowering Plants'"
+def plants_ecos_request():
+	endpoint = "https://ecos.fws.gov/ecp/pullreports/catalog/species/report/species/export"
+	# scientific name, status
+	plantColumns = "columns=/species@sid,sn,status,listing_date;/species/range_state@abbrev;/species/conservation_plans@plan_title"
+	# prevent null = scientific name, common name, date
+	# allowed null = range_state, conservation_plan
+	validFilters = "filter=/species@sn != ''&filter=/species@sn is not null&filter=/species@cn != ''&filter=/species@cn is not null&filter=/species@cn != 'None'&filter=/species@listing_date is not null"
+	statusFilters = "filter=/species@status = 'Endangered' or /species@status = 'Recovery' or /species@status = 'Threatened'"
+	plantFilters = "filter=/species@gn = 'Conifers and Cycads' or /species@gn = 'Ferns and Allies' or /species@gn = 'Flowering Plants'"
 
-r = requests.get(endpoint + "?" + plantColumns + "&" + validFilters + "&" + statusFilters + "&" + plantFilters)
-rawData = r.json()['data']
+	r = requests.get(endpoint + "?" + plantColumns + "&" + validFilters + "&" + statusFilters + "&" + plantFilters)
+	rawData = r.json()['data']
 
-plantsList = []
-duplicates = dict()
-for plantData in rawData:
-	id = plantData[0]
-	if id in duplicates:
-		# don't append, modify old entry - can be duplicate due to states or conservation plans
-		newState = plantData[4]
-		newPlan = plantData[5]
-		if newState is not None:
-			if plantsList[duplicates[id]]["states"] is None:
-				plantsList[duplicates[id]]["states"] = newState
-			elif newState not in plantsList[duplicates[id]]["states"]:
-				plantsList[duplicates[id]]["states"].append(newState)
-				plantsList[duplicates[id]]["states"].sort()
-		if newPlan is not None:
-			if plantsList[duplicates[id]]["plan"] is None:
-				plantsList[duplicates[id]]["plan"] = newPlan
+	plantsList = []
+	duplicates = dict()
+	for plantData in rawData:
+		id = plantData[0]
+		if id in duplicates:
+			# don't append, modify old entry - can be duplicate due to states or conservation plans
+			newState = plantData[4]
+			newPlan = plantData[5]
+			if newState is not None:
+				if plantsList[duplicates[id]]["states"] is None:
+					plantsList[duplicates[id]]["states"] = newState
+				elif newState not in plantsList[duplicates[id]]["states"]:
+					plantsList[duplicates[id]]["states"].append(newState)
+					plantsList[duplicates[id]]["states"].sort()
+			if newPlan is not None:
+				if plantsList[duplicates[id]]["plan"] is None:
+					plantsList[duplicates[id]]["plan"] = newPlan
 
-	else:
-		# append new plant's data
-		duplicates[plantData[0]] = len(plantsList)
-		plantDict = dict()
-		plantDict['id'] = plantData[0]
-		plantDict['sci_name'] = plantData[1]['value']
-		plantDict['status'] = plantData[2]
-		plantDict['list_date'] = plantData[3]
-		plantDict['states'] = list() if plantData[4] is None else [plantData[4]]
-		plantDict['plan'] = None if plantData[5] is None else plantData[5]['value']
-		plantsList.append(plantDict)
+		else:
+			# append new plant's data
+			duplicates[plantData[0]] = len(plantsList)
+			plantDict = dict()
+			plantDict['id'] = plantData[0]
+			plantDict['sci_name'] = plantData[1]['value']
+			plantDict['status'] = plantData[2]
+			plantDict['list_date'] = plantData[3]
+			plantDict['states'] = list() if plantData[4] is None else [plantData[4]]
+			plantDict['plan'] = None if plantData[5] is None else plantData[5]['value']
+			plantsList.append(plantDict)
+	return plantsList
 
-Session = sessionmaker(bind=engine)
-session = Session()
-
-def makeRequest(endpoint, plantsList, i):
+def plants_usda_request(endpoint, plantsList, i):
 	print("trying data for i=%d" % (i), flush=True)
 	try:
 		r = requests.get(endpoint)
@@ -116,10 +115,12 @@ def makeRequest(endpoint, plantsList, i):
 		del plantsList[i]
 	else:
 		plantData = result['data'][0]
-		# endpoint = "https://park-protection-image-search.cognitiveservices.azure.com/bing/v7.0/images/search?q="
-		# headers = {"Ocp-Apim-Subscription-Key" : os.getenv("IMAGES_KEY")}
-		# r = requests.get(endpoint + plantsList[i]['sci_name'], headers=headers)
-		# imageData = r.json()
+		"""
+		endpoint = "https://park-protection-image-search.cognitiveservices.azure.com/bing/v7.0/images/search?q="
+		headers = {"Ocp-Apim-Subscription-Key" : os.getenv("IMAGES_KEY")}
+		r = requests.get(endpoint + plantsList[i]['sci_name'], headers=headers)
+		imageData = r.json()
+		"""
 		# if 'value' not in imageData or len(imageData['value']) == 0 or 
 		if not plantData or plantData['Common_Name'] == "" or plantData['Family'] == "" or plantData['Family_Common_Name'] == "" or plantData['Category'] == "" or plantData['Duration'] == "" or plantData['Growth_Habit'] == "":
 			del plantsList[i]
@@ -134,52 +135,53 @@ def makeRequest(endpoint, plantsList, i):
 			# plantsList[i]["image"] = imageData['value'][0]['contentUrl']
 	print("succeeded data for i=%d" % (i), flush=True)
 
-
-endpoint = "https://plantsdb.xyz/search?limit=1"
-
 # remove invalid plants and prettify names
-for i in range(len(plantsList) - 1, -1, -1):
-	if len(plantsList[i]['states']) == 0:
-		del plantsList[i]
-	else:
-		if plantsList[i]['plan'] is None:
-			plantsList[i]['plan'] = "None"
-		plantsList[i]['sci_name'] = re.sub(" [(]=.*[)]", "", plantsList[i]['sci_name'])
-		nameSplit = plantsList[i]['sci_name'].split()
-		genus = nameSplit[0]
-		if len(nameSplit) == 1:
+def plants_pretty_parse(plantsList):
+	endpoint = "https://plantsdb.xyz/search?limit=1"
+	for i in range(len(plantsList) - 1, -1, -1):
+		if len(plantsList[i]['states']) == 0:
 			del plantsList[i]
 		else:
-			species = nameSplit[1]
-		if len(nameSplit) > 2:
-			if nameSplit[2] == "ssp." or nameSplit[2] == "subsp.":
-				ssp = nameSplit[3]
-				makeRequest(endpoint + "&Genus=" + genus + "&Species=" + species + "&Subspecies=" + ssp, plantsList, i)
-			elif nameSplit[2] == "var.":
-				var = nameSplit[3]
-				makeRequest(endpoint + "&Genus=" + genus + "&Species=" + species + "&Variety=" + var, plantsList, i)
-			else:
+			if plantsList[i]['plan'] is None:
+				plantsList[i]['plan'] = "None"
+			plantsList[i]['sci_name'] = re.sub(" [(]=.*[)]", "", plantsList[i]['sci_name'])
+			nameSplit = plantsList[i]['sci_name'].split()
+			genus = nameSplit[0]
+			if len(nameSplit) == 1:
 				del plantsList[i]
-		else:
-			makeRequest(endpoint + "&Genus=" + genus + "&Species=" + species, plantsList, i)
+			else:
+				species = nameSplit[1]
+			if len(nameSplit) > 2:
+				if nameSplit[2] == "ssp." or nameSplit[2] == "subsp.":
+					ssp = nameSplit[3]
+					plants_usda_request(endpoint + "&Genus=" + genus + "&Species=" + species + "&Subspecies=" + ssp, plantsList, i)
+				elif nameSplit[2] == "var.":
+					var = nameSplit[3]
+					plants_usda_request(endpoint + "&Genus=" + genus + "&Species=" + species + "&Variety=" + var, plantsList, i)
+				else:
+					del plantsList[i]
+			else:
+				plants_usda_request(endpoint + "&Genus=" + genus + "&Species=" + species, plantsList, i)
 
-plantsList.sort(key = lambda i: i['com_name'])
-with open("plants.json", "w") as outfile:
-	json.dump(plantsList, outfile)
+def plants_json_dump(plantsList):
+	plantsList.sort(key = lambda i: i['com_name'])
+	with open("plants.json", "w") as outfile:
+		json.dump(plantsList, outfile)
 
-for i in range(0, len(plantsList)):
-	print("trying commit for i=%d" % (i), flush=True)
-	states = []
-	for state in plantsList[i]['states']:
-		states.append(PlantState(name=state))
-	del plantsList[i]['states']
-	plant = Plant(**plantsList[i])
-	plant.states = states
-	session.add(plant)
-	session.commit()
-	print("succeeded commit for i=%d" % (i), flush=True)
 
-# 786
-print("length: " + str(len(plantsList)))
+def plants_commit_db(plantsList):
+	Session = sessionmaker(bind=engine)
+	session = Session()
+	for i in range(0, len(plantsList)):
+		print("trying commit for i=%d" % (i), flush=True)
+		states = []
+		for state in plantsList[i]['states']:
+			states.append(PlantState(name=state))
+		del plantsList[i]['states']
+		plant = Plant(**plantsList[i])
+		plant.states = states
+		session.add(plant)
+		session.commit()
+		print("succeeded commit for i=%d" % (i), flush=True)
 
 
