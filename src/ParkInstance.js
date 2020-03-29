@@ -4,6 +4,7 @@ import './App.css';
 import Container from 'react-bootstrap/Container';
 import Carousel from 'react-bootstrap/Carousel';
 import Jumbotron from 'react-bootstrap/Jumbotron';
+import Alert from 'react-bootstrap/Alert';
 import styled from 'styled-components';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -14,6 +15,7 @@ import { Nav } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
+
 
 const CarouselImage = styled('img')`
 	width: 100%;
@@ -119,6 +121,11 @@ class ParkInstance extends React.Component {
 
 				<br/>
 				<Container>
+				<Alert variant="danger">
+					COVID-19 may affect this park's hours of operation. Please contact the
+					park for details and see <a href="#" className="alert-link">this link</a> for more information on COVID-19.
+				</Alert>
+
 					<Carousel>
 						{this.makeCarousel()}
 					</Carousel>
