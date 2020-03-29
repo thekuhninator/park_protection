@@ -19,6 +19,7 @@ import AleutianHollyFern from './PlantInstancePages/AleutianHollyFern';
 import AmargosaNiterwort from './PlantInstancePages/AmargosaNiterwort';
 import PricklyApplecactus from './PlantInstancePages/PricklyApplecactus';
 import PlantInstance from './PlantInstancePages/PlantInstance';
+import NotFoundPage from './NotFoundPage'
 import { Link } from 'react-router-dom';
 
 require('dotenv').config({path: ':../.env' })
@@ -50,6 +51,7 @@ class App extends Component {
             <Route path="/Parks/:code" component={ParkInstance} />
             <Route path="/Animals" component={Animals} />
             <Route path="/Plants" component={Plants} />
+            <Route path="*" component={NotFoundPage} />
           </Switch>
         </Router>
       </React.Fragment>
