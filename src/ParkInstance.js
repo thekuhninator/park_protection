@@ -59,7 +59,19 @@ class ParkInstance extends React.Component {
 			phone : "",
 			states : "",
 			url : "",
-			weather : ""
+			weather : "",
+			rl1_id: 0,
+			rl1_img: "",
+			rl1_title: "",
+			rl2_id: 0,
+			rl2_img: "",
+			rl2_title: "",
+			rl3_id: 0,
+			rl3_img: "",
+			rl3_title: "",
+			rl4_id: 0,
+			rl4_img: "",
+			rl4_title: "",
 		};
 	}
 
@@ -70,7 +82,6 @@ class ParkInstance extends React.Component {
 		.then((response) => response.json())
 		.then((data) => {
 			console.log("FETCHED PARK INSTANCE")
-			console.log(data)
 			this.setState({
 				address : data.address,
 				desc : data.desc,
@@ -86,7 +97,36 @@ class ParkInstance extends React.Component {
 				url : data.url,
 				weather : data.weather
 			});
-
+			fetch(
+				'http://api.parkprotection.me/api/animals?q={"filters":[{"name":"states__name","op":"any","val":"'.concat(data.states[0].name).concat('"}]}')
+				)
+			.then((response) => response.json())
+			.then((animalsData) => {
+				console.log("FETCHED ANIMALS")
+				this.setState({
+					rl1_id: animalsData.objects[0].id,
+					rl1_img: animalsData.objects[0].image,
+					rl1_title: animalsData.objects[0].com_name,
+					rl2_id: animalsData.objects[1].id,
+					rl2_img: animalsData.objects[1].image,
+					rl2_title: animalsData.objects[1].com_name,
+				})
+			});
+			fetch(
+				'http://api.parkprotection.me/api/plants?q={"filters":[{"name":"states__name","op":"any","val":"'.concat(data.states[0].name).concat('"}]}')
+				)
+			.then((response) => response.json())
+			.then((plantsData) => {
+				console.log("FETCHED PLANTS")
+				this.setState({
+					rl3_id: plantsData.objects[0].id,
+					rl3_img: plantsData.objects[0].image,
+					rl3_title: plantsData.objects[0].com_name,
+					rl4_id: plantsData.objects[1].id,
+					rl4_img: plantsData.objects[1].image,
+					rl4_title: plantsData.objects[1].com_name,
+				})
+			});
 		});
 
 	}
@@ -150,39 +190,39 @@ class ParkInstance extends React.Component {
 					<div>
 						<Row>
 							<Col className="text-center">
-								<h4>Related Plants</h4>
+								<h4>Related Animals</h4>
 
 								<br/>
 								<CardDeck className="text-center">
-									<Card><Nav.Link as={ Link } to="/Plants/AleutianHollyFern"><Text>
-									    <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Aleutian_Shield_Fern.jpg" />
+									<Card><Nav.Link as={ Link } to={"/Animals/" + this.state.rl1_id}><Text>
+									    <Card.Img variant="top" src={this.state.rl1_img} />
 									    <Card.Body>
-									      	<Card.Title>Aleutian Holly Fern</Card.Title>
+									      	<Card.Title>{this.state.rl1_title}</Card.Title>
 									    </Card.Body>
 									</Text></Nav.Link></Card>
-						    		<Card><Nav.Link as={ Link } to="/Plants/AmargosaNiterwort"><Text>
-										<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Nitrophila_mohavensis_6.jpg" />
+						    		<Card><Nav.Link as={ Link } to={"/Animals/" + this.state.rl2_id}><Text>
+										<Card.Img variant="top" src={this.state.rl2_img} />
 									 	<Card.Body>
-											<Card.Title>Amargosa Niterwort</Card.Title>
+											<Card.Title>{this.state.rl2_title}</Card.Title>
 									 	</Card.Body>
 									</Text></Nav.Link></Card>
 					    		</CardDeck>
 							</Col>
 							<Col className="text-center">
-								<h4>Related Animals</h4>
+								<h4>Related Plants</h4>
 
 								<br/>
 								<CardDeck className="text-center">
-									<Card><Nav.Link as={ Link } to="/Animals/AbbottsBooby"><Text>
-							  			<Card.Img variant="top" src="https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg"/>
+									<Card><Nav.Link as={ Link } to={"/Plants/" + this.state.rl3_id}><Text>
+							  			<Card.Img variant="top" src={this.state.rl3_img} />
 							    		<Card.Body>
-							      			<Card.Title>Abbott's Booby</Card.Title>
+							      			<Card.Title>{this.state.rl3_title}</Card.Title>
 							    		</Card.Body>
 						    		</Text></Nav.Link></Card>
-						    		<Card><Nav.Link as={ Link } to="/Animals/AcklinsGroundIguana"><Text>
-										<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cyclura_rileyi_nuchalis_Exumas_1997_c_W_K_Hayes.jpg" />
+						    		<Card><Nav.Link as={ Link } to={"/Plants/" + this.state.rl4_id}><Text>
+										<Card.Img variant="top" src={this.state.rl4_img} />
 										<Card.Body>
-											<Card.Title>Acklins Ground Iguana</Card.Title>
+											<Card.Title>{this.state.rl4_title}</Card.Title>
 										</Card.Body>
 									</Text></Nav.Link></Card>
 					    		</CardDeck>
