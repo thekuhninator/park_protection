@@ -29,7 +29,7 @@ class PlantInstance extends React.Component {
     console.log(plant_id)
 
     fetch(
-        'http://api.parkprotection.me/api/plants/' + plant_id,  {mode: 'cors'})
+        'https://api.parkprotection.me/api/plants/' + plant_id,  {mode: 'cors'})
         .then((response) => response.json())
         .then((data) => {
           console.log('component MOUNTED HERE IS THE DATA')
