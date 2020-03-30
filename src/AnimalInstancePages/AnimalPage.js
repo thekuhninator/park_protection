@@ -12,8 +12,7 @@ import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
-import NoMapWrapper from '../Assets/Maps/NoMapWrapper';
-
+import MapWrapper from '../Assets/Maps/MapWrapper';
 
 const CommonName = styled('h1')`
   color: #444444;
@@ -71,30 +70,49 @@ const Text = styled('div')`
 `
 
 export default class AnimalPage extends Component {
+  state = {
+    animal : null,
+    loading : true,
+    states : null
+  }
+
+  async componentDidMount(){
+    let url = "http://api.parkprotection.me/api/animals/".concat(this.props.match.params.id);
+    const response = await fetch(url);
+    const data = await response.json();
+    this.setState({animal : data,
+                   loading: false,
+                   states: data.states.map(function(e) {
+                     return e.name
+                   })
+                 });
+  }
+
   render(){
     return (
-      <div>
+      this.state.loading ? (<div> unavailable </div>) :
+      (<div>
         <Jumbotron>
             <Container>
-              <CommonName>{this.props.location.state.cname}</CommonName>
-              <ScientificName>{this.props.location.state.sname}</ScientificName>
+              <CommonName>{this.state.animal.com_name}</CommonName>
+              <ScientificName>{this.state.animal.sci_name}</ScientificName>
             </Container>
         </Jumbotron>
         <br/><br/>
         <Container>
           <Row>
             <Col>
-              <ImageBox className="float-right" src= {this.props.location.state.image} fluid />
+              <ImageBox className="float-right" src= {this.state.animal.image} fluid />
             </Col>
 
             <Col>
-              <NoMapWrapper/>
+              <MapWrapper key={1} states={this.state.states} />
             </Col>
           </Row>
 
           <br/><br/>
           <EndangeredBox>
-            <EndangeredText>{this.props.location.state.endangeredText}</EndangeredText>
+            <EndangeredText>{this.state.animal.status}</EndangeredText>
           </EndangeredBox>
 
           <br/><br/>
@@ -102,12 +120,12 @@ export default class AnimalPage extends Component {
            <TableBox>
             <Table striped bordered hover size="sm">
                 <tbody>
-                <tr><th>Group</th><td>{this.props.location.state.group}</td></tr>
-                <tr><th>Domestic or Foreign</th><td>{this.props.location.state.foreign}</td></tr>
-                <tr><th><a href="https://www.fws.gov/pacific/news/grizzly/esafacts.htm">Distinct Population Segment?</a></th><td>{this.props.location.state.dps}</td></tr>
-                <tr><th>Aquatic?</th><td>{this.props.location.state.aquatic}</td></tr>
-                <tr><th><a href="https://www.fws.gov/birds/management/managed-species/birds-of-conservation-concern.php">BCC?</a></th><td>{this.props.location.state.bcc}</td></tr>
-                <tr><th>Conservation Plan Title</th><td>{this.props.location.state.cpt}</td></tr>
+                <tr><th>Group</th><td>{this.state.animal.tax_group}</td></tr>
+                <tr><th>Domestic or Foreign</th><td>{"foreign"}</td></tr>
+                <tr><th><a href="https://www.fws.gov/pacific/news/grizzly/esafacts.htm">Distinct Population Segment?</a></th><td>{this.state.animal.dps ? "Yes" : "No"}</td></tr>
+                <tr><th>Aquatic?</th><td>{this.state.animal.aquatic ? "Yes" : "No"}</td></tr>
+                <tr><th><a href="https://www.fws.gov/birds/management/managed-species/birds-of-conservation-concern.php">BCC?</a></th><td>{this.state.animal.bcc ? "Yes" : "No"}</td></tr>
+                <tr><th>Conservation Plan Title</th><td>{this.state.animal.plan}</td></tr>
                 </tbody>
             </Table>
           </TableBox></Col><Col />
@@ -121,9 +139,9 @@ export default class AnimalPage extends Component {
                 <br/>
                 <CardDeck className="text-center">
                   <Card><Nav.Link as={ Link } to="/Parks/GrandCanyon"><Text>
-                      <Card.Img variant="top" src= {this.props.location.state.park1img} />
+                      <Card.Img variant="top" src= "https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg" />
                       <Card.Body>
-                        <Card.Title>{this.props.location.state.park1}</Card.Title>
+                        <Card.Title>{}</Card.Title>
                       </Card.Body>
                     </Text></Nav.Link></Card>
                   <Card><Nav.Link as={ Link } to="/Parks/Yellowstone"><Text>
@@ -157,7 +175,7 @@ export default class AnimalPage extends Component {
           <br/>
           &nbsp;
         </Container>
-      </div>
+      </div>)
     );
   }
 };
