@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 import GitlabTable from './GitlabTable.js'
+import Row from 'react-bootstrap/Row';
 
 
 const AboutTitle = styled('h1')`
@@ -60,8 +61,8 @@ class About extends React.Component{
 			            <Container>
 			                <h1> Data Sources </h1>
 			                <p> Data was collected from the <a href="https://www.nps.gov/subjects/digital/nps-data-api.htm">National Park Services</a>,
-			                the <a href="https://ecos.fws.gov/ecp/report/ad-hoc-documentation?catalogId=species&reportId=species">Environmental 
-			                Conservation Online System</a>, 
+			                the <a href="https://ecos.fws.gov/ecp/report/ad-hoc-documentation?catalogId=species&reportId=species">Environmental
+			                Conservation Online System</a>,
 			                and the <a href="https://data.nal.usda.gov/dataset/usda-plants-database-api-r">United States Department of Agriculture</a>.
 			                </p>
 			            </Container>
@@ -71,6 +72,7 @@ class About extends React.Component{
 							<h1> Tools </h1>
 
 							<CardDeck>
+								<Row>
 									<Card>
 											<Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/AWS_Simple_Icons_AWS_Cloud.svg/1280px-AWS_Simple_Icons_AWS_Cloud.svg.png" />
 											<Card.Body>
@@ -99,6 +101,36 @@ class About extends React.Component{
 													</Card.Text>
 											</Card.Body>
 									</Card>
+									</Row>
+									<Row>
+									<Card>
+											<Card.Img variant="top" src="https://miro.medium.com/max/800/1*Q5EUk28Xc3iCDoMSkrd1_w.png" />
+											<Card.Body>
+													<Card.Title> Flask </Card.Title>
+													<Card.Text>
+															Flask is a microframework used for the backend of a web application.
+													</Card.Text>
+											</Card.Body>
+									</Card>
+									<Card>
+											<Card.Img variant="top" src="https://avatars2.githubusercontent.com/u/8770005?s=400&v=4" />
+											<Card.Body>
+													<Card.Title> Mocha </Card.Title>
+													<Card.Text>
+															Mocha is a Javascript test framework used for making asynchronous testing simple and fun.
+													</Card.Text>
+											</Card.Body>
+									</Card>
+									<Card>
+											<Card.Img variant="top" src="https://www.selenium.dev/images/selenium_logo_square_green.png" />
+											<Card.Body>
+													<Card.Title> Selenium </Card.Title>
+													<Card.Text>
+															Selenium is a tool used for automating tests for web applications.
+													</Card.Text>
+											</Card.Body>
+									</Card>
+									</Row>
 					</CardDeck>
 
 					<br/><br/>
