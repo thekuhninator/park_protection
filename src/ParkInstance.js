@@ -124,9 +124,9 @@ class ParkInstance extends React.Component {
 					rl3_id: plantsData.objects[0].id,
 					rl3_img: plantsData.objects[0].image,
 					rl3_title: plantsData.objects[0].com_name,
-					rl4_id: plantsData.objects[1].id,
-					rl4_img: plantsData.objects[1].image,
-					rl4_title: plantsData.objects[1].com_name,
+					rl4_id: plantsData.objects[1]?plantsData.objects[1].id: null,
+					rl4_img: plantsData.objects[1]?plantsData.objects[1].image:null,
+					rl4_title: plantsData.objects[1]?plantsData.objects[1].com_name:null,
 				})
 			});
 		});

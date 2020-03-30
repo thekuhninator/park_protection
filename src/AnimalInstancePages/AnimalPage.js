@@ -73,12 +73,13 @@ export default class AnimalPage extends Component {
   state = {
     animal : null,
     loading : true,
-    states : null
+    states : null,
+
   }
 
   async componentDidMount(){
-    let url = "http://api.parkprotection.me/api/animals/".concat(this.props.match.params.id);
-    const response = await fetch(url);
+    let url = "https://api.parkprotection.me/api/animals/".concat(this.props.match.params.id);
+    const response = await fetch(url, {mode: 'cors'});
     const data = await response.json();
     this.setState({animal : data,
                    loading: false,
@@ -86,6 +87,38 @@ export default class AnimalPage extends Component {
                      return e.name
                    })
                  });
+     fetch(
+  			'https://api.parkprotection.me/api/parks?q={"filters":[{"name":"states__name","op":"any","val":"'.concat(data.states[0].name).concat('"}]}')
+  			)
+  		.then((response) => response.json())
+  		.then((parksData) => {
+  			this.setState({
+            rl1_code : parksData.objects[0].code,
+            rl1_name : parksData.objects[0].name,
+            rl1_images : parksData.objects[0].images.split(" "),
+
+            rl2_code : parksData.objects[1].code,
+            rl2_name : parksData.objects[1].name,
+            rl2_images : parksData.objects[1].images.split(" "),
+  			})
+  		});
+
+      fetch(
+   			'https://api.parkprotection.me/api/plants?q={"filters":[{"name":"states__name","op":"any","val":"'.concat(data.states[0].name).concat('"}]}')
+   			)
+   		.then((response) => response.json())
+   		.then((plantsData) => {
+   			this.setState({
+          rl3_id: plantsData.objects[0].id,
+          rl3_img: plantsData.objects[0].image,
+          rl3_title: plantsData.objects[0].com_name,
+
+          rl4_id: plantsData.objects[1]?plantsData.objects[1].id: null,
+          rl4_img: plantsData.objects[1]?plantsData.objects[1].image:null,
+          rl4_title: plantsData.objects[1]?plantsData.objects[1].com_name:null,
+   			})
+   		});
+
   }
 
   render(){
@@ -121,7 +154,7 @@ export default class AnimalPage extends Component {
             <Table striped bordered hover size="sm">
                 <tbody>
                 <tr><th>Group</th><td>{this.state.animal.tax_group}</td></tr>
-                <tr><th>Domestic or Foreign</th><td>{"foreign"}</td></tr>
+                <tr><th>Date Listed</th><td>{this.state.animal.list_date}</td></tr>
                 <tr><th><a href="https://www.fws.gov/pacific/news/grizzly/esafacts.htm">Distinct Population Segment?</a></th><td>{this.state.animal.dps ? "Yes" : "No"}</td></tr>
                 <tr><th>Aquatic?</th><td>{this.state.animal.aquatic ? "Yes" : "No"}</td></tr>
                 <tr><th><a href="https://www.fws.gov/birds/management/managed-species/birds-of-conservation-concern.php">BCC?</a></th><td>{this.state.animal.bcc ? "Yes" : "No"}</td></tr>
@@ -138,16 +171,16 @@ export default class AnimalPage extends Component {
 
                 <br/>
                 <CardDeck className="text-center">
-                  <Card><Nav.Link as={ Link } to="/Parks/GrandCanyon"><Text>
-                      <Card.Img variant="top" src= "https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg" />
+                  <Card><Nav.Link as={ Link } to= {"/Parks/" + this.state.rl1_code}><Text>
+                      <Card.Img variant="top" src= {this.state.rl1_images ? this.state.rl1_images[0] : null} />
                       <Card.Body>
-                        <Card.Title>{}</Card.Title>
+                        <Card.Title>{this.state.rl1_name}</Card.Title>
                       </Card.Body>
                     </Text></Nav.Link></Card>
-                  <Card><Nav.Link as={ Link } to="/Parks/Yellowstone"><Text>
-                      <Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg"/>
+                  <Card><Nav.Link as={ Link } to={"/Parks/" + this.state.rl2_code}><Text>
+                      <Card.Img variant="top" src={this.state.rl2_images ? this.state.rl2_images[0] : null}/>
                       <Card.Body>
-                          <Card.Title>Yellowstone National Park</Card.Title>
+                          <Card.Title>{this.state.rl2_name}</Card.Title>
                       </Card.Body>
                     </Text></Nav.Link></Card>
                   </CardDeck>
@@ -157,16 +190,16 @@ export default class AnimalPage extends Component {
 
                 <br/>
                 <CardDeck className="text-center">
-                  <Card><Nav.Link as={ Link } to="/Plants/AleutianHollyFern"><Text>
-                      <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Aleutian_Shield_Fern.jpg" />
+                  <Card><Nav.Link as={ Link } to={"/Plants/" + this.state.rl3_id}><Text>
+                      <Card.Img variant="top" src={this.state.rl3_img} />
                       <Card.Body>
-                          <Card.Title>Aleutian Holly Fern</Card.Title>
+                          <Card.Title>{this.state.rl3_title}</Card.Title>
                       </Card.Body>
                   </Text></Nav.Link></Card>
-                    <Card><Nav.Link as={ Link } to="/Plants/AmargosaNiterwort"><Text>
-                    <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Nitrophila_mohavensis_6.jpg" />
+                    <Card><Nav.Link as={ Link } to={"/Plants/" + this.state.rl4_id}><Text>
+                    <Card.Img variant="top" src={this.state.rl4_img} />
                     <Card.Body>
-                      <Card.Title>Amargosa Niterwort</Card.Title>
+                      <Card.Title>{this.state.rl4_title}</Card.Title>
                     </Card.Body>
                   </Text></Nav.Link></Card>
                   </CardDeck>
