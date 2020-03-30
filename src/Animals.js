@@ -211,7 +211,7 @@ class Animals extends React.Component {
 
 	fillanimalList(pageNum) {
 		fetch(
-          "http://api.parkprotection.me/api/animals?results_per_page=9&page=".concat(this.state.page)
+          "https://api.parkprotection.me/api/animals?results_per_page=9&page=".concat(this.state.page)
       )
           .then((response) => response.json())
           .then((data) => {

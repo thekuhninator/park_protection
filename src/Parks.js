@@ -166,7 +166,7 @@ class Parks extends React.Component {
 
 	fillParkList(pageNum) {
 		fetch(
-          "http://api.parkprotection.me/api/parks?results_per_page=9&page=".concat(this.state.page)
+          "https://api.parkprotection.me/api/parks?results_per_page=9&page=".concat(this.state.page)
       )
           .then((response) => response.json())
           .then((data) => {

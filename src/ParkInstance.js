@@ -79,7 +79,7 @@ class ParkInstance extends React.Component {
 
 	componentDidMount() {
 		fetch(
-          "http://api.parkprotection.me/api/parks/".concat(this.props.match.params.code)
+          "https://api.parkprotection.me/api/parks/".concat(this.props.match.params.code)
       	)
 		.then((response) => response.json())
 		.then((data) => {
@@ -100,7 +100,7 @@ class ParkInstance extends React.Component {
 				weather : data.weather
 			});
 			fetch(
-				'http://api.parkprotection.me/api/animals?q={"filters":[{"name":"states__name","op":"any","val":"'.concat(data.states[0].name).concat('"}]}')
+				'https://api.parkprotection.me/api/animals?q={"filters":[{"name":"states__name","op":"any","val":"'.concat(data.states[0].name).concat('"}]}')
 				)
 			.then((response) => response.json())
 			.then((animalsData) => {
@@ -115,7 +115,7 @@ class ParkInstance extends React.Component {
 				})
 			});
 			fetch(
-				'http://api.parkprotection.me/api/plants?q={"filters":[{"name":"states__name","op":"any","val":"'.concat(data.states[0].name).concat('"}]}')
+				'https://api.parkprotection.me/api/plants?q={"filters":[{"name":"states__name","op":"any","val":"'.concat(data.states[0].name).concat('"}]}')
 				)
 			.then((response) => response.json())
 			.then((plantsData) => {
