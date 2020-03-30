@@ -69,7 +69,7 @@ class Parks extends React.Component {
 		this.state = {
 			parkList: [],
 	        page: 1,
-	        lastPageNum: 48
+	        lastPageNum: 44
 		};
 	}
 

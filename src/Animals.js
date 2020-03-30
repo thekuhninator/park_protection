@@ -75,7 +75,7 @@ class Animals extends React.Component {
 		this.state = {
 			animalList: [],
 	        page: 1,
-	        lastPageNum: 73
+	        lastPageNum: 58
 		};
 	}
 
@@ -188,6 +188,7 @@ class Animals extends React.Component {
               		status : data.objects[i].status,
               		states : data.objects[i].states.map((state) => state.name).join(", "),
               	}
+              	console.log(animalParsed.image)
                 animalList.push(animalParsed)
               }
               // var assert = require('assert');

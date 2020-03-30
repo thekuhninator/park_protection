@@ -72,7 +72,7 @@ class Plants extends React.Component {
 		this.state = {
 			plantList: [],
 	        page: 1,
-	        lastPageNum: 88
+	        lastPageNum: 43
 		};
 	}
 
@@ -185,6 +185,7 @@ class Plants extends React.Component {
               		status : data.objects[i].status,
               		states : data.objects[i].states.map((state) => state.name).join(", "),
               	}
+              	console.log(plantParsed.image)
                 plantList.push(plantParsed)
               }
               // var assert = require('assert');

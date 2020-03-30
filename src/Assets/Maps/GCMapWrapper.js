@@ -15,7 +15,7 @@ class GCMapWrapper extends Component {
 			<div>
 				<Map google={this.props.google}
 					containerStyle={containerStyle}
-					zoom={9}
+					zoom={6}
 					initialCenter={{lat: this.props.latitude, lng: this.props.longitude}}
 					center={{lat: this.props.latitude, lng: this.props.longitude}}>
 					<Marker
