@@ -1,6 +1,13 @@
 node_modules
 npm-debug.log
+virt
+api
+scraping
+build
 .env
+.elasticbeanstalk/*
+.git
+.gitignore# Elastic Beanstalk Files
 .elasticbeanstalk/*
 .git
 .gitignore

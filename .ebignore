@@ -1,2 +1,6 @@
 .env
 virt
+api
+scraping
+build
+node_modules

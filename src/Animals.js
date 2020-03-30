@@ -16,45 +16,6 @@ import styled from 'styled-components';
 import Select from 'react-select';
 import { Nav } from 'react-bootstrap';
 
-const state = {
-    cname : "Abbot'sby",
-    sname : "Papasula abbotti",
-    image : "https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg",
-    endangeredText : true ? "Endangered" : "threatened",
-    group : 'Birds',
-    foreign : 'Foreign',
-    dps : 'No',
-    aquatic : 'No',
-    bcc : 'No',
-    cpt : 'None',
-    park1 : "Grand Canyon National Park",
-    park1img: "https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg"};
-
-const state2 = {
-    cname : "Abbot's by",
-    sname : "Papasula abbotti",
-    image : "https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg",
-    endangeredText : true ? "Endangered" : "threatened",
-    group : 'Birds',
-    foreign : 'Foreign',
-    dps : 'No',
-    aquatic : 'No',
-    bcc : 'No',
-    cpt : 'None'};
-
-const state3 = {
-    cname : "Abbot's Booby",
-    sname : "Papasula abbotti",
-    image : "https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg",
-    endangeredText : true ? "Endangered" : "threatened",
-    group : 'Birds',
-    foreign : 'Foreign',
-    dps : 'No',
-    aquatic : 'No',
-    bcc : 'No',
-    cpt : 'None'};
-
-
 const common = [
   { value: 'asc', label: 'Ascending' },
   { value: 'des', label: 'Descending' }
@@ -154,7 +115,7 @@ class Animals extends React.Component {
 				)
 			}
             animalDeck.push(<br></br>)
-			animalDeck.push(<Row>{animalInstances}</Row>)
+			animalDeck.push(<CardDeck className="text-center">{animalInstances}</CardDeck>)
 		}
 		// var assert = require('assert');
 		// assert(deckSize == 0);
@@ -218,7 +179,7 @@ class Animals extends React.Component {
               for (const i in data.objects) {
               	const animalParsed = {
               		id : data.objects[i].id,
-              		image : data.objects[i].image,
+              		image : data.objects[i].image.replace("http://", "https://"),
               		com_name : data.objects[i].com_name,
               		sci_name : data.objects[i].sci_name,
               		tax_group : data.objects[i].tax_group,
@@ -271,9 +232,7 @@ class Animals extends React.Component {
 					</Col>
 				</Row>
 
-				<CardDeck className="text-center">
-					{this.makeCardDeck()}
-				</CardDeck>
+				{this.makeCardDeck()}
                 <br></br>
 				<Pagination className = 'justify-content-center'>
 					{this.createPaginationBar()}

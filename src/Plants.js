@@ -112,7 +112,7 @@ class Plants extends React.Component {
 				)
 			}
             plantDeck.push(<br></br>)
-			plantDeck.push(<Row>{plantInstances}</Row>)
+			plantDeck.push(<CardDeck className="text-center">{plantInstances}</CardDeck>)
 		}
 		// var assert = require('assert');
 		// assert(deckSize == 0);
@@ -178,7 +178,7 @@ class Plants extends React.Component {
               for (const i in data.objects) {
               	const plantParsed = {
               		id : data.objects[i].id,
-              		image : data.objects[i].image,
+              		image : data.objects[i].image.replace("http://", "https://"),
               		com_name : data.objects[i].com_name,
               		sci_name : data.objects[i].sci_name,
               		family : data.objects[i].family,
@@ -231,9 +231,7 @@ class Plants extends React.Component {
 					</Col>
 				</Row>
 
-				<CardDeck className="text-center">
-					{this.makeCardDeck()}
-				</CardDeck>
+				{this.makeCardDeck()}
                 <br></br>
 				<Pagination className = 'justify-content-center'>
 					{this.createPaginationBar()}
