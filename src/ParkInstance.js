@@ -84,51 +84,59 @@ class ParkInstance extends React.Component {
 		.then((response) => response.json())
 		.then((data) => {
 			console.log("FETCHED PARK INSTANCE")
-			this.setState({
-				address : data.address,
-				desc : data.desc,
-				designation : data.designation,
-				directions : data.directions,
-				email : data.email,
-				images : data.images.split(" "),
-				latitude : data.latitude,
-				longitude : data.longitude,
-				name : data.name,
-				phone : data.phone,
-				states : data.states.map((state) => state.name).join(", "),
-				url : data.url,
-				weather : data.weather
-			});
-			fetch(
-				'https://api.parkprotection.me/api/animals?q={"filters":[{"name":"states__name","op":"any","val":"'.concat(data.states[0].name).concat('"}]}')
-				)
-			.then((response) => response.json())
-			.then((animalsData) => {
-				console.log("FETCHED ANIMALS")
+			if("code" in data) {
 				this.setState({
-					rl1_id: animalsData.objects[0].id,
-					rl1_img: animalsData.objects[0].image,
-					rl1_title: animalsData.objects[0].com_name,
-					rl2_id: animalsData.objects[1].id,
-					rl2_img: animalsData.objects[1].image,
-					rl2_title: animalsData.objects[1].com_name,
-				})
-			});
-			fetch(
-				'https://api.parkprotection.me/api/plants?q={"filters":[{"name":"states__name","op":"any","val":"'.concat(data.states[0].name).concat('"}]}')
-				)
-			.then((response) => response.json())
-			.then((plantsData) => {
-				console.log("FETCHED PLANTS")
-				this.setState({
-					rl3_id: plantsData.objects[0].id,
-					rl3_img: plantsData.objects[0].image,
-					rl3_title: plantsData.objects[0].com_name,
-					rl4_id: plantsData.objects[1].id,
-					rl4_img: plantsData.objects[1].image,
-					rl4_title: plantsData.objects[1].com_name,
-				})
-			});
+					address : data.address,
+					desc : data.desc,
+					designation : data.designation,
+					directions : data.directions,
+					email : data.email,
+					images : data.images.split(" ").map((image) => image.replace("http://", "https://")),
+					latitude : data.latitude,
+					longitude : data.longitude,
+					name : data.name,
+					phone : data.phone,
+					states : data.states.map((state) => state.name).join(", "),
+					url : data.url,
+					weather : data.weather
+				});
+				fetch(
+					'https://api.parkprotection.me/api/animals?q={"filters":[{"name":"states__name","op":"any","val":"'.concat(data.states[0].name).concat('"}]}')
+					)
+				.then((response) => response.json())
+				.then((animalsData) => {
+					console.log("FETCHED ANIMALS")
+					if(animalsData.num_results >= 2) {
+						this.setState({
+							rl1_id: animalsData.objects[0].id,
+							rl1_img: animalsData.objects[0].image.replace("http://", "https://"),
+							rl1_title: animalsData.objects[0].com_name,
+							rl2_id: animalsData.objects[1].id,
+							rl2_img: animalsData.objects[1].image.replace("http://", "https://"),
+							rl2_title: animalsData.objects[1].com_name,
+						});
+					}
+				});
+				fetch(
+					'https://api.parkprotection.me/api/plants?q={"filters":[{"name":"states__name","op":"any","val":"'.concat(data.states[0].name).concat('"}]}')
+					)
+				.then((response) => response.json())
+				.then((plantsData) => {
+					console.log("FETCHED PLANTS")
+					if(plantsData.num_results >= 2) {
+						this.setState({
+							rl3_id: plantsData.objects[0].id,
+							rl3_img: plantsData.objects[0].image.replace("http://", "https://"),
+							rl3_title: plantsData.objects[0].com_name,
+							rl4_id: plantsData.objects[1].id,
+							rl4_img: plantsData.objects[1].image.replace("http://", "https://"),
+							rl4_title: plantsData.objects[1].com_name,
+						});
+					}
+				});
+			} else {
+				
+			}
 		});
 
 	}
@@ -138,7 +146,7 @@ class ParkInstance extends React.Component {
 		for(const i in this.state.images) {
 			const image = this.state.images[i]
 			carousel.push(
-				<Carousel.Item>
+				<Carousel.Item key={image}>
 				    <CarouselImage
 				      src={image}
 				      alt="Image"

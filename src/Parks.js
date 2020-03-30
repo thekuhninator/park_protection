@@ -92,7 +92,7 @@ class Parks extends React.Component {
 				var index = i * 3 + j;
                 var source = this.state.parkList[index];
 				parkInstances.push (
-					<Card>
+					<Card key={source.code}>
 						<Nav.Link as={ Link } to={{pathname: "/Parks/" + source.code, state: {code: source.code}}}>
 						    <Text>
 							    <Card.Img variant="top" src={source.image}/>
@@ -108,8 +108,8 @@ class Parks extends React.Component {
 				    </Card>
 				)
 			}
-            parkDeck.push(<br></br>)
-			parkDeck.push(<Row>{parkInstances}</Row>)
+            parkDeck.push(<br key={"br"+i} />)
+			parkDeck.push(<CardDeck key={"deck"+i} className="text-center">{parkInstances}</CardDeck>)
 		}
 		//var assert = require('assert');
 		//assert(deckSize == 9);
@@ -127,37 +127,37 @@ class Parks extends React.Component {
 		var pageNum = this.state.page;
 		if(pageNum != 1) {
 			paginationBar.push(
-				<Pagination.First onClick={(e) => {this.generateNewPage(e, 1)}}/>
+				<Pagination.First key="First" onClick={(e) => {this.generateNewPage(e, 1)}}/>
 			)
 			// paginationBar.push(
 				// <Pagination.Prev onClick={(e) => {this.generateNewPage(e, pageNum - 1)}}/>
 			// )
             if(pageNum != 2){
                 paginationBar.push(
-                    <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum-2)}}>{pageNum-2}</Pagination.Item>
+                    <Pagination.Item key={pageNum-2} onClick={(e) => {this.generateNewPage(e, pageNum-2)}}>{pageNum-2}</Pagination.Item>
                 )
             }
             paginationBar.push(
-            <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum-1)}}>{pageNum-1}</Pagination.Item>
+            <Pagination.Item key={pageNum-1} onClick={(e) => {this.generateNewPage(e, pageNum-1)}}>{pageNum-1}</Pagination.Item>
             )
 		}
 		paginationBar.push(
-			<Pagination.Item active onClick={(e) => {this.generateNewPage(e, pageNum)}}>{pageNum}</Pagination.Item>
+			<Pagination.Item key={pageNum} active onClick={(e) => {this.generateNewPage(e, pageNum)}}>{pageNum}</Pagination.Item>
 		)
 		if(pageNum != this.state.lastPageNum) {
             paginationBar.push(
-                <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum+1)}}>{pageNum+1}</Pagination.Item>
+                <Pagination.Item key={pageNum+1} onClick={(e) => {this.generateNewPage(e, pageNum+1)}}>{pageNum+1}</Pagination.Item>
             )
 			if(pageNum != this.state.lastPageNum - 1){
                 paginationBar.push(
-                    <Pagination.Item onClick={(e) => {this.generateNewPage(e, pageNum+2)}}>{pageNum+2}</Pagination.Item>
+                    <Pagination.Item key={pageNum+2} onClick={(e) => {this.generateNewPage(e, pageNum+2)}}>{pageNum+2}</Pagination.Item>
                 )
             }
             // paginationBar.push(
 				// <Pagination.Next onClick={(e) => {this.generateNewPage(e, pageNum + 1)}}/>
 			// )
 			paginationBar.push(
-				<Pagination.Last onClick={(e) => {this.generateNewPage(e, this.state.lastPageNum)}}/>
+				<Pagination.Last key="Last" onClick={(e) => {this.generateNewPage(e, this.state.lastPageNum)}}/>
 			)
 		}
         
@@ -175,7 +175,7 @@ class Parks extends React.Component {
               for (const i in data.objects) {
               	const parkParsed = {
               		code : data.objects[i].code,
-              		image : data.objects[i].images.split(" ")[0],
+              		image : data.objects[i].images.split(" ")[0].replace("http://", "https://"),
               		name : data.objects[i].name,
               		designation : data.objects[i].designation,
               		email : data.objects[i].email,
@@ -226,9 +226,7 @@ class Parks extends React.Component {
 					</Col>
 				</Row>
 
-				<CardDeck className="text-center">
-					{this.makeCardDeck()}
-				</CardDeck>
+				{this.makeCardDeck()}
                 <br></br>
 				<Pagination className = 'justify-content-center'>
 					{this.createPaginationBar()}
