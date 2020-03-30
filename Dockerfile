@@ -1,4 +1,5 @@
-#frontend
+FROM gpdowning/python
+
 FROM node:10
 
 COPY . /app
