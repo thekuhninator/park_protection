@@ -41,7 +41,7 @@ class App extends Component {
           </Navbar>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/AnimalPage" component={AnimalPage} />
+            <Route path="/Animals/:id" component={AnimalPage} />
             <Route path="/Plants/AleutianHollyFern" component={AleutianHollyFern} />
             <Route path="/Plants/AmargosaNiterwort" component={AmargosaNiterwort} />
             <Route path="/Plants/PricklyApplecactus" component={PricklyApplecactus} />
@@ -49,7 +49,7 @@ class App extends Component {
             <Route path="/About" component={About} />
             <Route exact path="/Parks" component={Parks} />
             <Route path="/Parks/:code" component={ParkInstance} />
-            <Route path="/Animals" component={Animals} />
+            <Route exact path="/Animals" component={Animals} />
             <Route path="/Plants" component={Plants} />
             <Route path="*" component={NotFoundPage} />
           </Switch>
