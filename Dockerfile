@@ -11,3 +11,6 @@ RUN npm install dotenv
 RUN pip install flask
 RUN npm install mocha --save-dev
 RUN npm install chai --save-dev
+RUN pip install requests
+RUN pip install sqlalchemy
+RUN pip install dotenv

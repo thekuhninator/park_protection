@@ -2,16 +2,19 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.1",
+    "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
     "google-maps-react": "^2.0.2",
-    "react-bootstrap": "^1.0.0-beta.16",
+    "nvm": "0.0.4",
+    "react-bootstrap": "^1.0.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
-    "react-select": "^3.0.8",
+    "react-select": "^3.1.0",
     "styled-components": "^5.0.1"
   },
   "scripts": {
@@ -19,7 +22,7 @@
     "build": "react-scripts build",
     "deploy": "aws s3 sync build/ s3://park-protection2",
     "test": "react-scripts test",
-    "mochatest": "mocha || true",
+    "mochatest": "mocha",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -37,14 +40,26 @@
       "last 1 safari version"
     ]
   },
+  "babel": {
+    "presets": [
+      "react"
+    ]
+  },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "bulma": "^0.8.0",
+    "bulma": "^0.8.1",
+    "chai": "^4.2.0",
     "mocha": "^7.1.1",
+    "nodemon": "^2.0.2",
     "parcel": "^1.12.4",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
