@@ -92,7 +92,7 @@ class Parks extends React.Component {
 				var index = i * 3 + j;
                 var source = this.state.parkList[index];
 				parkInstances.push (
-					<Card key={source.code}>
+					<Card className={source.code} key={source.code}>
 						<Nav.Link as={ Link } to={{pathname: "/Parks/" + source.code, state: {code: source.code}}}>
 						    <Text>
 							    <Card.Img variant="top" src={source.image}/>
