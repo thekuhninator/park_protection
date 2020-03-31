@@ -80,24 +80,65 @@ describe("Website", function() {
   //   });
 
   // });
+});
 
-  describe("Local", function() {
+describe("Local", function() {
+
+  describe("Homepage", function() {
 
     var url = "http://localhost:3000/";
 
-    it("returns status 200", function(done) {
+    it("returns status 200 on homepage", function(done) {
       request(url, function(error, response, body) {
         expect(response.statusCode).to.equal(200);
         done();
       });
     });
-    it("expect no error returned", function(done) {
+    it("expect no error returned on homepage", function(done) {
       request(url, function(error, response, body) {
         expect(error).to.equal(null);
         done();
       });
     });
     it("verify that homepage is loading properly", function(done) {
+      request(url, function(error, response, body) {
+        expect(body).to.not.equal(null);
+        done();
+      });
+    });
+
+  });
+
+  describe("Parks", function() {
+
+    var url = "http://localhost:3000/Parks";
+
+    it("expect no error returned on parks page", function(done) {
+      request(url, function(error, response, body) {
+        expect(error).to.equal(null);
+        done();
+      });
+    });
+    it("verify that parks page is loading properly", function(done) {
+      request(url, function(error, response, body) {
+        expect(body).to.not.equal(null);
+        done();
+      });
+    });
+
+  });
+
+  describe("Instance", function() {
+
+    var url = "http://localhost:3000/Animals/32";
+
+    it("expect no error returned on instance page", function(done) {
+      request(url, function(error, response, body) {
+        expect(error).to.equal(null);
+        done();
+      });
+    });
+    it("verify that instance page is loading properly", function(done) {
       request(url, function(error, response, body) {
         expect(body).to.not.equal(null);
         done();

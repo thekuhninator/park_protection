@@ -79,12 +79,15 @@ class PlantInstance extends React.Component {
   					<Col>
   						<Constants.ImageBox className="float-right" src={this.state.plant.image}/>
   					</Col>
+                    <Col>
+                        <MapWrapper key={1} states={this.state.states} />
+                    </Col>
 
   				</Row>
 
   				<br/><br/>
   				<Constants.EndangeredBox>
-  					<Constants.Text>{this.state.plant.status}</Constants.Text>
+  					<Constants.EndangeredText>{this.state.plant.status}</Constants.EndangeredText>
   				</Constants.EndangeredBox>
 
   				<br/><br/>
@@ -94,7 +97,6 @@ class PlantInstance extends React.Component {
 					<RelatedEntities info = {this.state}/>
 
   				<br/>
-          <MapWrapper key={1} states={this.state.states} />
 
   				&nbsp;
   			</Container>
