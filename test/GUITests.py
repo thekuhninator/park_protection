@@ -10,7 +10,7 @@ class GUITests(unittest.TestCase):
         self.driver = webdriver.Chrome(executable_path='./chromedriver')
         time.sleep(5)
         
-    def test_get_started(self):
+    def test_get_started(self): #1
         self.driver.get("localhost:3000")
         button_name = self.driver.find_element_by_link_text('Get Started')
 
@@ -22,7 +22,7 @@ class GUITests(unittest.TestCase):
 
         self.assertEqual(expected_result, actual_result)
     
-    def test_navbar_parks(self):
+    def test_navbar_parks(self): #2
         self.driver.get("localhost:3000")
         button_name = self.driver.find_element_by_link_text('Parks')
 
@@ -34,7 +34,7 @@ class GUITests(unittest.TestCase):
 
         self.assertEqual(expected_result, actual_result)
     
-    def test_navbar_plants(self):
+    def test_navbar_plants(self): #3
         self.driver.get("localhost:3000")
         button_name = self.driver.find_element_by_link_text('Plants')
 
@@ -46,7 +46,7 @@ class GUITests(unittest.TestCase):
 
         self.assertEqual(expected_result, actual_result)
         
-    def test_navbar_animals(self):
+    def test_navbar_animals(self): #4
         self.driver.get("localhost:3000")
         button_name = self.driver.find_element_by_link_text('Animals')
 
@@ -58,17 +58,78 @@ class GUITests(unittest.TestCase):
 
         self.assertEqual(expected_result, actual_result)
         
-    def test_navbar_about(self):
+    def test_navbar_about(self): #5
         self.driver.get("localhost:3000")
         button_name = self.driver.find_element_by_link_text('About')
 
         button_name.click()
 
         time.sleep(5)
-        expected_result = 'About'
+        expected_result = 'About Us'
         actual_result = self.driver.find_element_by_class_name('PageHeader').text
 
         self.assertEqual(expected_result, actual_result)
+        
+        def test_park_card(self): #6
+        self.driver.get("parkprotection.me/Parks")
+        button_name = self.driver.find_element_by_link_text('Abraham Lincoln Birthplace National Historical Park')
+
+        button_name.click()
+
+        time.sleep(5)
+        expected_result = 'Abraham Lincoln Birthplace National Historical Park'
+        actual_result = self.driver.find_element_by_class_name('PageHeader').text
+
+        self.assertEqual(expected_result, actual_result)
+    
+    def test_plants_card(self): #7
+        self.driver.get("parkprotection.me/Plants")
+        button_name = self.driver.find_element_by_link_text('White Bladderpod')
+
+        button_name.click()
+
+        time.sleep(5)
+        expected_result = 'White Bladderpod'
+        actual_result = self.driver.find_element_by_class_name('PageHeader').text
+
+        self.assertEqual(expected_result, actual_result)
+    
+    def test_animals_card(self): #8
+        self.driver.get("parkprotection.me/Animals")
+        button_name = self.driver.find_element_by_link_text('Florida grasshopper sparrow')
+
+        button_name.click()
+
+        time.sleep(5)
+        expected_result = 'Florida grasshopper sparrow'
+        actual_result = self.driver.find_element_by_class_name('PageHeader').text
+
+        self.assertEqual(expected_result, actual_result)
+    
+    def test_animals_related_parks(self): #9
+        self.driver.get("parkprotection.me/Animals/32")
+        button_name = self.driver.find_element_by_link_text('Big Cypress National Preserve')
+
+        button_name.click()
+
+        time.sleep(5)
+        expected_result = 'Big Cypress National Preserve'
+        actual_result = self.driver.find_element_by_class_name('PageHeader').text
+
+        self.assertEqual(expected_result, actual_result)
+
+    def test_plants_related_parks(self): #10
+        self.driver.get("parkprotection.me/Animals/104")
+        button_name = self.driver.find_element_by_link_text('Alibates Flint Quarries National Monument')
+
+        button_name.click()
+
+        time.sleep(5)
+        expected_result = 'Alibates Flint Quarries National Monument'
+        actual_result = self.driver.find_element_by_class_name('PageHeader').text
+
+        self.assertEqual(expected_result, actual_result)
+    
     def tearDown(self) :
         self.driver.close()
 
