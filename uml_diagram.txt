@@ -1,0 +1,59 @@
+@startuml
+object Animal {
+    id: int
+    com_name: string
+    sci_name: string
+    status: string
+    list_date: string
+    tax_group: string
+    dps: boolean
+    aquatic: boolean
+    bcc: boolean
+    plan: string
+    image: string
+    states: list
+}
+
+object Plant {
+    id: integer
+    com_name: string
+    sci_name: string
+    status: string
+    list_date: string
+    family: string
+    family_com: string
+    category: string
+    duration: string
+    growth: string
+    toxicity: string
+    plan: string
+    image: string
+    states: list
+}
+
+object Park {
+    code: string
+    name: string
+    designation: string
+    latitude: float
+    longitude: float
+    url: string
+    desc: string
+    weather: string
+    directions: string
+    address: string
+    phone: string
+    email: string
+    images: string
+    states: list
+}
+
+Animal <|-- Plant
+Animal <|-- Park
+
+Plant <|-- Animal
+Plant <|-- Park
+
+Park <|-- Animal
+Park <|-- Plant
+@enduml
