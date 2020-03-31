@@ -205,7 +205,7 @@ class Animals extends React.Component {
 			<Container>
 				<br/>
 				<Row>
-				<Col><h1>Animals</h1><br/></Col>
+				<Col><h1 className="PageHeader">Animals</h1><br/></Col>
 				<Col xs={{span: 3}}>
 					<Form inline>
 						<Form.Group as={Row}>

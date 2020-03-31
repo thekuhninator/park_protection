@@ -204,7 +204,7 @@ class Plants extends React.Component {
 			<Container>
 				<br/>
 				<Row>
-				<Col><h1>Plants</h1><br/></Col>
+				<Col><h1 className="PageHeader">Plants</h1><br/></Col>
 				<Col xs={{span: 3}}>
 					<Form inline>
 						<Form.Group as={Row}>
