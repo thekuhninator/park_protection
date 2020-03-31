@@ -50,7 +50,7 @@ class MapWrapper extends Component {
 			<div>
 				<Map google={this.props.google}
 					containerStyle={containerStyle}
-					zoom={4}
+					zoom={3.5}
 					initialCenter={{lat: 39.8283, lng: -98.5795}} >
 		      {this.makePolygons()}
 				</Map>

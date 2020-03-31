@@ -104,7 +104,7 @@ class Animals extends React.Component {
 							    <Card.Img variant="top" src={source.image}/>
 							    <Card.Body>
 							    	<Card.Title>{source.com_name}</Card.Title>
-							    	<Card.Text>{source.sci_name}</Card.Text>
+							    	<Card.Text><ItalicText>{source.sci_name}</ItalicText></Card.Text>
 							    	<Card.Text>{source.tax_group}</Card.Text>
 							    	<Card.Text>{source.status}</Card.Text>
 							    	<Card.Text>{source.states}</Card.Text>

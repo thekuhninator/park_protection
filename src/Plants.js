@@ -101,7 +101,7 @@ class Plants extends React.Component {
 							    <Card.Img variant="top" src={source.image}/>
 							    <Card.Body>
 							    	<Card.Title>{source.com_name}</Card.Title>
-							    	<Card.Text>{source.sci_name}</Card.Text>
+							    	<Card.Text><ItalicText>{source.sci_name}</ItalicText></Card.Text>
 							    	<Card.Text>{source.family}</Card.Text>
 							    	<Card.Text>{source.status}</Card.Text>
 							    	<Card.Text>{source.states}</Card.Text>
@@ -181,7 +181,7 @@ class Plants extends React.Component {
               		image : data.objects[i].image.replace("http://", "https://"),
               		com_name : data.objects[i].com_name,
               		sci_name : data.objects[i].sci_name,
-              		family : data.objects[i].family,
+              		family : data.objects[i].family_com,
               		status : data.objects[i].status,
               		states : data.objects[i].states.map((state) => state.name).join(", "),
               	}

@@ -22,7 +22,6 @@ class GitlabTable extends React.Component{
       this.testVarible= "this is a test";
       this.total_commits = 0;
       this.total_issues = 0;
-      this.total_tests = 0;
       this.team = [{
         name: 'Roman Kuhn',
         commits: 0,
@@ -34,28 +33,28 @@ class GitlabTable extends React.Component{
           name: 'Ameya Joshi',
           commits: 0,
           issues: 0,
-          tests: 0,
+          tests: 17,
           desc: 'A hardcore FPS and Minecraft G A M E R who came to UT to be a game dev, realized how bad the hours were, and is now apparently doing web dev.'
         },
         {
           name: 'Dylan Kan',
           commits: 0,
           issues: 0,
-          tests: 0,
+          tests: 10,
           desc: 'I can\'t remember the last time I woke up early enough to eat breakfast.'
         },
         {
           name: 'Skylore Evans',
           commits: 0,
           issues: 0,
-          tests: 0,
+          tests: 5,
           desc: 'Third year CS major. President of Anime Club. Weeb. Chronically tired. Code janitor.'
         },
         {
           name: 'Jordan Bogaards',
           commits: 0,
           issues: 0,
-          tests: 0,
+          tests: 5,
           desc: 'Junior in the CS major and just on the edge of being a competitive smash player. Incineroar and Cloud main, unfortunately. Wanted to be a wrestling Heel.'
         },
         {
@@ -66,6 +65,7 @@ class GitlabTable extends React.Component{
           desc: 'Took Roman\'s title for Smash Ultimate.'
           },
       ];
+      this.total_tests = this.team.map((dict) => dict.tests).reduce((total, num) => total + num);
   }
 
 
@@ -229,7 +229,7 @@ class GitlabTable extends React.Component{
                 <Row>
                     <Col> <h2> {this.total_commits} Commits </h2> </Col>
                     <Col> <h2> {this.total_issues} Issues </h2> </Col>
-                    <Col> <h2> 0 Unit Tests </h2> </Col>
+                    <Col> <h2> {this.total_tests} Unit Tests </h2> </Col>
                 </Row>
         </Container>
 
