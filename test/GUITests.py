@@ -11,7 +11,7 @@ class GUITests(unittest.TestCase):
         time.sleep(5)
         
     def test_get_started(self): #1
-        self.driver.get("localhost:3000")
+        self.driver.get("parkprotection.me")
         button_name = self.driver.find_element_by_link_text('Get Started')
 
         button_name.click()
@@ -23,7 +23,7 @@ class GUITests(unittest.TestCase):
         self.assertEqual(expected_result, actual_result)
     
     def test_navbar_parks(self): #2
-        self.driver.get("localhost:3000")
+        self.driver.get("parkprotection.me")
         button_name = self.driver.find_element_by_link_text('Parks')
 
         button_name.click()
@@ -35,7 +35,7 @@ class GUITests(unittest.TestCase):
         self.assertEqual(expected_result, actual_result)
     
     def test_navbar_plants(self): #3
-        self.driver.get("localhost:3000")
+        self.driver.get("parkprotection.me")
         button_name = self.driver.find_element_by_link_text('Plants')
 
         button_name.click()
@@ -47,7 +47,7 @@ class GUITests(unittest.TestCase):
         self.assertEqual(expected_result, actual_result)
         
     def test_navbar_animals(self): #4
-        self.driver.get("localhost:3000")
+        self.driver.get("parkprotection.me")
         button_name = self.driver.find_element_by_link_text('Animals')
 
         button_name.click()
@@ -59,7 +59,7 @@ class GUITests(unittest.TestCase):
         self.assertEqual(expected_result, actual_result)
         
     def test_navbar_about(self): #5
-        self.driver.get("localhost:3000")
+        self.driver.get("parkprotection.me")
         button_name = self.driver.find_element_by_link_text('About')
 
         button_name.click()
