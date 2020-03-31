@@ -110,12 +110,12 @@ export default class AnimalPage extends Component {
    		.then((plantsData) => {
    			this.setState({
           rl3_id: plantsData.objects[0].id,
-          rl3_img: plantsData.objects[0].image,
+          rl3_img: plantsData.objects[0].image.replace("http://", "https://"),
           rl3_title: plantsData.objects[0].com_name,
 
-          rl4_id: plantsData.objects[1]?plantsData.objects[1].id: null,
-          rl4_img: plantsData.objects[1]?plantsData.objects[1].image:null,
-          rl4_title: plantsData.objects[1]?plantsData.objects[1].com_name:null,
+          rl4_id: plantsData.objects[1].id,
+          rl4_img: plantsData.objects[1].image.replace("http://", "https://"),
+          rl4_title: plantsData.objects[1].com_name,
    			})
    		});
 
@@ -135,7 +135,7 @@ export default class AnimalPage extends Component {
         <Container>
           <Row>
             <Col>
-              <ImageBox className="float-right" src= {this.state.animal.image} fluid />
+              <ImageBox className="float-right" src= {this.state.animal.image.replace("http://", "https://")} fluid />
             </Col>
 
             <Col>
@@ -172,13 +172,13 @@ export default class AnimalPage extends Component {
                 <br/>
                 <CardDeck className="text-center">
                   <Card><Nav.Link as={ Link } to= {"/Parks/" + this.state.rl1_code}><Text>
-                      <Card.Img variant="top" src= {this.state.rl1_images ? this.state.rl1_images[0] : null} />
+                      <Card.Img variant="top" src= {this.state.rl1_images ? this.state.rl1_images[0].replace("http://", "https://") : null} />
                       <Card.Body>
                         <Card.Title>{this.state.rl1_name}</Card.Title>
                       </Card.Body>
                     </Text></Nav.Link></Card>
                   <Card><Nav.Link as={ Link } to={"/Parks/" + this.state.rl2_code}><Text>
-                      <Card.Img variant="top" src={this.state.rl2_images ? this.state.rl2_images[0] : null}/>
+                      <Card.Img variant="top" src={this.state.rl2_images ? this.state.rl2_images[0].replace("http://", "https://") : null}/>
                       <Card.Body>
                           <Card.Title>{this.state.rl2_name}</Card.Title>
                       </Card.Body>
