@@ -71,7 +71,7 @@ class PlantInstance extends React.Component {
   render() {
     return (
   		<div>
-        <InstanceHeader common_name={this.state.plant.com_name} scientific_name={this.state.plant.sci_name}/>
+        <InstanceHeader className="PageHeader" common_name={this.state.plant.com_name} scientific_name={this.state.plant.sci_name}/>
 
   			<br/><br/>
   			<Container>

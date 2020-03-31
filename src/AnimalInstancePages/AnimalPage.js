@@ -128,7 +128,7 @@ export default class AnimalPage extends Component {
       (<div>
         <Jumbotron>
             <Container>
-              <CommonName>{this.state.animal.com_name}</CommonName>
+              <CommonName className="PageHeader">{this.state.animal.com_name}</CommonName>
               <ScientificName>{this.state.animal.sci_name}</ScientificName>
             </Container>
         </Jumbotron>

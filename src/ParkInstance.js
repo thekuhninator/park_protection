@@ -163,7 +163,7 @@ class ParkInstance extends React.Component {
 			<div>
 				<Jumbotron>
 					<Container>
-						<CenterText><h1>{this.state.name}</h1></CenterText>
+						<CenterText><h1 className="PageHeader">{this.state.name}</h1></CenterText>
 					</Container>
 				</Jumbotron>
 
