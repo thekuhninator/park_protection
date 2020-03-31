@@ -2,16 +2,17 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 #from selenium.webdriver.support.ui import Select #I'm not sure if you need this line or not
 import time
-from unittest import main, TestCase
+import unittest
 
-class GUITests(TestCase):
-    
-    def set_up(self) :
-        self.driver = webdriver.Chrome('/chromedriver')
+class GUITests(unittest.TestCase):
+
+    def setUp(self) :
+        self.driver = webdriver.Chrome('chromedriver')
         time.sleep(5)
-        self.driver.get("https://www.parkprotection.me/")
+         #replace with https://www.parkprotection.me/
         
     def test_name(self):
+        self.driver.get("localhost:3000")
         button_name = self.driver.find_element_by_link_text('Get Started')
 
         button_name.click()
@@ -22,9 +23,9 @@ class GUITests(TestCase):
 
         self.assertEqual(expected_result, actual_result)
         
-    def tear_down(self) :
+    def tearDown(self) :
         self.driver.close()
 
-if name == 'main':
+if __name__ == '__main__':
     unittest.main()
 #parks 44pgs, plants 43pgs, animals 58pgs
