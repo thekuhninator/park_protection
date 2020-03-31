@@ -21,34 +21,50 @@ class PlantInstance extends React.Component {
       states: []
     }
   }
-  componentDidMount()
+  async componentDidMount()
   {
 
     // let's do a fetch request for the id
-    let plant_id = this.props.match.params.id
-    console.log(plant_id)
-
+    let plant_id = this.props.match.params.id;
+    let url = "https://api.parkprotection.me/api/plants/".concat(this.props.match.params.id);
+    const response = await fetch(url, {mode: 'cors'});
+    const data = await response.json();
+    let state_list = data.states.map(function(e) {
+      return e.name
+    });
+    let plant = data;
+    this.setState({ plant: plant, states: state_list });
     fetch(
-        'https://api.parkprotection.me/api/plants/' + plant_id,  {mode: 'cors'})
-        .then((response) => response.json())
-        .then((data) => {
-          console.log('component MOUNTED HERE IS THE DATA')
-          console.log(data)
-          console.log(data.states)
-          let state_list = data.states.map(function(e) {
-            return e.name
-          })
-          console.log('mapped states')
-          console.log(state_list)
-          let plant = data
-          this.setState({ plant: plant, states: state_list })
-          console.log('this is the state')
-          console.log(this.state)
-        })
-        .catch((e) => {
-            console.log('Error');
-            console.log(e);
-        });
+       'https://api.parkprotection.me/api/parks?q={"filters":[{"name":"states__name","op":"any","val":"'.concat(data.states[0].name).concat('"}]}')
+       )
+     .then((response) => response.json())
+     .then((parksData) => {
+       this.setState({
+           rl1_code : parksData.objects[0].code,
+           rl1_name : parksData.objects[0].name,
+           rl1_images : parksData.objects[0].images.split(" "),
+
+           rl2_code : parksData.objects[1].code,
+           rl2_name : parksData.objects[1].name,
+           rl2_images : parksData.objects[1].images.split(" "),
+       })
+     });
+
+     fetch(
+       'https://api.parkprotection.me/api/animals?q={"filters":[{"name":"states__name","op":"any","val":"'.concat(data.states[0].name).concat('"}]}')
+       )
+     .then((response) => response.json())
+     .then((animalsData) => {
+       this.setState({
+         rl3_id: animalsData.objects[0].id,
+         rl3_img: animalsData.objects[0].image.replace("http://", "https://"),
+         rl3_title: animalsData.objects[0].com_name,
+
+         rl4_id: animalsData.objects[1].id,
+         rl4_img: animalsData.objects[1].image.replace("http://", "https://"),
+         rl4_title: animalsData.objects[1].com_name,
+       })
+     });
 
   }
 
@@ -61,21 +77,21 @@ class PlantInstance extends React.Component {
   			<Container>
   				<Row>
   					<Col>
-  						<Constants.ImageBox className="float-right" src="https://images-na.ssl-images-amazon.com/images/I/51vxwr8lUxL._AC_SX450_.jpg"/>
+  						<Constants.ImageBox className="float-right" src={this.state.plant.image}/>
   					</Col>
 
   				</Row>
 
   				<br/><br/>
   				<Constants.EndangeredBox>
-  					<Constants.Text>Endangered</Constants.Text>
+  					<Constants.Text>{this.state.plant.status}</Constants.Text>
   				</Constants.EndangeredBox>
 
   				<br/><br/>
-  				<InformationTable />
+  				<InformationTable info = {this.state.plant}/>
 
 					<br/><br/>
-					<RelatedEntities />
+					<RelatedEntities info = {this.state}/>
 
   				<br/>
           <MapWrapper key={1} states={this.state.states} />

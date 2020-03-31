@@ -16,16 +16,16 @@ function RelatedEntities(props) {
 
         <br/>
         <CardDeck className="text-center">
-          <Card><Nav.Link as={ Link } to="/Parks/GrandCanyon"><Text>
-              <Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7B12D1-1DD8-B71B-0BCE0712F9CEA155.jpg" />
+          <Card><Nav.Link as={ Link } to= {"/Parks/" + props.info.rl1_code}><Text>
+              <Card.Img variant="top" src= {props.info.rl1_images ? props.info.rl1_images[0].replace("http://", "https://") : null} />
               <Card.Body>
-                <Card.Title>Grand Canyon National Park</Card.Title>
+                <Card.Title>{props.info.rl1_name}</Card.Title>
               </Card.Body>
             </Text></Nav.Link></Card>
-          <Card><Nav.Link as={ Link } to="/Parks/Yellowstone"><Text>
-              <Card.Img variant="top" src="https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg"/>
+          <Card><Nav.Link as={ Link } to={"/Parks/" + props.info.rl2_code}><Text>
+              <Card.Img variant="top" src={props.info.rl2_images ? props.info.rl2_images[0].replace("http://", "https://") : null}/>
               <Card.Body>
-                  <Card.Title>Yellowstone National Park</Card.Title>
+                  <Card.Title>{props.info.rl2_name}</Card.Title>
               </Card.Body>
             </Text></Nav.Link></Card>
           </CardDeck>
@@ -35,18 +35,18 @@ function RelatedEntities(props) {
 
         <br/>
         <CardDeck className="text-center">
-          <Card><Nav.Link as={ Link } to="/Animals/AbbottsBooby"><Text>
-              <Card.Img variant="top" src="https://www.edgeofexistence.org/wp-content/uploads/2017/06/Papasula_abbotti_xlarge3.jpg"/>
+          <Card><Nav.Link as={ Link } to= {"/Animals/" + props.info.rl3_id}><Text>
+              <Card.Img variant="top" src={props.info.rl3_img ? props.info.rl3_img.replace("http://", "https://"): null}/>
               <Card.Body>
-                  <Card.Title>Abbott's Booby</Card.Title>
+                  <Card.Title>{props.info.rl3_title}</Card.Title>
               </Card.Body>
             </Text></Nav.Link></Card>
-            <Card><Nav.Link as={ Link } to="/Animals/AcklinsGroundIguana"><Text>
-            <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cyclura_rileyi_nuchalis_Exumas_1997_c_W_K_Hayes.jpg" />
-            <Card.Body>
-              <Card.Title>Acklins Ground Iguana</Card.Title>
-            </Card.Body>
-          </Text></Nav.Link></Card>
+            <Card><Nav.Link as={ Link } to= {"/Animals/" + props.info.rl4_id}><Text>
+                <Card.Img variant="top" src={props.info.rl4_img ? props.info.rl4_img.replace("http://", "https://"): null}/>
+                <Card.Body>
+                    <Card.Title>{props.info.rl4_title}</Card.Title>
+                </Card.Body>
+              </Text></Nav.Link></Card>
           </CardDeck>
       </Col>
     </Row>
