@@ -95,7 +95,7 @@ class Plants extends React.Component {
 				var index = i * 3 + j;
                 var source = this.state.plantList[index];
 				plantInstances.push (
-					<Card>
+					<Card className={source.id}>
 						<Nav.Link as={ Link } to={{pathname: "/Plants/" + source.id, state: {id: source.id}}}>
 						    <Text>
 							    <Card.Img variant="top" src={source.image}/>

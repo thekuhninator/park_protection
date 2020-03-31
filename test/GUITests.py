@@ -9,7 +9,7 @@ class GUITests(unittest.TestCase):
     def setUp(self) :
         self.driver = webdriver.Chrome(executable_path='./chromedriver')
         time.sleep(5)
-    """    
+    
     def test_get_started(self): #1
         self.driver.get("localhost:3000")
         button_name = self.driver.find_element_by_link_text('Get Started')
@@ -69,7 +69,7 @@ class GUITests(unittest.TestCase):
         actual_result = self.driver.find_element_by_class_name('PageHeader').text
 
         self.assertEqual(expected_result, actual_result)
-       """ 
+       
     def test_park_card(self): #6
         self.driver.get("localhost:3000/Parks")
         time.sleep(5)
@@ -83,14 +83,14 @@ class GUITests(unittest.TestCase):
         actual_result = self.driver.find_element_by_class_name('PageHeader').text
 
         self.assertEqual(expected_result, actual_result)
-    """
+    
     def test_plants_card(self): #7
         self.driver.get("localhost:3000/Plants")
         time.sleep(5)
-        button_name = self.driver.find_element_by_link_text('White Bladderpod')
+        button_name = self.driver.find_element_by_class_name('104')
 
         button_name.click()
-
+        time.sleep(5)
         
         expected_result = 'White Bladderpod'
         actual_result = self.driver.find_element_by_class_name('PageHeader').text
@@ -100,10 +100,10 @@ class GUITests(unittest.TestCase):
     def test_animals_card(self): #8
         self.driver.get("localhost:3000/Animals")
         time.sleep(5)
-        button_name = self.driver.find_element_by_link_text('Florida grasshopper sparrow')
+        button_name = self.driver.find_element_by_class_name('32')
 
         button_name.click()
-
+        time.sleep(5)
         
         expected_result = 'Florida grasshopper sparrow'
         actual_result = self.driver.find_element_by_class_name('PageHeader').text
@@ -116,7 +116,7 @@ class GUITests(unittest.TestCase):
         button_name = self.driver.find_element_by_link_text('Big Cypress National Preserve')
 
         button_name.click()
-
+        time.sleep(5)
         
         expected_result = 'Big Cypress National Preserve'
         actual_result = self.driver.find_element_by_class_name('PageHeader').text
@@ -129,13 +129,13 @@ class GUITests(unittest.TestCase):
         button_name = self.driver.find_element_by_link_text('Alibates Flint Quarries National Monument')
 
         button_name.click()
-
+        time.sleep(5)
         
         expected_result = 'Alibates Flint Quarries National Monument'
         actual_result = self.driver.find_element_by_class_name('PageHeader').text
 
         self.assertEqual(expected_result, actual_result)
-    """
+    
     def tearDown(self) :
         self.driver.close()
 
