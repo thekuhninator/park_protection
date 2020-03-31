@@ -14,60 +14,72 @@ describe("Website", function() {
         done();
       });
     });
-
-  });
-
-  describe("Parks", function() {
-
-    var url = "https://parkprotection.me/Parks";
-
-    it("returns status 200", function(done) {
+    it("expect no error returned", function(done) {
       request(url, function(error, response, body) {
-        expect(response.statusCode).to.equal(200);
+        expect(error).to.equal(null);
+        done();
+      });
+    });
+    it("verify that homepage is loading properly", function(done) {
+      request(url, function(error, response, body) {
+        expect(body).to.not.equal(null);
         done();
       });
     });
 
   });
 
-  describe("Plants", function() {
+  // describe("Parks", function() {
 
-    var url = "https://parkprotection.me/Plants";
+  //   var url = "https://parkprotection.me/Parks";
 
-    it("returns status 200", function(done) {
-      request(url, function(error, response, body) {
-        expect(response.statusCode).to.equal(200);
-        done();
-      });
-    });
+  //   it("returns status 200", function(done) {
+  //     request(url, function(error, response, body) {
+  //       expect(response.statusCode).to.equal(200);
+  //       done();
+  //     });
+  //   });
 
-  });
+  // });
 
-  describe("Animals", function() {
+  // describe("Plants", function() {
 
-    var url = "https://parkprotection.me/Animals";
+  //   var url = "https://parkprotection.me/Plants";
 
-    it("returns status 200", function(done) {
-      request(url, function(error, response, body) {
-        expect(response.statusCode).to.equal(200);
-        done();
-      });
-    });
+  //   it("returns status 200", function(done) {
+  //     request(url, function(error, response, body) {
+  //       expect(response.statusCode).to.equal(200);
+  //       done();
+  //     });
+  //   });
 
-  });
+  // });
 
-  describe("About", function() {
+  // describe("Animals", function() {
 
-    var url = "https://parkprotection.me/About";
+  //   var url = "https://parkprotection.me/Animals";
 
-    it("returns status 200", function(done) {
-      request(url, function(error, response, body) {
-        expect(response.statusCode).to.equal(200);
-        done();
-      });
-    });
+  //   it("returns status 200", function(done) {
+  //     request(url, function(error, response, body) {
+  //       expect(response.statusCode).to.equal(200);
+  //       done();
+  //     });
+  //   });
 
-  });
+  // });
+
+  // describe("About", function() {
+
+  //   var url = "https://parkprotection.me/About";
+
+  //   it("returns status 200", function(done) {
+  //     request(url, function(error, response, body) {
+  //       expect(response.statusCode).to.equal(200);
+  //       done();
+  //     });
+  //   });
+
+  // });
 
   describe("Local", function() {
 
@@ -76,6 +88,18 @@ describe("Website", function() {
     it("returns status 200", function(done) {
       request(url, function(error, response, body) {
         expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+    it("expect no error returned", function(done) {
+      request(url, function(error, response, body) {
+        expect(error).to.equal(null);
+        done();
+      });
+    });
+    it("verify that homepage is loading properly", function(done) {
+      request(url, function(error, response, body) {
+        expect(body).to.not.equal(null);
         done();
       });
     });
