@@ -171,7 +171,7 @@ class ParkInstance extends React.Component {
 				<Container>
 				<Alert variant="danger">
 					COVID-19 may affect this park's hours of operation. Please contact the
-					park for details and see <a href="#" className="alert-link">this link</a> for more information on COVID-19.
+					park for details and see <a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html" className="alert-link">this link</a> for more information on COVID-19.
 				</Alert>
 
 					<Carousel>

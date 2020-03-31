@@ -7,7 +7,7 @@ import unittest
 class GUITests(unittest.TestCase):
 
     def setUp(self) :
-        self.driver = webdriver.Chrome('chromedriver')
+        self.driver = webdriver.Chrome(executable_path='./chromedriver')
         time.sleep(5)
          #replace with https://www.parkprotection.me/
         
@@ -19,7 +19,7 @@ class GUITests(unittest.TestCase):
 
         time.sleep(5)
         expected_result = 'Parks'
-        actual_result = self.browser.find_element_by_class_name('PageHeader').text
+        actual_result = self.driver.find_element_by_class_name('PageHeader').text
 
         self.assertEqual(expected_result, actual_result)
         
