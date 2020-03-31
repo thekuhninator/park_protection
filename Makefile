@@ -1,4 +1,3 @@
 all:
-
-docker: 
+docker:
 	docker run fanta67/frontend

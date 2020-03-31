@@ -82,46 +82,52 @@ class GitlabTable extends React.Component{
       }
 
       fetch(
-          'https://gitlab.com/api/v4/projects/16967791/repository/commits?per_page=10000'
+          'https://gitlab.com/api/v4/projects/16967791/repository/contributors'
       )
           .then((response) => response.json())
           .then((data) => {
-              console.log('TOTAL COMMITS');
+              console.log('TOTAL PEOPLE');
               console.log(data.length);
-              this.total_commits = data.length
+              this.total_commits = 0
               for (const i in data) {
                   const commit_data = data[i];
-                  var name = commit_data.author_name;
-                  console.log("Commit Author name:" + nameDict[name]);
-                  this.team[nameDict[name]].commits = this.team[nameDict[name]].commits + 1;
-                  this.setState({ testVariable : 'changed'});
+                  var name = commit_data.name;
+                  // console.log("Commit Author name:" + nameDict[name]);
+                  this.team[nameDict[name]].commits += commit_data.commits;
+                  this.total_commits += commit_data.commits;
               }
+              this.setState({ testVariable : 'changed'});
           })
           .catch((e) => {
               console.log('Error');
               console.log(e);
           });
 
-      fetch(
-        'https://gitlab.com/api/v4/projects/16967791/issues?per_page=10000'
-      )   .then((response) => response.json())
-          .then((data) => {
-            this.total_issues = data.length
-            for (const i in data) {
-              const issue_data = data[i]
-              if(issue_data.author.name in nameDict)
-              {
-                  this.team[nameDict[issue_data.author.name]].issues = this.team[nameDict[issue_data.author.name]].issues + 1;
-                  console.log(this.team[nameDict[issue_data.author.name]].issues);
-              }
-            }
-            this.setState({ testVariable : 'changed'})
+      let usernames = {
+        "thekuhninator": 0,
+        "MCGenius25": 1,
+        "Fanta67": 2,
+        "poisonthorns": 3,
+        "bogaards.jordan": 4,
+        "Pedro_Silva0111": 5
+        };
 
-          })
-            .catch((e) => {
-                console.log('Error');
-                console.log(e);
-            });
+      for (const [username, id] of Object.entries(usernames)) {
+        fetch(
+          'https://gitlab.com/api/v4/projects/16967791/issues_statistics?author_username=' + username
+        )   .then((response) => response.json())
+            .then((data) => {
+              console.log(username)
+              this.total_issues += data.statistics.counts.all;
+              this.team[id].issues += data.statistics.counts.all;
+              this.setState({ testVariable : 'changed'});
+
+            })
+              .catch((e) => {
+                  console.log('Error');
+                  console.log(e);
+              });
+      }
 
 
   }
