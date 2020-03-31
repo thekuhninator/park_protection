@@ -42,7 +42,7 @@ class About extends React.Component{
             <Container>
             <br></br>
 
-            <AboutTitle> About Us</AboutTitle>
+            <AboutTitle className='PageHeader'> About Us</AboutTitle>
             <br></br>
             <Paragraph > Many species are dying out in recent years, whether
             it be due to global warming or other environmental factors. This website
