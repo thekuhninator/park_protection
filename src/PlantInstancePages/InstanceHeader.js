@@ -10,7 +10,7 @@ class InstanceHeader extends React.Component {
     return(
       <Jumbotron>
           <Container>
-            <CommonName>{this.props.common_name}</CommonName>
+            <CommonName className="PageHeader">{this.props.common_name}</CommonName>
             <ScientificName>{this.props.scientific_name}</ScientificName>
           </Container>
       </Jumbotron>
