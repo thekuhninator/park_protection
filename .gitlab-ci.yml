@@ -14,5 +14,4 @@ parks_protection_postman:
 parks_protection_mocha:
     image: fanta67/frontend
     script:
-        - cd test
         - npm start mochatest
