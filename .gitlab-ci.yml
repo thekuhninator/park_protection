@@ -11,7 +11,8 @@ parks_protection_postman:
         - cd test
         - newman run postman.json
 
-parks_protection_mocha:
+parks_protection_python:
     image: fanta67/frontend
     script:
-        - npm start mochatest
+        - cd scraping
+        - python tests.py
