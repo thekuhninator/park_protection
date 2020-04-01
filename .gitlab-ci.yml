@@ -8,5 +8,5 @@ parks_protection_postman:
         name: postman/newman_alpine33
         entrypoint: [""]
     script:
-        - cd tests
+        - cd test
         - newman run postman.json
