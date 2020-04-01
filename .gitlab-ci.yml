@@ -3,12 +3,10 @@ before_script:
     - uname -a
     - printenv | sort
 
-parks_protection:
-    image: gpdowning/python
+parks_protection_postman:
+    image:
+        name: postman/newman_alpine33
+        entrypoint: [""]
     script:
-    - ls -al
-    - cat makefile
-    - make versions
-    - make clean
-    - make run
-    - make -r check
+        - cd test
+        - newman run postman.json
