@@ -10,8 +10,3 @@ parks_protection_postman:
     script:
         - cd test
         - newman run postman.json
-
-parks_protection_mocha:
-    image: fanta67/frontend
-    script:
-        - npm run mochatest
