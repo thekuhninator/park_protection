@@ -2,7 +2,7 @@
 
 # CS373 IDB - Park Protection
 
-- Ameya Joshi (Project Leader)
+- Ameya Joshi (Phase 1 Project Leader)
 	- EID: aj28283
 	- Gitlab ID: MCGenius25
 	- Phase 2
@@ -22,7 +22,7 @@
 		- Estimated Completion Time: 13 hours
 		- Actual Completion Time: 10 hours
 
-- Roman Kuhn
+- Roman Kuhn (Phase 2 Project Leader)
 	- EID: rck733
 	- Gitlab ID: thekuhninator
 	- Phase 2
