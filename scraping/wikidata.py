@@ -20,7 +20,7 @@ URL = "https://en.wikipedia.org/w/api.php"
 
 # put name of what you want to search for in SEARCHPAGE
 
-SEARCHPAGE = "Arctostaphylos confertiflora"
+SEARCHPAGE = "Mesodon clarki nantahala"
 
 PARAMS = {
     "action": "query",
@@ -31,6 +31,7 @@ PARAMS = {
 
 R = S.get(url=URL, params=PARAMS)
 DATA = R.json()
+
 
 # use the first result as the page for a parse
 
@@ -46,10 +47,10 @@ DATA = R.json()
 
 pagetext = DATA["parse"]["wikitext"]["*"]
 # remove speciesbox
-paragraph = re.sub('({{([^{])+}})', '', pagetext)
+paragraph = re.sub('({{([^}])+}})', '', pagetext)
 paragraph = re.search('(\'\'\'.+\n)', paragraph).group()
 # parse and remove tags
-print(re.sub('(<.+>)', '', paragraph))
+print(re.sub('(<.+?>)', '', paragraph))
 
-# Animal pages tend to have a "The " that will get parsed out by the regex.
+# Animal pages tend to have a "The " that will get parsed out by the regex. We can add this in manually if we know we're searching an animal.
 
