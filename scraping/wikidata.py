@@ -48,7 +48,8 @@ DATA = R.json()
 pagetext = DATA["parse"]["wikitext"]["*"]
 # remove speciesbox
 paragraph = re.sub('({{([^}])+}})', '', pagetext)
-paragraph = re.search('(\'\'\'.+\n)', paragraph).group()
+paragraph = re.search('(\'\'\'(.+\n+)+?(==))', paragraph).group()
+paragraph = re.sub('(==)', '', paragraph)
 # parse and remove tags
 print(re.sub('(<.+?>)', '', paragraph))
 
