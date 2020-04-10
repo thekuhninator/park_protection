@@ -8,6 +8,7 @@ from sqlalchemy.orm import relationship
 import os
 from dotenv import load_dotenv
 import requests
+from wikidata import *
 
 load_dotenv()
 
@@ -31,6 +32,7 @@ class Plant(Base):
 	toxicity = Column(String)
 	plan = Column(String)
 	image = Column(String)
+	des = Column(String)
 
 	states = relationship("PlantState", back_populates="plant", cascade="all, delete, delete-orphan")
 
@@ -64,6 +66,7 @@ class Animal(Base):
 	bcc = Column(Boolean)
 	plan = Column(String)
 	image = Column(String)
+	des = Column(String)
 
 	states = relationship("AnimalState", back_populates="animal", cascade="all, delete, delete-orphan")
 
@@ -141,6 +144,33 @@ def fetch_image(search):
 
 Session = sessionmaker(bind=engine)
 session = Session()
+
+rows = session.query(Animal).join(AnimalState).all()
+
+fails = 0
+flist = []
+for i in range(0, len(rows)):
+	print("trying: " + rows[i].sci_name)
+	des = wiki_search(rows[i].sci_name)
+	
+	print("succeeded: " + str(i))
+
+print("fails: " + str(fails))
+print(flist)
+
+rows = session.query(Plant).join(PlantState).all()
+
+fails = 0
+flist = []
+for i in range(0, len(rows)):
+	print("trying: " + rows[i].sci_name)
+	des = wiki_search(rows[i].sci_name)
+	
+	print("succeeded: " + str(i))
+
+print("fails: " + str(fails))
+print(flist)
+
 """
 rows = session.query(Animal).join(AnimalState).all()
 

@@ -1,548 +1,428 @@
-trying: 107
-succeeded: 107
-trying: 108
-succeeded: 108
-trying: 109
-succeeded: 109
-trying: 110
-succeeded: 110
-trying: 111
-succeeded: 111
-trying: 112
-succeeded: 112
-trying: 113
-succeeded: 113
-trying: 114
-succeeded: 114
-trying: 115
-succeeded: 115
-trying: 116
-succeeded: 116
-trying: 117
-succeeded: 117
-trying: 118
-succeeded: 118
-trying: 119
-succeeded: 119
-trying: 120
-succeeded: 120
-trying: 121
-succeeded: 121
-trying: 122
-succeeded: 122
-trying: 123
-succeeded: 123
-trying: 124
-succeeded: 124
-trying: 125
-succeeded: 125
-trying: 126
-succeeded: 126
-trying: 127
-succeeded: 127
-trying: 128
-succeeded: 128
-trying: 129
-succeeded: 129
-trying: 130
-succeeded: 130
-trying: 131
-succeeded: 131
-trying: 132
-succeeded: 132
-trying: 133
-succeeded: 133
-trying: 134
-succeeded: 134
-trying: 135
-succeeded: 135
-trying: 136
-succeeded: 136
-trying: 137
-succeeded: 137
-trying: 138
-succeeded: 138
-trying: 139
-succeeded: 139
-trying: 140
-succeeded: 140
-trying: 141
-succeeded: 141
-trying: 142
-succeeded: 142
-trying: 143
-succeeded: 143
-trying: 144
-succeeded: 144
-trying: 145
-succeeded: 145
-trying: 146
-succeeded: 146
-trying: 147
-succeeded: 147
-trying: 148
-succeeded: 148
-trying: 149
-succeeded: 149
-trying: 150
-succeeded: 150
-trying: 151
-succeeded: 151
-trying: 152
-succeeded: 152
-trying: 153
-succeeded: 153
-trying: 154
-succeeded: 154
-trying: 155
-succeeded: 155
-trying: 156
-succeeded: 156
-trying: 157
-succeeded: 157
-trying: 158
-succeeded: 158
-trying: 159
-succeeded: 159
-trying: 160
-succeeded: 160
-trying: 161
-succeeded: 161
-trying: 162
-succeeded: 162
-trying: 163
-succeeded: 163
-trying: 164
-succeeded: 164
-trying: 165
-succeeded: 165
-trying: 166
-succeeded: 166
-trying: 167
-succeeded: 167
-trying: 168
-succeeded: 168
-trying: 169
-succeeded: 169
-trying: 170
-succeeded: 170
-trying: 171
-succeeded: 171
-trying: 172
-succeeded: 172
-trying: 173
-succeeded: 173
-trying: 174
-succeeded: 174
-trying: 175
-succeeded: 175
-trying: 176
-succeeded: 176
-trying: 177
-succeeded: 177
-trying: 178
-succeeded: 178
-trying: 179
-succeeded: 179
-trying: 180
-succeeded: 180
-trying: 181
-succeeded: 181
-trying: 182
-succeeded: 182
-trying: 183
-succeeded: 183
-trying: 184
-succeeded: 184
-trying: 185
-succeeded: 185
-trying: 186
-succeeded: 186
-trying: 187
-succeeded: 187
-trying: 188
-succeeded: 188
-trying: 189
-succeeded: 189
-trying: 190
-succeeded: 190
-trying: 191
-succeeded: 191
-trying: 192
-succeeded: 192
-trying: 193
-succeeded: 193
-trying: 194
-succeeded: 194
-trying: 195
-succeeded: 195
-trying: 196
-succeeded: 196
-trying: 197
-succeeded: 197
-trying: 198
-succeeded: 198
-trying: 199
-succeeded: 199
-trying: 200
-succeeded: 200
-trying: 201
-succeeded: 201
-trying: 202
-succeeded: 202
-trying: 203
-succeeded: 203
-trying: 204
-succeeded: 204
-trying: 205
-succeeded: 205
-trying: 206
-succeeded: 206
-trying: 207
-succeeded: 207
-trying: 208
-succeeded: 208
-trying: 209
-succeeded: 209
-trying: 210
-succeeded: 210
-trying: 211
-succeeded: 211
-trying: 212
-succeeded: 212
-trying: 213
-succeeded: 213
-trying: 214
-succeeded: 214
-trying: 215
-succeeded: 215
-trying: 216
-succeeded: 216
-trying: 217
-succeeded: 217
-trying: 218
-succeeded: 218
-trying: 219
-succeeded: 219
-trying: 220
-succeeded: 220
-trying: 221
-succeeded: 221
-trying: 222
-succeeded: 222
-trying: 223
-succeeded: 223
-trying: 224
-succeeded: 224
-trying: 225
-succeeded: 225
-trying: 226
-succeeded: 226
-trying: 227
-succeeded: 227
-trying: 228
-succeeded: 228
-trying: 229
-succeeded: 229
-trying: 230
-succeeded: 230
-trying: 231
-succeeded: 231
-trying: 232
-succeeded: 232
-trying: 233
-succeeded: 233
-trying: 234
-succeeded: 234
-trying: 235
-succeeded: 235
-trying: 236
-succeeded: 236
-trying: 237
-succeeded: 237
-trying: 238
-succeeded: 238
-trying: 239
-succeeded: 239
-trying: 240
-succeeded: 240
-trying: 241
-succeeded: 241
-trying: 242
-succeeded: 242
-trying: 243
-succeeded: 243
-trying: 244
-succeeded: 244
-trying: 245
-succeeded: 245
-trying: 246
-succeeded: 246
-trying: 247
-succeeded: 247
-trying: 248
-succeeded: 248
-trying: 249
-succeeded: 249
-trying: 250
-succeeded: 250
-trying: 251
-succeeded: 251
-trying: 252
-succeeded: 252
-trying: 253
-succeeded: 253
-trying: 254
-succeeded: 254
-trying: 255
-succeeded: 255
-trying: 256
-succeeded: 256
-trying: 257
-succeeded: 257
-trying: 258
-succeeded: 258
-trying: 259
-succeeded: 259
-trying: 260
-succeeded: 260
-trying: 261
-succeeded: 261
-trying: 262
-succeeded: 262
-trying: 263
-succeeded: 263
-trying: 264
-succeeded: 264
-trying: 265
-succeeded: 265
-trying: 266
-succeeded: 266
-trying: 267
-succeeded: 267
-trying: 268
-succeeded: 268
-trying: 269
-succeeded: 269
-trying: 270
-succeeded: 270
-trying: 271
-succeeded: 271
-trying: 272
-succeeded: 272
-trying: 273
-succeeded: 273
-trying: 274
-succeeded: 274
-trying: 275
-succeeded: 275
-trying: 276
-succeeded: 276
-trying: 277
-succeeded: 277
-trying: 278
-succeeded: 278
-trying: 279
-succeeded: 279
-trying: 280
-succeeded: 280
-trying: 281
-succeeded: 281
-trying: 282
-succeeded: 282
-trying: 283
-succeeded: 283
-trying: 284
-succeeded: 284
-trying: 285
-succeeded: 285
-trying: 286
-succeeded: 286
-trying: 287
-succeeded: 287
-trying: 288
-succeeded: 288
-trying: 289
-succeeded: 289
-trying: 290
-succeeded: 290
-trying: 291
-succeeded: 291
-trying: 292
-succeeded: 292
-trying: 293
-succeeded: 293
-trying: 294
-succeeded: 294
-trying: 295
-succeeded: 295
-trying: 296
-succeeded: 296
-trying: 297
-succeeded: 297
-trying: 298
-succeeded: 298
-trying: 299
-succeeded: 299
-trying: 300
-succeeded: 300
-trying: 301
-succeeded: 301
-trying: 302
-succeeded: 302
-trying: 303
-succeeded: 303
-trying: 304
-succeeded: 304
-trying: 305
-succeeded: 305
-trying: 306
-succeeded: 306
-trying: 307
-succeeded: 307
-trying: 308
-succeeded: 308
-trying: 309
-succeeded: 309
-trying: 310
-succeeded: 310
-trying: 311
-succeeded: 311
-trying: 312
-succeeded: 312
-trying: 313
-succeeded: 313
-trying: 314
-succeeded: 314
-trying: 315
-succeeded: 315
-trying: 316
-succeeded: 316
-trying: 317
-succeeded: 317
-trying: 318
-succeeded: 318
-trying: 319
-succeeded: 319
-trying: 320
-succeeded: 320
-trying: 321
-succeeded: 321
-trying: 322
-succeeded: 322
-trying: 323
-succeeded: 323
-trying: 324
-succeeded: 324
-trying: 325
-succeeded: 325
-trying: 326
-succeeded: 326
-trying: 327
-succeeded: 327
-trying: 328
-succeeded: 328
-trying: 329
-succeeded: 329
-trying: 330
-succeeded: 330
-trying: 331
-succeeded: 331
-trying: 332
-succeeded: 332
-trying: 333
-succeeded: 333
-trying: 334
-succeeded: 334
-trying: 335
-succeeded: 335
-trying: 336
-succeeded: 336
-trying: 337
-succeeded: 337
-trying: 338
-succeeded: 338
-trying: 339
-succeeded: 339
-trying: 340
-succeeded: 340
-trying: 341
-succeeded: 341
-trying: 342
-succeeded: 342
-trying: 343
-succeeded: 343
-trying: 344
-succeeded: 344
-trying: 345
-succeeded: 345
-trying: 346
-succeeded: 346
-trying: 347
-succeeded: 347
-trying: 348
-succeeded: 348
-trying: 349
-succeeded: 349
-trying: 350
-succeeded: 350
-trying: 351
-succeeded: 351
-trying: 352
-succeeded: 352
-trying: 353
-succeeded: 353
-trying: 354
-succeeded: 354
-trying: 355
-succeeded: 355
-trying: 356
-succeeded: 356
-trying: 357
-succeeded: 357
-trying: 358
-succeeded: 358
-trying: 359
-succeeded: 359
-trying: 360
-succeeded: 360
-trying: 361
-succeeded: 361
-trying: 362
-succeeded: 362
-trying: 363
-succeeded: 363
-trying: 364
-succeeded: 364
-trying: 365
-succeeded: 365
-trying: 366
-succeeded: 366
-trying: 367
-succeeded: 367
-trying: 368
-succeeded: 368
-trying: 369
-succeeded: 369
-trying: 370
-succeeded: 370
-trying: 371
-succeeded: 371
-trying: 372
-succeeded: 372
-trying: 373
-succeeded: 373
-trying: 374
-succeeded: 374
-trying: 375
-succeeded: 375
-trying: 376
-succeeded: 376
-trying: 377
-succeeded: 377
-trying: 378
-succeeded: 378
-trying: 379
-succeeded: 379
-fails: 0
-[]
+trying: Peromyscus polionotus ammobates
+{{subspeciesbox
+| name = Alabama beach mouse
+| image = ALbeachmouse1.jpg
+| status = LE
+| status_system = ESA
+| status_ref = 
+| genus = Peromyscus
+| species = polionotu
+
+| species_link = Oldfield mouse
+| subspecies = ammobates
+| authority = Bowen, 1968
+}}
+
+The '''Alabama beach mouse''' ''(Peromyscus polionotus ammobates)'' is a federally [[endangered species]] which lives along the [[Alabama]] [[coast]].
+
+The range of the Alabama beach mouse historically included much of the [[Fort Morgan, Alabama|Fort Morgan Peninsula]] on the Alabama Gulf coast and extends from Ono Island to Fort Morgan.
+
+Coastal residential and commercial development and roadway construction have fragmented and destroyed habitat used by this species. [[Hurricane]]s, [[tropical storm]]s, and dune use by pedestrians have also damaged or destroyed [[sand dune]]s and related habitats. Stalking by domestic and wild cats, as well as other animals, plus competition from other rodents have also contributed to Alabama beach mouse declines.
+[[File:Alabama Beach Mouse.jpg|thumb|left|Alabama beach mouse]]
+The Alabama beach mouse is one of several subspecies of old field mice living only in coastal sand dune areas. These small light-colored mice [[burrow]] and nest in dunes and are primarily active at night. They eat various plant seeds and insects. They prefer sand-covered slopes with patches of [[sea oats]], [[Ammophila (Poaceae)|beach grass]], other grasses and herbs.
+
+Interior sand dune ridges provide vital habitat for survival during flooding. Beach mice are an important part of the coastal dune ecosystem. Thriving beach mouse populations indicate a healthy dune system. The mice themselves contribute by collecting and distributing seeds. Uneaten seeds grow into plants which help to stabilize dunes. Beach mice are also an important part of the food chain, providing a food source for dune predators such as the snakes and owls.
+
+The species is endangered and is protected in areas such as the [[Bon Secour National Wildlife Refuge]] in [[Baldwin County, Alabama]]. In ''[[Sierra Club v. Babbitt]]'', environmental organizations halted construction of housing in the Alabama beach mouse's habitat.
+
+==References==
+{{Reflist}}
+
+==External links==
+*[http://www.natureserve.org/explorer/servlet/NatureServe?searchName=Peromyscus+polionotus+ammobates NatureServe Report]
+*[http://www.fws.gov/daphne/es/abm.html FWS report on the Alabama Beach Mouse]
+
+{{Taxonbar|from=Q2636280}}
+
+[[Category:Mammals of the United States|Mouse, Alabama Beach]]
+[[Category:Endemic fauna of Alabama]]
+[[Category:Peromyscus]]
+[[Category:ESA endangered species]]
+Alabama beach mouse (Peromyscus polionotus ammobates) is a federally endangered species which lives along the Alabama coast.
+
+The range of the Alabama beach mouse historically included much of the Fort Morgan Peninsula on the Alabama Gulf coast and extends from Ono Island to Fort Morgan.
+
+Coastal residential and commercial development and roadway construction have fragmented and destroyed habitat used by this species. Hurricanes, tropical storms, and dune use by pedestrians have also damaged or destroyed sand dunes and related habitats. Stalking by domestic and wild cats, as well as other animals, plus competition from other rodents have also contributed to Alabama beach mouse declines.
+Alabama beach mouse
+The Alabama beach mouse is one of several subspecies of old field mice living only in coastal sand dune areas. These small light-colored mice burrow and nest in dunes and are primarily active at night. They eat various plant seeds and insects. They prefer sand-covered slopes with patches of sea oats, beach grass, other grasses and herbs.
+
+Interior sand dune ridges provide vital habitat for survival during flooding. Beach mice are an important part of the coastal dune ecosystem. Thriving beach mouse populations indicate a healthy dune system. The mice themselves contribute by collecting and distributing seeds. Uneaten seeds grow into plants which help to stabilize dunes. Beach mice are also an important part of the food chain, providing a food source for dune predators such as the snakes and owls.
+
+The species is endangered and is protected in areas such as the Bon Secour National Wildlife Refuge in Baldwin County, Alabama. In Sierra Club v. Babbitt, environmental organizations halted construction of housing in the Alabama beach mouses habitat.
+
+
+succeeded: 0
+trying: Speoplatyrhinus poulsoni
+{{speciesbox
+| name = Alabama cavefish
+| status = CR
+| status_system = IUCN3.1
+| status_ref = <ref name=iucn>{{Cite iucn | author = NatureServe | title = ''Speoplatyrhinus poulsoni'' | volume = 2013 | page = e.T20467A19033986 | date = 2013 | doi = 10.2305/IUCN.UK.2013-1.RLTS.T20467A19033986.en }} Listed as Critically Endangered (CR B1ab(iii)+2ab(iii) v3.1)</ref>
+| image = AlabamaCavefish.jpg
+| genus = Speoplatyrhinus
+| parent_authority = [[John Edward Cooper|J. E. Cooper]] & [[Robert Andrew Kuehne|Kuehne]], 1974
+| species = poulsoni
+| authority = J. E. Cooper & Kuehne, 1974<ref>{{ITIS |id=164397|taxon=''Speoplatyrhinus poulsoni''|accessdate=18 April 2006}}</ref>
+| range_map = File:Alabama Cavefish Range.png
+| range_map_caption = The range map of the Alabama Cavefish.
+}}
+
+The '''Alabama cavefish''' (''Speoplatyrhinus poulsoni''), is a [[critically endangered]] species of [[Amblyopsidae|amblyopsid cavefish]] found only in underground pools in Key Cave, located in northwestern [[Alabama]], United States in the [[Key Cave National Wildlife Refuge]].<ref name="Fishbase">{{FishBase species |genus=Speoplatyrhinus|species=poulsoni|month= March|year=2006}}</ref> It was discovered underneath a colony of [[gray bat]]s in 1967 by researchers Robert A. Kuehne and John E. Cooper<ref>{{Cite journal|last=Romero|first=Aldemaro|date=1998|title=Threatened fishes of the world: Speoplatyrhinus poulsoni|url=http://link.springer.com/10.1023/A:1007405815580|journal=Environmental Biology of Fishes|volume=53|issue=3|pages=293–294|doi=10.1023/A:1007405815580|via=}}</ref> and [[Species description|scientifically described]] in 1974.<ref name=Cooper1974>Cooper, J.E., and R.A. Kuehne (1974). "Speoplatyrhinus poulsoni, a New Genus and Species of Subterranean Fish from Alabama." Copeia 1974: 486-93.</ref>
+
+On any single visit to the cave, no more than 10 individuals of this fish have been observed, and scientists estimate fewer than 100 are left.<ref name=iucn/> This fish is believed to be the rarest species of [[cavefish]] in the United States and one of the rarest of all freshwater fish. It exists in a fragile ecosystem based on nutrient-rich [[guano]] of the gray bat.<ref name="fws">{{cite web|url=http://www.fws.gov/ecos/ajax/docs/life_histories/E011.html|title=Alabama Cavefish|publisher=U.S. Fish and Wildlife Service|url-status=dead|archiveurl=https://web.archive.org/web/20141007234105/http://www.fws.gov/ecos/ajax/docs/life_histories/E011.html|archivedate=7 October 2014|accessdate=12 October 2011}}</ref> Researchers have failed to find the fish in any other location.<ref name=iucn/>
+
+The only species in its genus, the Alabama cavefish is in danger of extinction. Conservation measures that have been taken to save the species from extinction include protecting the fish under the [[Lacey Act of 1900|Lacey Act]] and limiting human disturbance of Key Cave.
+
+==Habitat and Distribution==
+
+The Alabama cavefish is one of the rarest [[cavefish]] species in North America. While the specific habitat requirements of the fish are unknown, it is known that the Alabama cavefish is a cave obligate, restricted to [[Key Cave National Wildlife Refuge|Key Cave]] in [[Lauderdale County, Alabama]]. Cave habitats tend to be stable, with drastic changes mainly being associated with the inflow of water. Annual rainfall and flooding in the cave produce changes in water level, temperature, and food availability for the fish. Researchers speculate that the flooding may trigger a hormonal change in the cavefish for growth and reproduction.
+
+Since the discovery of the cavefish, only 9 specimens have been collected (all before 1983). Because very few individuals have been collected and observed and the population is confined to [[Key Cave National Wildlife Refuge|Key Cave]]'','' the Alabama cavefish may be the rarest of the American cavefish and the rarest freshwater fish.<ref name=":0">{{Cite journal|last=Romero|first=Aldemaro|date=1998|title=Threatened fishes of the world: Speoplatyrhinus poulsoni|url=http://link.springer.com/10.1023/A:1007405815580|journal=Environmental Biology of Fishes|volume=53|issue=3|pages=293–294|doi=10.1023/A:1007405815580|via=}}</ref> 
+
+Because the underground water system in the area is so widespread, it was hoped that the cavefish had dispersed to other sites. However, studies of 120 other caves in the area, conducted since 1977, have failed to locate any other cavefish populations. No more than 10 individuals have been observed on any single visit to the Key Cave and in 36 visits from 1967 to 1998, the average was less than 4 per visit.<ref name="iucn" /> The total number of individuals in the Key Cave population is estimated to be less than 100.<ref name="iucn" /> Initially classified as [[Vulnerable species|vulnerable]] by the [[IUCN]], its status has been gradually upgraded as its extreme rarity became apparent. It is currently considered [[critically endangered]].<ref name="iucn" /> Two reports of these fish in nearby Collier Cave are unconfirmed. Both caves are protected and inaccessible to the public.
+
+Because its known range is limited to a single cave, the Alabama cavefish has an uncertain future, being threatened by changes in groundwater quality and level, changes in [[aquifer]] characteristics, and diminished organic input. It also may compete with the syntopic [[southern cavefish]] (''Typhlichthys subterraneus''), which is more abundant and aggressive.<ref name="fws" /> Cave crayfish sometimes feed on Alabama cavefish.<ref name="fws" />
+
+==Physiology==
+
+The Alabama cavefish is up to {{convert|7.2|cm|in|abbr=on}} long and has no eyes or discernible pigmentation,<ref name="Fishbase"/> appearing semitransparent with a slight pink hue. Its large head makes up more than one-third of its length. It is the only species in its genus, and can be distinguished from other cavefish with its very elongated, flattened head with a laterally constricted snout and a terminal mouth. The cavefish lacks pelvic fins, and its fin rays are unbranched with the fin membranes deeply incised between the rays. It has an elaborate system of sensory papillae, arranged in ridges on the head and sides, an adaptation to the dark environment.<ref name="fws"/> The Alabama cavefish has the most highly developed caudal sensory papillae in the Amblyopsidae family.<ref>{{Cite web|url=https://ecos.fws.gov/ecp0/profile/speciesProfile?sId=50|title=Species Profile|website=ecos.fws.gov|access-date=2020-04-06}}</ref>
+
+==Diet==
+
+Its diet of [[copepod]]s, [[isopod]]s, [[amphipod]]s, and smaller cavefish is supported by the nutrient-filled bat guano.<ref name="fws"/> It can also survive on other small organisms such as mites, spiders, millipedes, and beetles and other insects.<ref name="Outdoor Alabama">{{cite web|url=http://www.outdooralabama.com/fishing/freshwater/fish/other/cavefish/alabama/|title=Alabama Cavefish|accessdate=9 March 2009|year=2008|publisher=Outdoor Alabama|archiveurl=https://web.archive.org/web/20090316212948/http://www.outdooralabama.com/fishing/freshwater/fish/other/cavefish/alabama/|archivedate=16 March 2009|url-status=dead|df=dmy-all}}</ref>
+
+==Reproduction==
+
+There is little information available on the reproductive cycle of the Alabama cavefish. Some speculate that it may reproduce like the [[northern cavefish]] by carrying its young [[Mouthbrooder|inside its mouth]] to be incubated.<ref name="Outdoor Alabama"/> The Alabama cavefish, like most fish, utilizes seasonal cues to trigger hormonal changes that lead to its growth and reproduction. While most fish rely on a large change in water temperature or photoperiod, the Alabama cavefish rely on flooding of the cave in the winter and spring.'''<ref name="fws" />''' This results in an increase in flow of water into the cave and a small temperature change. Even with these cues, reproduction does not occur every year for the Alabama Cavefish. Years that reproduction does occur, only a few eggs are produced per female. It is hypothesized that, because of the jugular position of the vent and the size of the [[Fish anatomy|branchial chamber]], the Alabama Cavefish practices [[Mouthbrooder|branchial incubation]].
+
+== Listing History ==
+
+=== Endangered Species Act ===
+The Alabama Cavefish was first listed as a threatened species under the Endangered Species Act in 1977. Following further assessment of the species’ range and changing environmental conditions, the cavefish was considered an endangered species in 1988. By 1990, a recovery plan was created for the fish, which stipulates that the species would be down-listed when the following three criteria are met: (1) three other viable populations are found in discontinuous aquatic systems outside the Key Cave area, (2) the aquifer recharge areas for all four populations are protected, and (3) all four populations are demonstrated to be stable or increasing over at least a 20-year period.<ref>{{Cite web|url=https://ecos.fws.gov/docs/recovery_plan/901025.pdf|title=Alabama Cavefish Recovery Plan|last=|first=|date=1990|website=U.S Fish & Wildlife Service Environmental Conservation Online System|url-status=live|archive-url=|archive-date=|access-date=}}</ref> 
+
+In 2019, amendments to the recovery plan were created that changed the criteria for down-listing and created a criterion for delisting. In order to be delisted, the criteria now stipulate that: (1) the species must demonstrate a stable or increasing trend in the existing Key Cave population, (2) two more cavefish populations must be created, and (3) the aquifer recharge areas must be delineated, mapped, and protected. In order for the cavefish to be delisted entirely, the aquifer recharge area must be protected by a conservation mechanism for at least one of the new populations and all other threats to the cavefish must be addressed or managed, allowing viability for the foreseeable future.<ref>{{Cite web|url=https://ecos.fws.gov/docs/recovery_plan/Alabama%20Cavefish%20Recovery%20Plan%20Amendment.pdf|title=Recovery Plan for the Alabama Cavefish|last=|first=|date=2019|website=U.S. Fish & Wildlife Service Environmental Conservation Online System|url-status=live|archive-url=|archive-date=|access-date=}}</ref>
+
+=== International Union for Conservation of Nature Red List ===
+The Alabama Cavefish was first listed on the IUCN Red List of Threatened Species in 1986 as vulnerable and remained in that category following re-evaluation in 1988. Two years later, the status of the cavefish was reassessed and upgraded to endangered, which was then confirmed by a reassessment in 1994. In 1996, the Alabama Cavefish was again upgraded to critically endangered due to their lack of extent (100 sq. km), low population size, and numerous habitat challenges. The species was last assessed in April of 2012, and although its population trend is stable, it is still listed as critically endangered.<ref>{{Cite web|url=https://www.iucnredlist.org/en|title=IUCN Red List of Threatened Species: Speoplatyrhinus poulsoni|last=Authority)|first=NatureServe (Red List Partner & Red List|date=2012-04-12|website=IUCN Red List of Threatened Species|access-date=2020-04-07}}</ref>
+
+== Conservation ==
+There are a few current conservation measures put in place to protect the Alabama cavefish. Along with being listed under the ESA, the species is protected by the [[Lacey Act of 1900|Lacey Act]]. This makes it unlawful to import, export, transport, sell, receive, acquire, or purchase (alive or dead including parts, products, eggs, or offspring) the Alabama Cavefish. Secondly, The Tennessee Valley Authority, which owns the two entrances to the caves, have installed a fence to limit human disturbance.<ref name=":0" /> Lastly, in 1997, the Key Cave National Wildlife Refuge (NWR) was established. The Key Cave NWR aims at ensuring the biological integrity of the cave through protection of sinkholes that carry surface water directly into the aquifer of the cave.<ref name=":1">Bernard R. Kuhajda, email message to author, March 19, 2020.</ref>  
+
+== Human Impact ==
+The largest human-induced threat to the survival of the Alabama Cavefish is groundwater contamination within the recharge area of Key Cave. The recharge area is the place where water seeps into the ground and refills the aquifer. A major source of contamination is the chemicals used to cultivate crops grown in the areas surrounding the cave. Furthermore, collection of the species by amateurs or for scientific purposes pose such a major threat due to the already small population size.<ref name=":0" />
+
+== Factors Likely to Cause Extinction ==
+Many factors that are likely to cause the extinction of the Alabama Cavefish are associated with the recharge zone of the Key Cave. The degradation of the groundwater due to agrochemicals and the decreasing level of groundwater limit the entry and cycling of uncontaminated water into Key Cave.<ref name=":0" /> Additionally, the alteration of flood cycles within the aquifer often lead to unsuccessful cavefish reproduction.<ref name=":1" /> Furthermore, the [[Gray bat]], Myotis grisescens, which is also protected under the ESA, provides nutrients to the Alabama Cavefish through their guano. Therefore, the threats to this bat species also impact the Alabama Cavefish and their fuel source.<ref name=":0" /> All these factors combined with the already small population size and limited home range pose massive threats to the Alabama Cavefish.
+
+==References==
+{{Reflist|colwidth=33em}}
+
+{{Taxonbar|from=Q3061096}}
+
+[[Category:Amblyopsidae]]
+[[Category:Cave fish]]
+[[Category:Critically endangered fauna of the United States]]
+[[Category:Freshwater fish of the Southeastern United States|Cavefish, Alabama]]
+[[Category:Endemic fauna of Alabama]]
+[[Category:Fish described in 1974]]
+[[Category:ESA endangered species]]
+Alabama cavefish (Speoplatyrhinus poulsoni), is a critically endangered species of amblyopsid cavefish found only in underground pools in Key Cave, located in northwestern Alabama, United States in the Key Cave National Wildlife Refuge.
+
+On any single visit to the cave, no more than 10 individuals of this fish have been observed, and scientists estimate fewer than 100 are left.
+
+The only species in its genus, the Alabama cavefish is in danger of extinction. Conservation measures that have been taken to save the species from extinction include protecting the fish under the Lacey Act and limiting human disturbance of Key Cave.
+
+
+succeeded: 1
+trying: Palaemonias alabamae
+{{Taxobox
+| name = Alabama cave shrimp
+| status = EN
+| status_system = IUCN3.1
+| status_ref = <ref name="iucn">{{Cite iucn | author = De Grave, S. | author2 = Rogers, C. | last-author-amp = yes | title = ''Palaemonias alabamae'' | volume = 2013 | page = e.T15887A788932 | date = 2013 | doi = 10.2305/IUCN.UK.2013-1.RLTS.T15887A788932.en }}</ref>
+| regnum = [[Animal]]ia
+| phylum = [[Arthropod]]a
+| subphylum = [[Crustacean|Crustacea]]
+| classis = [[Malacostraca]]
+| ordo = [[Decapoda]]
+| infraordo = [[Caridea]]
+| familia = [[Atyidae]]
+| genus = ''[[Palaemonias]]''
+| species = '''''P. alabamae'''''
+| binomial = ''Palaemonias alabamae''
+| binomial_authority = ([[Alfred Evans Smalley|Smalley]], 1961)
+}}
+
+The '''Alabama cave shrimp''' (''Palaemonias alabamae'') is a [[species]] of [[Caridea|shrimp]] in the [[family (biology)|family]] [[Atyidae]], found only in caves in the state of [[Alabama]].
+
+==Conservation status==
+''Palaemonias alabamae'' is listed as an [[endangered species]] both on the [[IUCN Red List]],<ref name="iucn"/> and since September 7, 1988, under the U.S. [[Endangered Species Act]].<ref>{{FWS profile |spcode=K01V |name=Alabama cave shrimp |sci=Palaemonias alabamae |date=October 10, 2010}}</ref>
+
+==Distribution==
+The Alabama cave shrimp is only known from five [[cave]]s, all in [[Madison County, Alabama|Madison County]], [[Alabama]].<ref name="FWS">{{cite web |title=Alabama Cave Shrimp (''Palaemonias alabamae''). 5-Year Review: Summary and Evaluation |publisher=[[United States Fish and Wildlife Service]] |author=Jeff Powell |date=August 29, 2006 |accessdate=October 10, 2010 |url=http://www.fws.gov/southeast/5yearReviews/5yearreviews/05-ALS-cave-shrimp-final-5yr.pdf }}</ref> [[Shelta Cave]] is the species' [[type locality (biology)|type locality]], but viable populations have only been confirmed in [[Bobcat Cave]] and the complex comprising Hering Cave, Glover Cave and Brazelton Cave.
+
+==Ecology==
+''P. alabamae'' occurs in cave pools with [[silt]]y bottoms.<ref name="FWS"/> Predators of the Alabama cave shrimp include the [[southern cavefish]] ''[[Typhlichthys subterraneus]]'', the [[Tennessee cave salamander]] ''[[Gyrinophilus palleucus]]'', various [[crayfish]] species, [[American bullfrog|bullfrog]]s and [[raccoon]]s.<ref name="FWS"/>
+
+==Taxonomy==
+The closest relative of the Alabama cave shrimp is the [[Kentucky cave shrimp]], ''Palaemonias ganteri'', which lives in [[Mammoth Cave National Park]], [[Kentucky]].<ref name="FWS"/> The two species can be distinguished by size (''P. alabamae'' being larger than ''P. ganteri''), the longer [[rostrum (anatomy)|rostrum]] in ''P. alabamae'', and the greater number of spines on the rostrum of ''P. alabamae''.<ref name="FWS"/>
+
+==References==
+
+{{Reflist}}
+
+{{Taxonbar|from=Q3935149}}
+
+[[Category:Atyidae]]
+[[Category:Crustaceans of the United States]]
+[[Category:Cave shrimp]]
+[[Category:Endemic fauna of Alabama]]
+[[Category:Freshwater crustaceans of North America]]
+[[Category:Madison County, Alabama]]
+[[Category:Crustaceans described in 1961]]
+[[Category:Endangered fauna of the United States]]
+[[Category:ESA endangered species]]
+Alabama cave shrimp (Palaemonias alabamae) is a species of shrimp in the family Atyidae, found only in caves in the state of Alabama.
+
+
+succeeded: 2
+trying: Lampsilis virescens
+{{Speciesbox
+| image = 
+| status = CR
+| status_system = IUCN2.3
+| status_ref = <ref name=iucn/>
+| genus = Lampsilis
+| species = virescens
+| authority = ([[Isaac Lea|Lea]], 1858)
+| synonyms = 
+}}
+
+'''''Lampsilis virescens''''', the '''Alabama lamp naiad''', '''Alabama lamp pearly mussel''' or '''Alabama lampmussel''', is a [[species]] of [[freshwater mussel]], an [[aquatic animal|aquatic]] [[bivalve]] [[mollusk]] in the family [[Unionidae]], the river mussels.
+
+This species is [[Endemism|endemic]] to the [[United States]].  This river mussel is currently limited to the [[Paint Rock River]] drainage in northeastern [[Alabama]].
+
+This mussel grows up to 6 centimeters long and is straw-colored or greenish and smooth and shiny.<ref name=tnc>[http://www.natureserve.org/explorer/servlet/NatureServe?searchName=Lampsilis+virescens ''Lampsilis virescens''.] The NatureServe Explorer.</ref>
+
+==References==
+{{Reflist|refs=
+<ref name=iucn>{{Cite journal | author = Bogan, A.E. | title = ''Lampsilis virescens'' | journal = [[The IUCN Red List of Threatened Species]] | volume = 1996 | page = e.T11245A3265438 | publisher = [[IUCN]] | date = 1996 | url = http://www.iucnredlist.org/details/11245/0 | doi = 10.2305/IUCN.UK.1996.RLTS.T11245A3265438.en | access-date = 10 January 2018}}</ref>
+}}
+
+{{Taxonbar|from=Q3013701}}
+
+[[Category:Endemic fauna of Alabama]]
+[[Category:Critically endangered fauna of the United States]]
+[[Category:Lampsilis|virescens]]
+[[Category:Bivalves described in 1858]]
+[[Category:ESA endangered species]]
+[[Category:Taxonomy articles created by Polbot]]
+
+{{Unionidae-stub}}
+Lampsilis virescens, the Alabama lamp naiad, Alabama lamp pearly mussel or Alabama lampmussel, is a species of freshwater mussel, an aquatic bivalve mollusk in the family Unionidae, the river mussels.
+
+This species is endemic to the United States.  This river mussel is currently limited to the Paint Rock River drainage in northeastern Alabama.
+
+This mussel grows up to 6 centimeters long and is straw-colored or greenish and smooth and shiny.
+
+
+succeeded: 3
+trying: Medionidus acutissimus
+{{Speciesbox
+| image = Medionidus acutissimus.jpg
+| status = EN
+| status_system = IUCN2.3
+| status_ref = <ref name="iucn">{{Cite journal | author = Bogan, A.E. | title = ''Medionidus acutissimus'' | journal = [[The IUCN Red List of Threatened Species]] | volume = 1996 | page = e.T12924A3398826 | publisher = [[IUCN]] | date = 1996 | url = http://www.iucnredlist.org/details/12924/0 | doi = 10.2305/IUCN.UK.1996.RLTS.T12924A3398826.en | access-date = 18 December 2017}}</ref>
+| genus = Medionidus
+| species = acutissimus
+| authority = ([[Isaac Lea|I. Lea]], 1831)
+| synonyms = ''Unio acutissimus''<br>''Unio rubellinus''
+}}
+
+'''''Medionidus acutissimus''''', the '''Alabama moccasinshell''', is a [[species]] of [[freshwater mussel]] in the family [[Unionidae]], the river mussels. It is native to [[Alabama]], [[Mississippi]], [[Georgia (U.S. state)|Georgia]], [[Tennessee]], and possibly [[Florida]].<ref name=tnc>[http://www.natureserve.org/explorer/servlet/NatureServe?searchName=Medionidus+acutissimus ''Medionidus acutissimus''.] The Nature Conservancy.</ref> It is a federally listed threatened species of the United States.<ref name=fws>USFWS. [http://ecos.fws.gov/docs/federal_register/fr2245.pdf Endangered status for eight freshwater mussels and threatened status for three freshwater mussels in the Mobile River Drainage.] ''Federal Register'' March 17, 1993.</ref>
+
+This [[aquatic animal|aquatic]] [[bivalve]] [[mollusk]] is about 3 centimeters long with a thin yellow or brownish yellow shell. The [[nacre]] is mostly translucent with a [[salmon pink]] area.<ref name=fws/>
+
+This mussel is native to the [[Mobile River]] drainage, where it was once widespread. Its numbers are now low, with only one population, in the [[Sipsey Fork of the Black Warrior River|Sipsey Fork]], appearing to be stable. The highest numbers are found in streams in [[Bankhead National Forest]], where it is common in some areas. It is probably [[local extinction|extirpated]] from Florida and the rivers along the [[Gulf Coast]].<ref name=tnc/>
+
+==References==
+{{Reflist}}
+
+{{Taxonbar|from=Q3014029}}
+
+[[Category:Molluscs of the United States]]
+[[Category:Medionidus|acutissimus]]
+[[Category:Bivalves described in 1831]]
+[[Category:ESA threatened species]]
+[[Category:Taxonomy articles created by Polbot]]
+
+
+{{Unionidae-stub}}
+Medionidus acutissimus, the Alabama moccasinshell, is a species of freshwater mussel in the family Unionidae, the river mussels. It is native to Alabama, Mississippi, Georgia, Tennessee, and possibly Florida.
+
+This aquatic bivalve mollusk is about 3 centimeters long with a thin yellow or brownish yellow shell. The nacre is mostly translucent with a salmon pink area.<<<
+
+This mussel is native to the Mobile River drainage, where it was once widespread. Its numbers are now low, with only one population, in the Sipsey Fork, appearing to be stable. The highest numbers are found in streams in Bankhead National Forest, where it is common in some areas. It is probably extirpated from Florida and the rivers along the Gulf Coast.<<<
+
+
+succeeded: 4
+trying: Margaritifera marrianae
+{{Speciesbox
+| name = Alabama pearlshell
+| image = 
+| status = EN 
+| status_system = IUCN3.1
+| status_ref = <ref name="iucn">{{Cite journal | author = Cummings, K. | author2 = Cordeiro, J. | last-author-amp = yes | title = ''Margaritifera marrianae'' | journal = [[The IUCN Red List of Threatened Species]] | volume = 2012 | page = e.T12800A509635 | publisher = [[IUCN]] | date = 2012 | url = http://www.iucnredlist.org/details/12800/0 | doi = 10.2305/IUCN.UK.2012.RLTS.T12800A509635.en | access-date = 18 December 2017}}</ref>
+| genus = Margaritifera
+| species = marrianae
+| authority = R.I. Johnson, 1983
+| synonyms = 
+}}
+
+'''''Margaritifera marrianae''''', the '''Alabama pearlshell''', is a [[species]] of [[freshwater mussel]], an [[Aquatic animal|aquatic]] [[bivalve]] [[mollusk]] in the family [[Margaritiferidae]], the freshwater [[pearl]] mussels.
+
+This species is [[Endemism|endemic]] to the [[United States]].  It is threatened by [[habitat loss]].<ref name="iucn"/>
+
+==References==
+{{Reflist}}
+
+{{Taxonbar|from=Q3015947}}
+
+[[Category:Molluscs of the United States]]
+[[Category:Margaritifera|marrianae]]
+[[Category:Molluscs described in 1983]]
+[[Category:Taxonomy articles created by Polbot]]
+[[Category:ESA endangered species]]
+
+
+{{bivalve-stub}}
+Margaritifera marrianae, the Alabama pearlshell, is a species of freshwater mussel, an aquatic bivalve mollusk in the family Margaritiferidae, the freshwater pearl mussels.
+
+This species is endemic to the United States.  It is threatened by habitat loss.<<<
+
+
+succeeded: 5
+trying: Pseudemys alabamensis
+{{Speciesbox
+| image = Alabama red-bellied turtle US FWS cropped.jpg
+| status = EN
+| status_system = IUCN2.3
+| status_ref = <ref name="Rhodin11">{{Harnvb|Rhodin|2011|p=000.181}}</ref><ref name="Redlist">{{Cite journal | author = Tortoise & Freshwater Turtle Specialist Group | title = ''Pseudemys alabamensis'' | journal = [[The IUCN Red List of Threatened Species]] | volume = 1996 | page = e.T18458A97296493 | publisher = [[IUCN]] | date = 1996 | doi = 10.2305/IUCN.UK.1996.RLTS.T18458A8295960.en }} Listed as Endangered (EN B1+2c v2.3)</ref>
+| genus = Pseudemys
+| species = alabamensis
+| authority = ([[Georg Baur|Baur]], 1893)<ref name="Rhodin11" />
+| range_map = Pseudemys alabamensis range.png
+| range_map_caption = Alabama red-bellied cooter range<ref>{{cite journal |last1=U.S. Geological Survey |title=Alabama Red-bellied Cooter (Pseudemys alabamensis) rARBCx_CONUS_2001v1 Range Map |journal=Gap Analysis Project |date=2017 |doi=10.5066/F7Z31XTN }}</ref>
+| synonyms = * ''Pseudemys alabamensis'' <small>Baur, 1893</small> 
+* ''Chrysemys ababamensis'' <small>Ditmars, 1907</small>  ''([[ex errore]])''
+* ''Pseudemys rubriventris alabamensis'' <small>Stejneger, 1938</small> 
+* ''Chrysemys rubriventris alabamensis'' <small>Obst, 1983</small>
+| synonyms_ref = <ref name="Fritz2007">{{Cite journal|journal=Vertebrate Zoology |title=Checklist of Chelonians of the World |date=2007 |author=Fritz Uwe |author2=Peter Havaš |volume=57 |issue=2 |pages=192 |url=http://www.cnah.org/pdf_files/851.pdf |archiveurl=https://web.archive.org/web/20110501060224/http://www.cnah.org/pdf_files/851.pdf |archivedate=1 May 2011 |accessdate=29 May 2012 |url-status=dead |df=dmy }}</ref>
+}}
+
+The '''Alabama red-bellied cooter''' (''Pseudemys alabamensis'') or '''Alabama red-bellied turtle''', is native to [[Alabama]].<ref name="Rhodin11" /><ref name="Redlist" />  It belongs to the turtle family [[Emydidae]], the pond turtles. It is the [[state reptile|official reptile]] of the state of Alabama.<ref>{{cite web |url=http://www.archives.state.al.us/emblems/st_rept.html |title=Official Alabama Reptile |accessdate=2007-03-19 |date=2001-07-12 |work=Alabama Emblems, Symbols and Honors |publisher=Alabama Department of Archives & History}}</ref>
+
+==Life history==
+The red-belly inhabits the fresh to brackish waters of the [[Mobile-Tensaw River Delta]] in [[Mobile County|Mobile]] and [[Baldwin County, Alabama|Baldwin]] counties.<ref name="Redlist" />  It feeds on aquatic vegetation<ref name="gdomag.com">{{Cite web |url=http://www.gdomag.com/stories.php?story=08%2F10%2F27%2F4668945 |title=Archived copy |access-date=7 October 2018 |archive-url=https://web.archive.org/web/20140416192052/http://www.gdomag.com/stories.php?story=08%2F10%2F27%2F4668945 |archive-date=16 April 2014 |url-status=dead |df=dmy-all }}</ref> and can be found sunning itself on logs.
+Nesting of the red-bellied turtle occurs from May through July. Female turtles lay their eggs on dry land, digging nests in sandy soil, where 4 to 9 eggs are laid.  Hatchlings usually emerge during the summer. However, when the turtles nest in late July, hatchlings may overwinter in the nest and emerge the following spring.{{citation needed|date=May 2012}}
+
+A mature female can be 14 inches, while a mature male can be 12 inches.<ref name="gdomag.com"/>
+
+==Location==
+As of June 2009 the turtle has been seen in the central part of Alabama, in the [[Elmore County, Alabama|Elmore County]] region.{{citation needed|date=May 2012}}
+
+This turtle has also been found in south-eastern Mississippi,<ref>''Southern Wonder: Alabama's Surprising Biodiversity'' by R. Scot Duncan, University of Alabama Press, 2013, page 367, {{ISBN|9780817357504}}</ref> in Harrison and Jackson counties.<ref name="gdomag.com"/>
+
+==Protection==
+In 2007, a {{Convert|3.4|mi|km}} chain-link fence has been constructed along part of the [[US 98]] causeway ([[Battleship Parkway]]) that separates the Mobile-Tensaw delta from [[Mobile Bay]].<ref>http://baldwinreport.com/2007/11/14/turtle-protectors-on-the-causeway/</ref>  Hatchling deaths dropped 80% from 2007 to 2008.{{cn|date=February 2018}}
+
+==Gallery==
+<gallery>
+File:Alabama red-bellied turtle hatchling climbing up hand.JPG|hatchling 
+File:Alabama red-bellied turtle hatchling plastron view.jpg|hatchling, bottom shell
+File:Alabama red-bellied turtle hatchling, carapace view.jpg|hatchling, carapace view
+</gallery>
+
+== References ==
+{{Reflist}}
+
+==External links==
+{{Commons category|Pseudemys alabamensis}}
+*[https://web.archive.org/web/20180821060415/http://www.savetheredbelly.org/ Save the Alabama Red-bellied turtle]—Alabama red-bellied turtle alliance
+
+{{Emydidae}}
+{{Use dmy dates|date=May 2012}}
+
+{{Taxonbar|from=Q597376}}
+
+[[Category:Pseudemys]]
+[[Category:Endemic fauna of the United States]]
+[[Category:Reptiles described in 1893]]
+[[Category:ESA endangered species]]
+[[Category:Taxa named by Georg Baur]]
+[[Category:Reptiles of the United States]]
+[[Category:Symbols of Alabama]]
+Alabama red-bellied cooter (Pseudemys alabamensis) or Alabama red-bellied turtle, is native to Alabama.
+
+
+succeeded: 6
+trying: Scaphirhynchus suttkusi
+{{Taxobox
+| name = Alabama sturgeon
+| status = CR 
+| status_system = IUCN3.1
+| status_ref = <ref name="IUCN">{{cite iucn|author=Parauka, F.M. (U.S. Fish & Wildlife Service)|year=2004|url=https://www.iucnredlist.org/details/19942/0|title=''Scaphyrhynchus suttkusi''|access-date=20 January 2014|ref=harv}}</ref>
+| image = Alabama Sturgeon.jpg
+| image_width = 275px
+| image_caption = 
+| regnum = [[Animal]]ia
+| phylum = [[Chordate|Chordata]]
+| classis = [[Actinopterygii]]
+| ordo = [[Acipenseriformes]]
+| familia = [[Acipenseridae]]
+| genus = ''[[Scaphirhynchus]]''
+| species = '''''S. suttkusi'''''
+| binomial = ''Scaphirhynchus suttkusi''
+| binomial_authority = [[James David Williams|J. D. Williams]] & [[Glenn H. Clemmer|Clemmer]] 1991<ref>{{Cite website|last=Froese|first=R.|last2=Pauly|first2=D.|year=2017|title=Acipenseridae |url=http://www.fishbase.se/Summary/FamilySummary.php?ID=32|website=[[FishBase]] version (02/2017)|accessdate=18 May 2017}}</ref><ref>{{cite journal |last1=Van Der Laan |first1=Richard |last2=Eschmeyer |first2=William N. |last3=Fricke |first3=Ronald |title=Family-group names of Recent fishes |journal=Zootaxa |date=11 November 2014 |volume=3882 |issue=1 |pages=1–230 |doi=10.11646/zootaxa.3882.1.1 |pmid=25543675 }}</ref>
+}}
+[[File:Scaphirhynchus suttkusi.jpg|thumb|275px|right|Alabama sturgeon]]
+
+The '''Alabama sturgeon''', ''Scaphirhynchus suttkusi'', is a [[critically endangered species]] of [[sturgeon]] native to the [[United States|United States of America]] and now only believed to exist in {{convert|130|mi|km}} of the lower [[Alabama River]].<ref name="Bouma1">{{cite news|last=Bouma |first=Katherine |title=Alabama sturgeon caught in Wilcox, raises hopes for possible breeding |newspaper=The Birmingham News |date=2007-04-05 |url=http://www.al.com/news/birminghamnews/index.ssf?/base/news/117576094897930.xml&coll=2 |accessdate=2007-04-06 |archiveurl=https://web.archive.org/web/20070927200314/http://www.al.com/news/birminghamnews/index.ssf?%2Fbase%2Fnews%2F117576094897930.xml&coll=2 |archivedate=2007-09-27 |url-status=dead }}</ref>  The fish has a distinctive yellowish-orange color, grows to a size of about {{convert|30|in|cm|abbr=on}} long and {{convert|2|to(-)|3|lb|kg|abbr=on|1}}, and is believed to have a lifespan of 12 to 20 years. Biologists have known of the fish since the 1950s or 1960s, but the large diversity of aquatic species in [[Alabama]] prevented formal identification until 1991.
+
+== Protected status controversy ==
+The Alabama sturgeon was first proposed for protected status in the early 1990s, although by then the fish was already so rare its survival was uncertain.  The sturgeon's protection was opposed by a variety of industries located along Alabama's rivers for the feared economic impact.  The opponents' main arguments were that it was already extinct or that it was not a distinct species.  In response to this opposition, the [[U.S. Fish and Wildlife Service]] ceased efforts to place the fish on the Endangered Species List.  Then Ray Vaughan, an environmental lawyer in [[Montgomery, Alabama]], sued the Service and, in 2000, won, requiring Fish and Wildlife to list the fish for protection.<ref name="Bouma1" />
+
+== Recent efforts ==
+In 1993, state and federal biologists began a program to help save the Alabama sturgeon through a captive breeding program.  Unfortunately, only six fish have been captured since then, all male.  The last fish held in captivity died in 2002.  The most recent specimen was captured in April 2007.  After determining the fish was a male, sperm were collected, a small tracking device implanted, and it was released once it had fully healed.<ref name="Bouma2">{{cite news|last=Bouma |first=Katherine |title=Alabama sturgeon a male, to be freed carrying tracker |newspaper=The Birmingham News |date=2007-04-06 |url=http://www.al.com/birminghamnews/stories/index.ssf?/base/news/1175847731193450.xml&coll=2 |accessdate=2007-04-06 |archiveurl=https://web.archive.org/web/20070930031719/http://www.al.com/birminghamnews/stories/index.ssf?%2Fbase%2Fnews%2F1175847731193450.xml&coll=2 |archivedate=2007-09-30 |url-status=dead }}</ref>
+<ref name="Bouma3">{{cite news|last=Bouma |first=Katherine |title=Biologists hope tagged sturgeon will lead to others |newspaper=The Birmingham News |date=2007-04-18 |url=http://www.al.com/news/birminghamnews/index.ssf?/base/news/117689904956630.xml&coll=2 |accessdate=2007-04-06 |archiveurl=https://web.archive.org/web/20070930023521/http://www.al.com/news/birminghamnews/index.ssf?%2Fbase%2Fnews%2F117689904956630.xml&coll=2 |archivedate=2007-09-30 |url-status=dead }}</ref>  It was hoped that the tagged fish would lead to others of its species, but in a year of tracking to date, this has not happened.<ref name="Reilly1">{{cite news|last=Reilly |first=Sean |title='Critical habitat' set for sturgeon |publisher=(Mobile, Alabama) Press-Register |date=2008-05-27 |url=http://www.al.com/news/press-register/index.ssf?/base/news/121187973695920.xml&coll=3 |archiveurl=https://web.archive.org/web/20120927161602/http://www.al.com/news/press-register/index.ssf?%2Fbase%2Fnews%2F121187973695920.xml&coll=3 |archivedate=2012-09-27 |accessdate=2014-01-20 |url-status=dead }}</ref>
+
+In May 2008, the Fish and Wildlife Service proposed designating {{convert|245|mi|km}} of the Alabama River and {{convert|81|mi|km}} of the lower portion of its tributary, the [[Cahaba River]], as critical habitat for the fish.  Although the rivers are dammed at multiple locations, management of the river flows is expected to continue unchanged.  In July 2009, fish researchers lost contact with the only known live Alabama Sturgeon. The fish had been given an electronic tracking device in hopes that the fish would lead them to other members of the species, but the device stopped working.
+
+In August 2013, the Fish and Wildlife Service released the "Recovery Plan for the Alabama Sturgeon (''Scaphirhynchus suttkusi'')".<ref name="AP2013">{{cite news|title = Agency makes plans to save Alabama sturgeon|publisher = Montgomery Advertiser|date = 2007-08-07|url = http://www.montgomeryadvertiser.com/apps/pbcs.dll/article?AID=2013308070050 |archiveurl=https://web.archive.org/web/20130814161257/http://www.montgomeryadvertiser.com/proart/?aid=2013308070050&pagerestricted=1| archivedate= 2013-08-14 |accessdate = 2014-01-20}}</ref> It includes a plan to establish a captive stock that can produce fingerlings to be released back into the wild and to improve the habitat in the Alabama River through operational changes at Claiborne and Millers Ferry Lock and Dams.<ref name="WTVY">{{cite news | title = Alabama Sturgeon Recovery Plan Released | publisher = WTVY.com | date = 2013-08-06 | url = http://www.wtvy.com/news/headlines/Alabama-Sturgeon-Recovery-Plan-Released-218516971.html | accessdate = 2013-08-14 | archive-url = https://web.archive.org/web/20140201235852/http://www.wtvy.com/news/headlines/Alabama-Sturgeon-Recovery-Plan-Released-218516971.html | archive-date = 2014-02-01 | url-status = dead }}</ref>
+
+Studies from 2014 and 2015 indicated that despite the very few sightings over the last decade, the species is still extant. This is due to numerous traces of recent Alabama sturgeon DNA ([[environmental DNA]]) found in water samples gathered from the river.<ref>{{Cite news|url=https://www.atlasobscura.com/articles/how-fish-forensics-uncovered-the-longlost-alabama-sturgeon|title=How Fish Forensics Uncovered the Long-Lost Alabama Sturgeon|date=2016-09-08|work=Atlas Obscura|access-date=2018-05-13|language=en}}</ref>
+
+==References==
+{{Reflist}}
+
+==External links==
+* [http://ecos.fws.gov/speciesProfile/profile/speciesProfile.action?spcode=E026 Alabama sturgeon page] of the U.S. Fish and Wildlife Service's Endangered Species Program site
+* [https://web.archive.org/web/20080515224921/http://www.outdooralabama.com/fishing/freshwater/fish/sturgeon/alabama/ Alabama Sturgeon of the Mobile basin] at the Alabama Department of Conservation and Natural Resources
+* [https://web.archive.org/web/20110702073505/http://www.wkrg.com/alabama/article/scientists-lose-contact-with-lone-alabama-sturgeon/168581/Jul-07-2009_1-37-pm/ WKRG News 5 - Scientists lose contact with lone Alabama sturgeon] via the Internet Archive Wayback machine
+* {{ITIS |id=201895 |taxon=Scaphirhynchus suttkusi |accessdate=6 April 2007}}
+* {{FishBase_species|genus=Scaphirhynchus|species=suttkusi|year=2007|month=April}}
+
+{{Acipenseriformes}}
+
+{{Taxonbar|from=Q2123132}}
+
+{{DEFAULTSORT:Alabama Sturgeon}}
+[[Category:Scaphirhynchus]]
+[[Category:Freshwater fish of the United States]]
+[[Category:Endemic fauna of Alabama]]
+[[Category:Fish of the Eastern United States]]
+[[Category:Critically endangered fish]]
+[[Category:Critically endangered fauna of the United States]]
+[[Category:Fish described in 1991]]
+[[Category:ESA endangered species]]
+[[Category:Freshwater fish of North America]]
