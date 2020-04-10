@@ -20,7 +20,7 @@ URL = "https://en.wikipedia.org/w/api.php"
 
 # put name of what you want to search for in SEARCHPAGE
 
-SEARCHPAGE = "Athearnia anthonyi"
+SEARCHPAGE = "Mesodon clarki nantahala"
 
 PARAMS = {
     "action": "query",
@@ -56,6 +56,7 @@ paragraph = re.sub('(==)', '', paragraph)
 paragraph = re.sub('(<.+?>)', '<<<', paragraph)
 paragraph = re.sub('(<<<.+<<<)', '', paragraph)
 # remove quotes and quotes and brackets
+paragraph = re.sub('(\[([^\[])+\|)', '', paragraph)
 paragraph = re.sub('(\[)', '', paragraph)
 paragraph = re.sub('(\])', '', paragraph)
 paragraph = re.sub('\'', '', paragraph)
