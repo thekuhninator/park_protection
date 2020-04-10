@@ -20,7 +20,7 @@ URL = "https://en.wikipedia.org/w/api.php"
 
 # put name of what you want to search for in SEARCHPAGE
 
-SEARCHPAGE = "Mesodon clarki nantahala"
+SEARCHPAGE = "Speoplatyrhinus poulsoni"
 
 PARAMS = {
     "action": "query",
@@ -47,8 +47,10 @@ DATA = R.json()
 
 pagetext = DATA["parse"]["wikitext"]["*"]
 
+print(pagetext)
+
 # remove speciesbox
-paragraph = re.sub('({{(.|\n)+?}}\n\n)', '', pagetext)
+paragraph = re.sub('({{(.|\n)+?}}\n\n)', '', pagetext, 1)
 paragraph = re.search('(\'\'\'(.+\n+)+?(==))', paragraph).group()
 # remove next paragraph header
 paragraph = re.sub('(==)', '', paragraph)
