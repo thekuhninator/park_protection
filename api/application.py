@@ -100,10 +100,131 @@ db.create_all()
 # Create the Flask-Restless API manager.
 manager = APIManager(application, flask_sqlalchemy_db=db)
 
+class Searching:
+    plant_search_terms = None
+
+def get_many_preprocessor(search_params=None, **kw):
+    # make the results like 1000 or something
+    print('PRE PROCESSOR WAS CALLED')
+    if(search_params != None):
+        print('SEARCH PARAMS IS NOT NONE')
+        keywords = search_params['search_query'].split()
+        attributes = ['category', 'com_name', 'duration', 'family', 'family_com', 'growth', 'sci_name', 'status', 'toxicity']
+        listDicts = []
+        # for each keywrod
+        # add 9 ilike dictionaries where you add a  percentage for each field
+        # then do states and name with any and uppercase
+        for keyword in keywords:
+            for attribute in attributes:
+                new_dict = dict(name=attribute, op='ilike', val=keyword)
+                listDicts.append(new_dict)
+                print(listDicts)
+            states_dict = dict(name='states__name', op='any', val=keyword.upper())
+            listDicts.append(states_dict)
+
+        #filt = dict(name='category', op='ilike', val='Dicot')
+        #filters.
+
+        print(listDicts)
+        search_params["filters"] = [{"or": listDicts}]
+        #search_params["q"] = {"filters": [{"or": listDicts}]}
+        #search_params["filters"] = {"filters": [{"or": listDicts}]}
+
+        #print(search_params)
+
+        #listDicts = [dict(name='category', op='ilike', val='Dicot'), dict(name='status', op='ilike', val='endangered')]
+
+
+        # filters is an array of size 1
+        # in the array the element is a dictionary
+        # that dictionary has one key value pair
+        # the key is or
+        # the value is an array of dicts
+        # that array of dictionaries is the actual filterfalse
+        # the dictionary is the normal filter list
+
+        # thing     op       val
+        # name       ilike   %keyword1%
+        # name       ilike   %keyword2%
+
+        # an array of dictionaries for each attribute for each keyword
+        # name and op is never going to change
+        # no percent for states, just make it all uppercase
+        #{"name":"states__name","op":"any","val":"FL"}
+
+        # split search screen
+        # for each keywrod
+        # add 9 ilike dictionaries where you add a  percentage for each field
+        # then do states and name with any and uppercase
+
+        '''
+        assert ('search_query' in search_params)
+        search_query = search_params['search_query']
+        Searching.plant_search_terms = search_query.split()
+        print('PLANT SEARCH TERMS IS NOW')
+        print(Searching.plant_search_terms)
+        '''
+
+
+    pass
+
+
+
 # Create API endpoints, which will be available at /api/<tablename> by
 # default. Allowed HTTP methods can be specified as well.
+from itertools import filterfalse
+def search_process(result=None, **kw):
+    print('POST PROCESSOR CALLED')
+    #print(result)
+    #print('the size of results is')
+    #print(result)
+
+    print('\n\n\n\n\n\n\n')
+    print('plant search terms')
+    print(Searching.plant_search_terms)
+    if(Searching.plant_search_terms != None):
+        print('\n\n\n\n\n\n\n')
+        print('plant search terms is not null, now filtering')
+        def search_filter(plant):
+            #include_result = False
+            for attribute in list(plant):
+                for keyword in Searching.plant_search_terms:
+                    #print('attribute, keyword', attribute, keyword)
+                    if(isinstance(plant[attribute],str) and keyword in plant[attribute]):
+                        print('keeping this one')
+                        return False
+            print('not keeping this one')
+            return True
+        print('results before')
+        print(len(result['objects']))
+        result['objects'][:] = filterfalse(search_filter, result['objects'])
+        print('after')
+        print(len(result['objects']))
+
+
+
+    result['FART'] = 'ASS'
+
+    #print('PAGE 1 ')
+    #result = {'hello':  'world'}
+    #print(result)
+    #print(kw)
+    pass
+    #return result
+
+# Create API endpoints, which will be available at /api/<tablename> by
+# default. Allowed HTTP methods can be specified as well.
+# manager.create_api(Person, methods=['GET', 'POST', 'DELETE'])
+# manager.create_api(Article, methods=['GET'])
+
+
 animals_blueprint = manager.create_api(Animals, methods=['GET'])
-plants_blueprint = manager.create_api(Plants, methods=['GET'])
+plants_blueprint = manager.create_api(Plants, methods=['GET'],
+                        preprocessors={'GET_MANY': [get_many_preprocessor]},
+                        #postprocessors={'GET_MANY': [search_process]} ,
+                        max_results_per_page=1000,
+                        results_per_page=1000
+                        )
 parks_blueprint = manager.create_api(Parks, methods=['GET'])
 
 '''
@@ -126,7 +247,7 @@ def add_headers(response):
     response.headers['Access-Control-Allow-Origin'] = '*'
     response.headers['Access-Control-Allow-Credentials'] = 'true'
     return response
-    
+
 application.after_request(add_headers)
 
 # start the flask loop
