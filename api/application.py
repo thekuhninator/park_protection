@@ -122,41 +122,9 @@ def get_many_preprocessor(search_params=None, **kw):
             states_dict = dict(name='states__name', op='any', val=keyword.upper())
             listDicts.append(states_dict)
 
-        #filt = dict(name='category', op='ilike', val='Dicot')
-        #filters.
-
-        print(listDicts)
         search_params["filters"] = [{"or": listDicts}]
-        #search_params["q"] = {"filters": [{"or": listDicts}]}
-        #search_params["filters"] = {"filters": [{"or": listDicts}]}
 
-        #print(search_params)
-
-        #listDicts = [dict(name='category', op='ilike', val='Dicot'), dict(name='status', op='ilike', val='endangered')]
-
-
-        # filters is an array of size 1
-        # in the array the element is a dictionary
-        # that dictionary has one key value pair
-        # the key is or
-        # the value is an array of dicts
-        # that array of dictionaries is the actual filterfalse
-        # the dictionary is the normal filter list
-
-        # thing     op       val
-        # name       ilike   %keyword1%
-        # name       ilike   %keyword2%
-
-        # an array of dictionaries for each attribute for each keyword
-        # name and op is never going to change
-        # no percent for states, just make it all uppercase
-        #{"name":"states__name","op":"any","val":"FL"}
-
-        # split search screen
-        # for each keywrod
-        # add 9 ilike dictionaries where you add a  percentage for each field
-        # then do states and name with any and uppercase
-
+        # code that we can throw away
         '''
         assert ('search_query' in search_params)
         search_query = search_params['search_query']
@@ -164,8 +132,6 @@ def get_many_preprocessor(search_params=None, **kw):
         print('PLANT SEARCH TERMS IS NOW')
         print(Searching.plant_search_terms)
         '''
-
-
     pass
 
 
