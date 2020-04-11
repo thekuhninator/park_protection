@@ -36,6 +36,7 @@ class Animals(db.Model):
     bcc = db.Column(db.Boolean)
     plan = db.Column(db.Unicode)
     image = db.Column(db.Unicode)
+    des = db.Column(db.Unicode)
 
 class AnimalStates(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -58,6 +59,7 @@ class Plants(db.Model):
     toxicity = db.Column(db.Unicode)
     plan = db.Column(db.Unicode)
     image = db.Column(db.Unicode)
+    des = db.Column(db.Unicode)
 
 class PlantStates(db.Model):
     id = db.Column(db.Integer, primary_key=True)

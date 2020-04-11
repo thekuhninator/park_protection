@@ -16,12 +16,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 const common = [
   { value: 'asc', label: 'Ascending' },
-  { value: 'des', label: 'Descending' }
+  { value: 'desc', label: 'Descending' }
 ]
-
-const Common = () => (
-  <Select options={common} placeholder="Common Names" />
-)
 
 const scientific = [
   { value: 'asc', label: 'Ascending' },
@@ -74,8 +70,9 @@ class Plants extends React.Component {
 	        page: 1,
 	        lastPageNum: 43
 		};
+        this.CommonHandler = this.CommonHandler.bind(this);
+        this.comDir = 'asc'
 	}
-
 	componentDidMount() {
 		this.fillplantList(1)
 	}
@@ -163,13 +160,21 @@ class Plants extends React.Component {
 				<Pagination.Last onClick={(e) => {this.generateNewPage(e, this.state.lastPageNum)}}/>
 			)
 		}
-        
+
 		return paginationBar;
 	}
 
 	fillplantList(pageNum) {
+        let dir;
+        if(this.comDir != null){
+            dir = this.comDir;
+        }
+        if(dir == null){
+            dir = 'asc';
+        }
+
 		fetch(
-          "https://api.parkprotection.me/api/plants?results_per_page=9&page=".concat(this.state.page)
+          'https://api.parkprotection.me/api/plants?results_per_page=9&q=%7B%22order_by%22:%5B%7B%22field%22:%22com_name%22,%22direction%22:%22'.concat(dir).concat("%22%7D%5D%7D&page=").concat(pageNum)
       )
           .then((response) => response.json())
           .then((data) => {
@@ -197,7 +202,19 @@ class Plants extends React.Component {
               console.log(e);
               this.setState({ plantList : []});
           });
+          this.render();
 	}
+
+    CommonHandler(comDir){
+        this.comDir = comDir.value;
+        this.fillplantList(this.state.page);
+        this.forceUpdate();
+    }
+    Common() {
+      return <Select options={common} ref = "comDir" placeholder="Common Names" onChange ={
+          this.CommonHandler
+      }/>
+    }
 
 	render() {
 		return (
@@ -216,7 +233,7 @@ class Plants extends React.Component {
 
 				<Row>
 					<Col>
-						<Common />
+						{this.Common()}
 					</Col>
 					<Col>
 						<Scientific />
