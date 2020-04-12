@@ -126,14 +126,54 @@ def plant_preprocessor(search_params=None, **kw):
 
         search_params["filters"] = [{"or": listDicts}] # set the search_params
 
-        # code that we can throw away
-        '''
-        assert ('search_query' in search_params)
-        search_query = search_params['search_query']
-        Searching.plant_search_terms = search_query.split()
-        print('PLANT SEARCH TERMS IS NOW')
-        print(Searching.plant_search_terms)
-        '''
+    pass # end of function
+
+def animal_preprocessor(search_params=None, **kw):
+
+    # if there was a search attempt let's handle it, if not leave it alone
+    if(search_params != None and 'search_query' in search_params):
+        # get all the keywords
+        keywords = search_params['search_query'].split()
+        # all the possible attributes we will search through
+        attributes = ['com_name', 'des', 'sci_name', 'status', 'tax_group']
+        # define our filters
+        listDicts = []
+
+        for keyword in keywords: # iterate through each keyword
+            keyword = '%' + keyword + '%' # makes it so we can search anywhere in the string
+            for attribute in attributes: # iterate through the columns/attributes
+                new_dict = dict(name=attribute, op='ilike', val=keyword) # make a new filter dict
+                listDicts.append(new_dict) # add it
+                print(listDicts)
+            states_dict = dict(name='states__name', op='any', val=keyword.upper()) # states dict
+            listDicts.append(states_dict)
+
+        search_params["filters"] = [{"or": listDicts}] # set the search_params
+
+    pass # end of function
+
+def park_preprocessor(search_params=None, **kw):
+
+    # if there was a search attempt let's handle it, if not leave it alone
+    if(search_params != None and 'search_query' in search_params):
+        # get all the keywords
+        keywords = search_params['search_query'].split()
+        # all the possible attributes we will search through
+        attributes = ['address', 'code', 'desc', 'designation', 'name', 'weather']
+        # define our filters
+        listDicts = []
+
+        for keyword in keywords: # iterate through each keyword
+            keyword = '%' + keyword + '%' # makes it so we can search anywhere in the string
+            for attribute in attributes: # iterate through the columns/attributes
+                new_dict = dict(name=attribute, op='ilike', val=keyword) # make a new filter dict
+                listDicts.append(new_dict) # add it
+                print(listDicts)
+            states_dict = dict(name='states__name', op='any', val=keyword.upper()) # states dict
+            listDicts.append(states_dict)
+
+        search_params["filters"] = [{"or": listDicts}] # set the search_params
+
     pass # end of function
 
 
@@ -186,14 +226,24 @@ def search_process(result=None, **kw):
 # manager.create_api(Article, methods=['GET'])
 
 
-animals_blueprint = manager.create_api(Animals, methods=['GET'])
+animals_blueprint = manager.create_api(Animals, methods=['GET'],
+                        preprocessors={'GET_MANY': [animal_preprocessor]},
+                        #postprocessors={'GET_MANY': [search_process]} ,
+                        max_results_per_page=1000,
+                        results_per_page=1000
+                        )
 plants_blueprint = manager.create_api(Plants, methods=['GET'],
                         preprocessors={'GET_MANY': [plant_preprocessor]},
                         #postprocessors={'GET_MANY': [search_process]} ,
                         max_results_per_page=1000,
                         results_per_page=1000
                         )
-parks_blueprint = manager.create_api(Parks, methods=['GET'])
+parks_blueprint = manager.create_api(Parks, methods=['GET'],
+                        preprocessors={'GET_MANY': [park_preprocessor]},
+                        #postprocessors={'GET_MANY': [search_process]} ,
+                        max_results_per_page=1000,
+                        results_per_page=1000
+                        )
 
 '''
 # add the cors header
