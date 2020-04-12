@@ -105,26 +105,26 @@ manager = APIManager(application, flask_sqlalchemy_db=db)
 class Searching:
     plant_search_terms = None
 
-def get_many_preprocessor(search_params=None, **kw):
-    # make the results like 1000 or something
-    print('PRE PROCESSOR WAS CALLED')
-    if(search_params != None):
-        print('SEARCH PARAMS IS NOT NONE')
+def plant_preprocessor(search_params=None, **kw):
+    # if there was a search attempt let's handle it, if not leave it alone
+    if(search_params != None and 'search_query' in search_params):
+        # get all the keywords
         keywords = search_params['search_query'].split()
+        # all the possible attributes we will search through
         attributes = ['category', 'com_name', 'duration', 'family', 'family_com', 'growth', 'sci_name', 'status', 'toxicity']
+        # define our filters
         listDicts = []
-        # for each keywrod
-        # add 9 ilike dictionaries where you add a  percentage for each field
-        # then do states and name with any and uppercase
-        for keyword in keywords:
-            for attribute in attributes:
-                new_dict = dict(name=attribute, op='ilike', val=keyword)
-                listDicts.append(new_dict)
+
+        for keyword in keywords: # iterate through each keyword
+            keyword = '%' + keyword + '%' # makes it so we can search anywhere in the string
+            for attribute in attributes: # iterate through the columns/attributes
+                new_dict = dict(name=attribute, op='ilike', val=keyword) # make a new filter dict
+                listDicts.append(new_dict) # add it
                 print(listDicts)
-            states_dict = dict(name='states__name', op='any', val=keyword.upper())
+            states_dict = dict(name='states__name', op='any', val=keyword.upper()) # states dict
             listDicts.append(states_dict)
 
-        search_params["filters"] = [{"or": listDicts}]
+        search_params["filters"] = [{"or": listDicts}] # set the search_params
 
         # code that we can throw away
         '''
@@ -134,7 +134,7 @@ def get_many_preprocessor(search_params=None, **kw):
         print('PLANT SEARCH TERMS IS NOW')
         print(Searching.plant_search_terms)
         '''
-    pass
+    pass # end of function
 
 
 
@@ -188,7 +188,7 @@ def search_process(result=None, **kw):
 
 animals_blueprint = manager.create_api(Animals, methods=['GET'])
 plants_blueprint = manager.create_api(Plants, methods=['GET'],
-                        preprocessors={'GET_MANY': [get_many_preprocessor]},
+                        preprocessors={'GET_MANY': [plant_preprocessor]},
                         #postprocessors={'GET_MANY': [search_process]} ,
                         max_results_per_page=1000,
                         results_per_page=1000
